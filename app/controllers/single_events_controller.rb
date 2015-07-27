@@ -124,7 +124,7 @@ end
     if current_user
      @events = current_user.profesor.single_events    
      @user = current_user
-     @event_grid = initialize_grid(@events, order: 'single_events.date',order_direction: 'asc')
+     @event_grid = initialize_grid(current_user.profesor.single_events, include: :group ,order: 'single_events.date',order_direction: 'asc')
     else
      redirect_to new_user_session_path, notice: 'You are not logged in.'
     end

@@ -18,33 +18,14 @@
 
   .clickable{
     cursor: pointer;
-    margin-bottom: 2px;
-    margin-right: 2px;
+    margin-bottom: 0px;
+    margin-right: 0px;
   }
 
   .ui-datepicker-trigger, .wg-detached-filter .ui-datepicker-trigger{
     cursor: pointer;
   }
 
-  .custom-dropdown-container {
-
-    .expand-multi-select-icon, .collapse-multi-select-icon{
-      width: 10px;
-      height: 10px;
-      display: inline-block;
-      margin-left: 5px;
-      vertical-align: top;
-    }
-
-    .collapse-multi-select-icon{
-      background: transparent image-url("icons/grid/collapse.gif") no-repeat;
-    }
-
-    .expand-multi-select-icon{
-      background: transparent image-url("icons/grid/expand.gif") no-repeat;
-    }
-
-  }
 }
 
 .wice-grid{

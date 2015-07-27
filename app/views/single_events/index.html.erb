@@ -1,15 +1,15 @@
+<%# show_filters: :when_filtered %>
+<%= grid(@event_grid, show_filters: :always) do |g| 
 
-<%= grid(@event_grid) do |g| 
-
-	g.column name: "ID", attribute: 'id' do |t|
+	g.column name: "ID", attribute: 'id'  do |t|
 		t.id
 	end
 
-	g.column name: "Naziv", attribute: 'title' do |t|
+	g.column name: "Naziv", attribute: 'title', custom_filter: :auto do |t|
 		t.title
 	end
 
-	g.column name: "Grupa" do |t|
+	g.column name: "Grupa", attribute: 'name', custom_filter: :auto , model: Group do |t|
 		if t.group != nil
 		 t.group.name#link_to(t.group.name, grupa_path(t.id))
 		else
@@ -17,7 +17,7 @@
 		end
 	end
 
-	g.column name: "Datum predavanja", attribute: 'date',ordering: true do |t|
+	g.column name: "Datum predavanja", attribute: 'date', ordering: true, custom_filter: :auto  do |t|
 		t.date.to_date.strftime(" %d.%m.%Y.")
 	end
 
@@ -29,7 +29,7 @@
 		t.end
 	end
 
-	g.column name: "Upisano predavanje", attribute: 'odrzano' do |t|
+	g.column name: "Upisano predavanje", attribute: 'odrzano'  do |t|
 		t.odrzano? ? "Yes" : "No"
 	end
 
@@ -37,4 +37,4 @@
 		link_to("Stranica predavanja", event_path(t.id))
 	end
 
-end -%>
+end-%>
