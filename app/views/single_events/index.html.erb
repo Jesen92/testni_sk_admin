@@ -11,7 +11,7 @@
 
 	g.column name: "Grupa" do |t|
 		if t.group != nil
-		link_to(t.group.name, grupa_path(t.id))
+		 t.group.name#link_to(t.group.name, grupa_path(t.id))
 		else
 			"Nema grupe"
 		end
