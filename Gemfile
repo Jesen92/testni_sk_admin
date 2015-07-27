@@ -28,6 +28,7 @@ gem 'ice_cube'
 gem 'recurring_select'
 gem 'formtastic'
 gem "wice_grid", '3.5.0'
+gem 'rails_12factor', group: :production
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
