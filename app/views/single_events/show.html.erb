@@ -1,0 +1,13 @@
+<h2><%=  @event.title %></h2>
+<ul>
+	<li><%= @event.start %></li>
+	<li><%= @event.end %></li>
+	<li><%= @event.date.to_date.strftime(" %d.%m.%Y.") %></li>
+</ul>
+<h3>Prisutni učenici</h3>
+<ul>
+	<% @event.uceniks.each do |ucenik| %>
+	<li><%= ucenik.name %></li>
+	<% end %>	
+</ul>
+<p><%= link_to "Edit", edit_event_path(@event.id) %></p>

@@ -1,0 +1,2 @@
+module MojegrupeHelper
+end

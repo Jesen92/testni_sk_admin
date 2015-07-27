@@ -1,0 +1,13 @@
+<h2><%=  @profesor.name %></h2>
+<ul>
+	<li><%= @profesor.mobitel %></li>
+	<li><%= @profesor.mail %></li>
+
+</ul>
+<h3>Grupe</h3>
+<ul>
+	<% @profesor.groups.each do |group| %>
+	<li><%= group.name %></li>
+	<% end %>	
+</ul>
+

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  start: MyString
+  end: MyString
+  start_date: MyString
+  profesor_id: 1
+  group_id: 1
+  where_id: 1
+
+two:
+  title: MyString
+  start: MyString
+  end: MyString
+  start_date: MyString
+  profesor_id: 1
+  group_id: 1
+  where_id: 1

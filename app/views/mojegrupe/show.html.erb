@@ -1,0 +1,12 @@
+<h2><%=  @group.name %></h2>
+<ul>
+	<li><%= @group.profesor.name %></li>
+	<li><%= @group.level %></li>
+</ul>
+
+<h3>Popis Učenika</h3>
+<% @group.uceniks.each do |ucenik| %>
+<ul>
+	<li><%= ucenik.name %></li>
+</ul>
+<% end %>

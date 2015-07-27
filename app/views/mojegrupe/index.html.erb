@@ -1,0 +1,12 @@
+<h2>Moje Grupe</h2>
+<% if @user != nil %>
+<% if @groups == nil %>
+	<h2>Nema grupa!</h2>
+<% else %>
+	<% @groups.each do |group| %>
+		<ul>
+			<li><td><%= link_to group.name, grupa_path(group.id) %></li>
+		</ul>
+	<% end %>
+<% end %>
+<% end %>

@@ -1,0 +1,34 @@
+<h2><%= @event.title %></h2>
+<%= semantic_form_for @event do |f| %>
+	<%= f.inputs do %>
+		<div class="form-group">
+		<%= f.input :start, :label => "Vrijeme početka:", :as => :time_picker  %>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :end, :label => "Vrijeme završetka:", :as => :time_picker%>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :where, :label => "Mjesto predavanja",  :as => :select%>
+		</div>
+		
+		<div class="form-group">
+		<%= f.input :date, :label => "Datum:", :as => :date_picker %>
+		</div>
+		
+		<div class="form-group">
+		<%= f.input :odrzano, :label => "Odrzano"%>
+		</div>
+
+		<p><h3>Popis učenika</h3></p>
+		<div class="form-group">
+		<%= f.input :uceniks, :label => "", :as => :check_boxes , :collection => Ucenik.includes(:groups).where(:groups => {:id => @event.group_id})%>
+
+		</div>
+	<% end %>
+	<%= f.actions do %>
+		<%= f.action :submit, :as => :button %>
+      	<%= f.action :cancel, :as => :link %>
+    <% end %>
+<% end %>
