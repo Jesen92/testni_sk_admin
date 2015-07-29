@@ -37,19 +37,19 @@
   }
 
   .desc {
-    background: transparent url("arrow_down.gif") right no-repeat
+    background: transparent url("icons/grid/arrow_down.gif") right no-repeat
   }
   .asc  {
-    background: transparent url("arrow_up.gif")   right no-repeat
+    background: transparent url("icons/grid/arrow_up.gif")   right no-repeat
   }
 
   .submit.clickable{
-    background: transparent image-url("table_refresh.png") no-repeat;
+    background: transparent image-url("icons/grid/table_refresh.png") no-repeat;
     @include icon-dimensions;
   }
 
   .reset.clickable{
-    background: transparent image-url("table.png") no-repeat;
+    background: transparent image-url("icons/grid/table.png") no-repeat;
     @include icon-dimensions;
   }
 
