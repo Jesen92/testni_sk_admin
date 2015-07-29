@@ -4,5 +4,6 @@ class UceniksController < ApplicationController
 
   def show
   	@ucenik = Ucenik.find(params[:format])
+  	@page_title = @ucenik.name
   end
 end

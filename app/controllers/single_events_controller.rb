@@ -122,6 +122,7 @@ end
 
   def index
     if current_user
+     @page_title = "Predavanja"
      @events = current_user.profesor.single_events    
      @user = current_user
      @event_grid = initialize_grid(current_user.profesor.single_events, include: :group ,order: 'single_events.date',order_direction: 'asc')
@@ -132,6 +133,7 @@ end
 
   def show
     @event = SingleEvent.find(params[:format])
+    @page_title = @event.title
   end 
 
   def update

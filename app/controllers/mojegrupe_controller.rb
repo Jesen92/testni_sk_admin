@@ -4,6 +4,7 @@ before_action :authenticate_user!
 
   def index
     if current_user
+     @page_title = "Grupe"
      @profesor = current_user.profesor
    	 @groups = @profesor.groups
      @user = current_user
@@ -14,6 +15,7 @@ before_action :authenticate_user!
 
   def show
   	@group = Group.find(params[:id])
+    @page_title = @group.name
   end
 
 
