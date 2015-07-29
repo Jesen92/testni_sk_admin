@@ -30,6 +30,7 @@
             <li class="<%= params[:controller] == 'mojegrupe' ? 'active' : '' %>"><%= link_to "Moje Grupe", mojegrupe_path %></li>
              <li class="<%= params[:controller] == 'single_events' ? 'active' : '' %>"><%= link_to "Moja Predavanja", single_events_path %></li>
              <li class="<%= params[:controller] == 'all_events' ? 'active' : '' %>"><%= link_to "Sva Predavanja", all_events_path %></li>
+
           </ul>
                 <ul class="nav navbar-nav navbar-right">
           <li><%= link_to current_user.email, podaci_path %></li>

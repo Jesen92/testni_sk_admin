@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'uceniks/index'
+
+  get 'uceniks/show' => 'uceniks#show', :as => :ucenik
+
   get 'profesors/index'
 
   get 'profesors/show'

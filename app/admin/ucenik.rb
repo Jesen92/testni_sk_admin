@@ -39,6 +39,9 @@ permit_params :name, :OIB, :adresa, group_ids: []
       f.input :name, :label => "Ime i prezime"
       f.input :OIB, :label => "OIB"
       f.input :adresa, :label => "Adresa"
+      f.input :parents_name, :label => "Ime roditelja"
+      f.input :email, :label => "e-mail"
+      f.input :tel, :label => "Broj telefona/mobitela"
       f.input :groups, :as => :check_boxes
 
       f.actions

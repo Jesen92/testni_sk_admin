@@ -1,0 +1,15 @@
+<style>
+p.prikaz{
+	font-weight: bold;
+}
+</style>
+<h2><%= @ucenik.name %></h2>
+	<ul>
+		<li><p class="prikaz">OIB:</p> <%= @ucenik.OIB %><p></p></li>
+		<li><p class="prikaz">Adresa:</p> <%= @ucenik.adresa %><p></p></li>
+		<% if @ucenik.parents_name? %>
+		<li><p class="prikaz">Ime Roditelja:</p> <%= @ucenik.parents_name %><p></p></li>
+		<% end %>
+		<li><p class="prikaz">Broj telefona/mobitela:</p> <%= @ucenik.tel %><p></p></li>
+		<li><p class="prikaz">e-mail:</p> <%= @ucenik.email %></li>
+	</ul>
