@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require moment
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require recurring_select
 //= require bootstrap-datepicker
 //= require wice_grid

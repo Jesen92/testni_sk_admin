@@ -17,7 +17,12 @@
  *= require wice_grid.css.scss
  *= require style
  *= require_self
+ *= require formtastic_moj.css.scss
+ *= boostrap-sass
  */
+
+
+
 body {
   padding-top: 50px;
 }

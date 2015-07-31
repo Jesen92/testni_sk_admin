@@ -17,8 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'mysql2'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_editor'
-gem 'font-awesome-rails'
-gem 'bootstrap-sass', '~> 3.3.5'
+
 
 gem 'autoprefixer-rails'
 gem 'fullcalendar-rails'
@@ -32,6 +31,7 @@ gem "wice_grid", '3.5.0'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-datepicker-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
