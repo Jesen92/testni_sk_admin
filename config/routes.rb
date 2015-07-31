@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'events/new' => 'events#new', :as => :new_event
+
+  get 'events/create'
+
   get 'uceniks/index'
 
   get 'uceniks/show' => 'uceniks#show', :as => :ucenik
@@ -54,6 +58,7 @@ Rails.application.routes.draw do
   get 'home/show'
 
 
+  resources :events
   resources :pages, only: [:show]
   resources :mojegrupe
   resources :profesors

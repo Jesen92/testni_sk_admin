@@ -1,4 +1,5 @@
 <%# show_filters: :when_filtered %>
+<p><%= link_to "Dodaj novo predavanje", new_event_path %></p>
 <%= grid(@event_grid, show_filters: :always) do |g| 
 
 	g.column name: "ID", attribute: 'id'  do |t|

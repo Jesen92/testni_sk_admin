@@ -2,6 +2,7 @@ class SingleEventsController < ApplicationController
 respond_to :json
     helper_method :current_user
     before_filter :authenticate_user!
+    layout "application"
 
   
 

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
 	include IceCube
 
-	
+	layout "application"
 	respond_to :json
   	helper_method :current_user
   	before_filter :authenticate_user!
@@ -50,5 +50,40 @@ class EventsController < ApplicationController
 			end
 		end
 	render :text => events.to_json
-	end
+	end 
+
+  def new
+    #@page_title = 'Add New Book'
+    #@book = Book.new
+    #@category = Category.new
+    #@author = Author.new
+    #@publisher = Publisher.new
+
+    @event = Event.new
+    @profesor = Profesor.new
+    @where = Where.new
+
+  end
+
+  def create
+    #@book = Book.new(book_params)
+    #@book.save
+
+    #flash[:notice] = 'Book Added'
+
+    #redirect_to books_path
+
+    @event = Event.new(event_params)
+    @event.save
+
+    flash[:notice] = "Predavanje dodano"
+
+    redirect_to single_events_path
+  end
+
+  private
+    def event_params
+    params.require(:event).permit(:title, :start, :end, :start_date, :profesor_id, :where_id)
+  end
+
 end

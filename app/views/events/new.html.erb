@@ -1,0 +1,34 @@
+<h2>Kreirajte novo predavanje</h2>
+
+<%= semantic_form_for @event do |f| %>
+	<%= f.inputs do %>
+		<div class="form-group">
+		<%= f.input :title, :label => "Naziv", :as => :time_picker,class:'form-control'  %>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :start, :label => "Profesor", :as => :time_picker,class:'form-control'  %>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :start, :label => "Vrijeme početka:", :as => :time_picker,class:'form-control'  %>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, class:'form-control'%>
+		</div>
+
+		<div class="form-group">
+		<%= f.input :where, :label => "Mjesto predavanja",  :as => :select,class:'form-control'%>
+		</div>
+		
+		<div class="form-group">
+		<%= f.input :start_date, :label => "Datum:", :as => :date_picker,class:'form-control' %>
+		</div>
+		
+	<% end %>
+	<%= f.actions do %>
+		<%= f.action :submit, :as => :button,class:'btn btn-primary' %>
+      	<%= f.action :cancel, :as => :link, class:'btn btn-default' %>
+    <% end %>
+<% end %>
