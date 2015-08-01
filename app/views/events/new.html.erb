@@ -6,27 +6,27 @@
 				<%= f.inputs do %>
 				<div id="section-details">
 					<div class="form-group">
-					<%= f.input :title, :label => "Naziv", :input_html => {:class => 'form-control'} %></br>
+					<%= f.input :title, :label => "Naziv", :required => true ,:input_html => {:class => 'form-control'} %></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :profesor, :label => "Profesor", :input_html => {:class => 'form-control'}%></br>
+					<%= f.input :profesor, :label => "Profesor",:required => true , :input_html => {:class => 'form-control'}%></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :start, :label => "Početak predavanja", :as => :time_picker %></br>
+					<%= f.input :start, :label => "Početak predavanja",:required => true , :as => :time_picker %></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :end, :label => "Kraj predavanja", :as => :time_picker%></br>
+					<%= f.input :end, :label => "Kraj predavanja",:required => true , :as => :time_picker, :input_html => {:placeholder => "HH:MM"} %></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :where, :label => "Učionica",  :as => :select, :input_html => {:class => 'form-control'}%></br>
+					<%= f.input :where, :label => "Učionica",:required => true ,  :as => :select, :input_html => {:class => 'form-control'}%></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :start_date, :label => "Datum", :as => :date_picker, :input_html => {:class => 'form-control'} %></br>
+					<%= f.input :start_date, :label => "Datum",:required => true ,  :as => :date_picker, :input_html => {:class => 'form-control', :min => '1.1.2015', :placeholder => "dd.mm.gggg."} %></br>
 					</div>
 				</div>
 				<% end %>

@@ -44,13 +44,13 @@ class Event < ActiveRecord::Base
       s_event = SingleEvent.new
       s_event.event_id = event.id
       s_event.title = event.title
-      s_event.start = event.start
-      s_event.end = event.end
+      s_event.start = event.start.to_time.strftime(" %H:%M ")
+      s_event.end = event.end.to_time.strftime(" %H:%M ")
 
       if event.repeat?
       	s_event.date = @dani[@dani_count]+@zbr
   	  else
-  	  	s_event.date = event.start_date
+  	  	s_event.date = event.start_date.to_date.strftime(" %d.%m.%Y. ")
   	  end
 
       if event.profesor_id?
