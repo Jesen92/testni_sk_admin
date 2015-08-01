@@ -1,4 +1,5 @@
 class ProfesorsController < ApplicationController
+	  	before_filter :authenticate_user!
   def index
   	@page_title = "Profesori"
   	@profesors = Profesor.all

@@ -15,8 +15,6 @@
 //= require turbolinks
 //= require moment
 //= require bootstrap
-//= require recurring_select
-//= require bootstrap-datepicker
 //= require wice_grid
 //= require fullcalendar
 //= require_tree .

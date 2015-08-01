@@ -11,9 +11,7 @@
  * file per style scope.
  *
  *= require fullcalendar
- *= require recurring_select
  *= require bootstrap
- *= require bootstrap-datepicker
  *= require wice_grid.css.scss
  *= require style
  *= require_self

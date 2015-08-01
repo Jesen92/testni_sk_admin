@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-	include IceCube
+
 
 	layout "application"
 	respond_to :json
@@ -53,7 +53,7 @@ class EventsController < ApplicationController
 	end 
 
   def new
-    #@page_title = 'Add New Book'
+    @page_title = 'Novo predavanje'
     #@book = Book.new
     #@category = Category.new
     #@author = Author.new

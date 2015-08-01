@@ -24,12 +24,9 @@ gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'devise', '~> 3.4.1'
 gem 'cancancan'
-gem 'ice_cube'
-gem 'recurring_select'
 gem 'formtastic'
 gem "wice_grid", '3.5.0'
 gem 'rails_12factor', group: :production
-gem 'bootstrap-datepicker-rails'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 
