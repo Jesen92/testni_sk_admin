@@ -18,7 +18,7 @@ gem 'mysql2'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_admin_editor'
 
-gem 'bootstrap-datepicker-rails'
+
 gem 'autoprefixer-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
@@ -28,7 +28,6 @@ gem 'formtastic'
 gem "wice_grid", '3.5.0'
 gem 'rails_12factor', group: :production
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-
 
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
