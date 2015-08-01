@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
     	@br = 0
     	@zbr = 0
 
-      event.start_date = event.start_date.to_date.strftime(" %d.%m.%Y. ")
+      event.start_date = event.start_date.to_date.strftime(" %Y-%m-%d ")
 
     if event.repeat?
 
@@ -52,7 +52,7 @@ class Event < ActiveRecord::Base
       if event.repeat?
       	s_event.date = @dani[@dani_count]+@zbr
   	  else
-  	  	s_event.date = event.start_date.to_date.strftime(" %d.%m.%Y. ")
+  	  	s_event.date = event.start_date.to_date.strftime(" %Y-%m-%d ")
   	  end
 
       if event.profesor_id?
