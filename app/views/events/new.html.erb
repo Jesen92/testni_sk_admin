@@ -14,11 +14,11 @@
 					</div>
 
 					<div class="form-group">
-					<%= f.input :start, :label => "Početak predavanja",:required => true , :as => :time_select,:input_html => {:class => 'form-control'} %></br>
+					<%= f.input :start, :label => "Početak predavanja",:required => true , :as => :time_picker,:size => 4, :ignore_date => true %></br>
 					</div>
 
 					<div class="form-group">
-					<%= f.input :end, :label => "Kraj predavanja",:required => true , :as => :time_select,:input_html => {:class => 'form-control'} %></br>
+					<%= f.input :end, :label => "Kraj predavanja",:required => true , :as => :time_picker, :ignore_date => true %></br>
 					</div>
 
 					<div class="form-group">
@@ -26,7 +26,7 @@
 					</div>
 
 					<div class="form-group">
-					<%= f.input :start_date, :label => "Datum",:required => true ,  :as => :date_picker, :input_html => {:class => 'form-control', :min => '1.1.2015', :placeholder => "dd.mm.gggg."} %></br>
+					<%= f.input :start_date, :label => "Datum",:required => true ,  :as => :date_picker, :input_html => {:class => 'form-control'} %></br>
 					</div>
 				</div>
 				<% end %>
