@@ -18,6 +18,8 @@ class Event < ActiveRecord::Base
     	@br = 0
     	@zbr = 0
 
+      event.start_date = event.start_date.to_date.strftime(" %d.%m.%Y. ")
+
     if event.repeat?
 
     	@first_day = event.days.first.id
@@ -44,8 +46,8 @@ class Event < ActiveRecord::Base
       s_event = SingleEvent.new
       s_event.event_id = event.id
       s_event.title = event.title
-      s_event.start = event.start.to_time.strftime(" %H:%M ")
-      s_event.end = event.end.to_time.strftime(" %H:%M ")
+      s_event.start = event.start.to_time.strftime(" %HH:%MM ")
+      s_event.end = event.end.to_time.strftime(" %HH:%MM ")
 
       if event.repeat?
       	s_event.date = @dani[@dani_count]+@zbr
