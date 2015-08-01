@@ -17,7 +17,6 @@
 //= require bootstrap
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.es.js
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.en.js
 //= require wice_grid
 //= require fullcalendar
 //= require_tree .
