@@ -5,5 +5,5 @@ class SingleEvent < ActiveRecord::Base
 	belongs_to :event
 
 	has_many :ucenik_events
-	has_many :uceniks, through: :ucenik_events
+	has_many :uceniks, through: :ucenik_events #prisutnost učenika
 end

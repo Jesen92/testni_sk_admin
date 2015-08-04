@@ -54,7 +54,7 @@ index :title => 'Suradnici' do
 	column :radi_za_nas
 	column :sudski_tumac
 	column :obrazovanje
-	column :grad , :label => "Prebivalište"
+	column "Prebivalište", :grad  
 	column :karijerska_pozicija
 	column :inozemno_iskustvo
 	actions

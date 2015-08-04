@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714115959) do
+ActiveRecord::Schema.define(version: 20150804100330) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20150714115959) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.integer  "num"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "days", force: true do |t|
     t.string   "name"
@@ -132,6 +139,14 @@ ActiveRecord::Schema.define(version: 20150714115959) do
     t.datetime "updated_at"
   end
 
+  create_table "ucenik_books", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "ucenik_id"
+    t.boolean  "placeno"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "ucenik_events", force: true do |t|
     t.integer  "ucenik_id"
     t.integer  "single_event_id"
@@ -140,8 +155,11 @@ ActiveRecord::Schema.define(version: 20150714115959) do
   end
 
   create_table "uceniks", force: true do |t|
-    t.string   "name",       limit: 50, null: false
-    t.integer  "OIB",        limit: 8
+    t.string   "name",         limit: 50, null: false
+    t.integer  "OIB",          limit: 8
+    t.string   "parents_name", limit: 25
+    t.integer  "email"
+    t.integer  "tel",                     null: false
     t.string   "adresa"
     t.integer  "group_id"
     t.datetime "created_at"
