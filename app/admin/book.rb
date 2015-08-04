@@ -38,4 +38,20 @@ menu :label => "Udžbenici", :priority => 7
       f.actions
   end
 
+  show do
+  	attributes_table do
+  	row :id
+  	row :title
+  	row "Broj komada", :num
+
+  	panel "Učenici" do
+        table_for book.uceniks do 
+          column :name do |ucenik|
+           link_to ucenik.name, [:admin, ucenik]
+         end
+        end
+      end
+ 	end
+  end
+
 end
