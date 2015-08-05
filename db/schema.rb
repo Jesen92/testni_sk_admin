@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804100330) do
+ActiveRecord::Schema.define(version: 20150805073509) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -95,6 +95,13 @@ ActiveRecord::Schema.define(version: 20150804100330) do
     t.datetime "updated_at"
   end
 
+  create_table "messages", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "picked_days", force: true do |t|
     t.integer  "day_id"
     t.integer  "event_id"
@@ -142,7 +149,7 @@ ActiveRecord::Schema.define(version: 20150804100330) do
   create_table "ucenik_books", force: true do |t|
     t.integer  "book_id"
     t.integer  "ucenik_id"
-    t.boolean  "placeno"
+    t.boolean  "placeno",    default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

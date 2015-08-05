@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/index' => 'messages#index', :as => :messages
+
+  get 'messages/show' => 'messages#show', :as => :message
+
   get 'events/new' => 'events#new', :as => :new_event
 
   get 'events/create'

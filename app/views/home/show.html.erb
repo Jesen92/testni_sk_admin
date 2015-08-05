@@ -63,4 +63,40 @@ $(document).ready(function() {
     <div id="eventInfo"></div>
 </div>
 
-<div id="calendar"></div>
+	<div class="container" >
+	<div class="panel panel-primary">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><%= link_to "Obavijesti", messages_path %></h3>
+	  </div>
+	  <table class="table">
+	    <thead>
+	    	<tr>
+			    <th>#</th>
+			    <th>Obavijest</th>
+			    <th>Korisnik</th>
+			    <th>Objavljeno</th>
+			</tr>
+	    </thead>
+	    <tbody>
+	    <% @obavijesti.each do |obavijest| %>
+	    	<tr>
+	    		<th scope="row"><span class="glyphicons glyphicons-envelope">✉</span></th>
+	    			<td><%= link_to obavijest.title, message_path(obavijest.id) %></td>
+	    			<td><%= obavijest.profesor.name %></td>
+	    			<td><%= obavijest.created_at %></td>
+
+	    	</tr>
+	    <% end %>
+	    </tbody>
+	    </table>
+	  </div>
+	</div>
+</div>
+<div class="well well-lg">
+	<div class ="panel panel-info">
+		<div class="panel-heading">Raspored</div>
+		<div class="panel-body">
+			<div id="calendar"></div>
+		</div>
+	</div>
+</div>

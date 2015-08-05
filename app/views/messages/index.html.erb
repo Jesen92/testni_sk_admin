@@ -1,0 +1,23 @@
+<%= grid(@obavijesti_grid, show_filters: :always) do |g| 
+
+	g.column name: "ID", attribute: 'id', filter: false  do |t|
+		t.id
+	end
+
+	g.column name: "Obavijest", attribute: 'title' do |t|
+		t.title
+	end
+
+	g.column name: "Korisnik", attribute: 'name',custom_filter: :auto, model: Profesor do |t|
+		t.profesor.name
+	end
+
+	g.column name: "Objavljeno", attribute: 'created_at',filter: false do |t|
+		t.created_at
+	end
+
+	g.column do |t|
+		link_to("Stranica obavijesti", message_path(t.id))
+	end
+
+end-%>
