@@ -4,7 +4,7 @@ ActiveAdmin.register Ucenik do
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :tel, :adresa, :fee, :fee_to_pay, :br_rata ,:placanje_na_rate,:prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books: []
+permit_params :name, :OIB, :email,:tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata ,:placanje_na_rate,:prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books: []
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -83,23 +83,23 @@ show do
   @placeno = Array.new
     attributes_table do
       row :id
-      row :name
+      row("Ime i prezime") {ucenik.name}      
       row :OIB
-      row :parents_name
-      row :email
-      row :tel
-      row :adresa
-      row :created_at
-      row :updated_at
-      row :fee
-      row :fee_to_pay
-      row :placanje_na_rate
-      row :br_rata
-      row :prvi_mj_placanja
+      row ("Ime roditelja") {ucenik.parents_name}
+      row ("e-mail") {ucenik.email}
+      row ("Broj telefona/mobitela") {ucenik.tel}
+      row ("Adresa") {ucenik.adresa}
+      row ("Ukupno za platiti") {ucenik.fee}
+      row ("Preostalo za platiti") {ucenik.fee_to_pay}
+      row ("Plaćanje na rate") {ucenik.placanje_na_rate}
+      row ("Broj rata") {ucenik.br_rata}
+      row ("Mjesec prve rate") {ucenik.prvi_mj_placanja}
+      row ("Kreiran") {ucenik.created_at}
+      row ("Izmijenjen") {ucenik.updated_at}
 
       panel "Popis grupa" do
         table_for ucenik.groups do 
-          column :name do |group|
+          column "Naziv" do |group|
            link_to group.name, [:admin, group]
          end
         end
@@ -121,12 +121,21 @@ show do
       end
 
       panel "Uplate" do
-        table_for ucenik.payments do
+        table_for ucenik.payments.order('date ASC') do
+          column "Grupa" do |pay|
+            pay.group.name
+          end
+
           column "Mjesec" do |pay|
             link_to pay.date.strftime(" %m.%Y. "), [:admin, pay]
           end
+  
           column "Plaćeno" do |pay|
             pay.uplaceno? ? "Da" : "Ne"
+          end
+
+          column "Uplata(kn)" do |pay|
+            pay.uplata? ? pay.uplata : "---"
           end
         end
       end

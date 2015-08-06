@@ -36,7 +36,7 @@ class Ucenik < ActiveRecord::Base
 					payments = Payment.all
 
 					payments.each do |pay| #provjera da li uplate vec postoje u bazi
-						if pay.ucenik_id == ucenik.id && pay.group_id == ucenik.group.id
+						if pay.ucenik_id == ucenik.id && pay.group_id == group.id
 							@indicator = 1
 							break
 						end 
