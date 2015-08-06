@@ -83,8 +83,7 @@ $(document).ready(function() {
 	    		<th scope="row"><span class="glyphicons glyphicons-envelope">✉</span></th>
 	    			<td><%= link_to obavijest.title, message_path(obavijest.id) %></td>
 	    			<td><%= obavijest.profesor.name %></td>
-	    			<td><%= obavijest.created_at %></td>
-
+	    			<td><%= obavijest.created_at.to_datetime.strftime(" %d.%m.%Y. %H:%M")%></td>	
 	    	</tr>
 	    <% end %>
 	    </tbody>

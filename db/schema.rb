@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805073509) do
+ActiveRecord::Schema.define(version: 20150806104838) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20150805073509) do
     t.string   "name"
     t.integer  "profesor_id"
     t.string   "level"
+    t.integer  "cijena",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,6 +99,16 @@ ActiveRecord::Schema.define(version: 20150805073509) do
   create_table "messages", force: true do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "profesor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "payments", force: true do |t|
+    t.integer  "ucenik_id"
+    t.integer  "group_id"
+    t.integer  "uplata"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -162,13 +173,18 @@ ActiveRecord::Schema.define(version: 20150805073509) do
   end
 
   create_table "uceniks", force: true do |t|
-    t.string   "name",         limit: 50, null: false
-    t.integer  "OIB",          limit: 8
-    t.string   "parents_name", limit: 25
-    t.integer  "email"
-    t.integer  "tel",                     null: false
+    t.string   "name",             limit: 50,             null: false
+    t.integer  "OIB",              limit: 8
+    t.string   "parents_name",     limit: 25
+    t.string   "email",            limit: 20
+    t.integer  "tel",                                     null: false
     t.string   "adresa"
     t.integer  "group_id"
+    t.integer  "fee",                         default: 0, null: false
+    t.integer  "fee_to_pay",                  default: 0, null: false
+    t.boolean  "placanje_na_rate",                        null: false
+    t.date     "prvi_mj_placanja"
+    t.integer  "br_rata",                     default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

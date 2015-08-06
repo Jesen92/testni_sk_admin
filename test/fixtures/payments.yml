@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ucenik_id: 1
+  group_id: 1
+  uplata: 1
+  date: 2015-08-06
+
+two:
+  ucenik_id: 1
+  group_id: 1
+  uplata: 1
+  date: 2015-08-06

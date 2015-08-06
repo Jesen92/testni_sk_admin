@@ -4,9 +4,8 @@ ActiveAdmin.register Ucenik do
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :adresa, group_ids: []
-permit_params book_ids: []
-permit_params ucenik_books: []
+permit_params :name, :OIB, :tel, :adresa, :fee, :fee_to_pay, :br_rata ,:placanje_na_rate,:prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books: []
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -42,14 +41,20 @@ permit_params ucenik_books: []
       @i = 0
 
     f.inputs "Details" do
-      f.input :name, :label => "Ime i prezime"
+      f.input :name, :label => "Ime i prezime", :required => true
       f.input :OIB, :label => "OIB"
-      f.input :adresa, :label => "Adresa"
+      f.input :adresa, :label => "Adresa", :required => true
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"
-      f.input :tel, :label => "Broj telefona/mobitela"
+      f.input :tel, :label => "Broj telefona/mobitela", :required => true
       f.input :groups, :label => "Grupe", :as => :check_boxes
       f.input :books, :label => "Udžbenici", :as => :check_boxes
+      f.input :fee, :label => "Ukupno za platiti"
+      f.input :fee_to_pay, :label => "Preostalo za platiti"
+
+      f.input :placanje_na_rate, :label => "Plaćanje an rate"
+      f.input :prvi_mj_placanja, :label => "Mjesec prve uplate", :as => :datepicker
+      f.input :br_rata, :label => "Broj rata"
 
        ucenik.books.each do |book|
         @books.unshift(book.title)
@@ -86,6 +91,11 @@ show do
       row :adresa
       row :created_at
       row :updated_at
+      row :fee
+      row :fee_to_pay
+      row :placanje_na_rate
+      row :br_rata
+      row :prvi_mj_placanja
 
       panel "Popis grupa" do
         table_for ucenik.groups do 
@@ -101,11 +111,22 @@ show do
 
       panel "Popis udžbenika" do
         table_for ucenik.books do
-          column :title do |book|
+          column "Naziv" do |book|
             link_to book.title, [:admin, book]
           end
           column "Plaćeno" do |book|
             (@placeno.pop) == true ? "Da" : "Ne"
+          end
+        end
+      end
+
+      panel "Uplate" do
+        table_for ucenik.payments do
+          column "Mjesec" do |pay|
+            link_to pay.date.strftime(" %m.%Y. "), [:admin, pay]
+          end
+          column "Plaćeno" do |pay|
+            pay.uplaceno? ? "Da" : "Ne"
           end
         end
       end

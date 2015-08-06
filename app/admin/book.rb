@@ -32,9 +32,7 @@ menu :label => "Udžbenici", :priority => 7
 
 
       end
-     # f.inputs "Ponavljanje" do
-     #   f.input :recurring_rule, :as=> :select, :input_html => { :class => 'recurring_select'}, :collection => options_for_select([[ "- not recurring -" , "null"],["Set schedule..." , "custom" ]], [ "- not recurring -" , "null"])
-     # end
+
       f.actions
   end
 

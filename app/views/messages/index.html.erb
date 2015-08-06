@@ -12,8 +12,8 @@
 		t.profesor.name
 	end
 
-	g.column name: "Objavljeno", attribute: 'created_at',filter: false do |t|
-		t.created_at
+	g.column name: "Datum objave", attribute: 'created_at',filter: false do |t|
+		t.created_at.to_datetime.strftime(" %d.%m.%Y. %H:%M")
 	end
 
 	g.column do |t|

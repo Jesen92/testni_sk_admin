@@ -33,18 +33,18 @@ respond_to :json
 
             @ev = "<p><a href ='/single_event/show."+s_event.id.to_s+"'>Stranica predavanja</a></p>"
 
-            if s_event.odrzano? && s_event.date <= Date.today.strftime("%Y-%m-%d")
+            if s_event.odrzano? && s_event.date.to_s <= Date.today.strftime("%Y-%m-%d")
               @col = "#00FF00"
-            elsif !s_event.odrzano? && s_event.date < Date.today.strftime("%Y-%m-%d")
+            elsif !s_event.odrzano? && s_event.date.to_s < Date.today.strftime("%Y-%m-%d")
               @col = "#FF0000"
-            elsif !s_event.odrzano? && s_event.date == Date.today.strftime("%Y-%m-%d")
+            elsif !s_event.odrzano? && s_event.date.to_s == Date.today.strftime("%Y-%m-%d")
               @col = "#FF9900"
             end
 
 
 
 
-        events << {:id => s_event.id, :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date+" "+s_event.start,:end =>s_event.date+" "+s_event.end, :vrijeme => "<p><strong>"+s_event.start+" - "+s_event.end+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
+        events << {:id => s_event.id, :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.start,:end =>s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.end, :vrijeme => "<p><strong>"+s_event.start+" - "+s_event.end+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
     #  else 
        # events << {:id => event.id, :title => event.title, :start =>event.start_date.to_s+" "+event.start.to_s,:end =>event.start_date.to_s+" "+event.end.to_s , :vrijeme => "<p><strong>"+event.start+" - "+event.end+"</strong></p>" , :grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>", :ranges => [{:start => "2000-1-1", :end => "3000-1-1"}] }
     #  end
@@ -111,7 +111,7 @@ def get_all_events #JSON zapis predavanja za kalendar(svi user-i)
 
            @profesor = "<p><a href ='/profesors/show."+s_event.profesor.id.to_s+"'>"+s_event.profesor.name+"</a></p>"
 
-        events << {:id => s_event.id, :profesor => "<p><strong>Profesor:</strong></p> "+"<p>"+@profesor+"</p>", :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date+" "+s_event.start,:end =>s_event.date+" "+s_event.end, :vrijeme => "<p><strong>"+s_event.start+" - "+s_event.end+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
+        events << {:id => s_event.id, :profesor => "<p><strong>Profesor:</strong></p> "+"<p>"+@profesor+"</p>", :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.start,:end =>s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.end, :vrijeme => "<p><strong>"+s_event.start+" - "+s_event.end+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
     #  else 
        # events << {:id => event.id, :title => event.title, :start =>event.start_date.to_s+" "+event.start.to_s,:end =>event.start_date.to_s+" "+event.end.to_s , :vrijeme => "<p><strong>"+event.start+" - "+event.end+"</strong></p>" , :grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>", :ranges => [{:start => "2000-1-1", :end => "3000-1-1"}] }
     #  end
