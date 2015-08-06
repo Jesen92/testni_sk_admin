@@ -46,6 +46,7 @@ permit_params :id, :name, :profesor_id, :level
       row :level
       row :created_at
       row :updated_at
+      row :cijena
 
       panel "Popis učenika" do
         table_for group.uceniks do 

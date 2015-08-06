@@ -20,13 +20,24 @@ class Ucenik < ActiveRecord::Base
 
 
 			@fee = 0
+			@pay = Payment.where({ucenik_id: ucenik.id})
 
 			ucenik.groups.each do |group|
 				@fee += group.cijena
 			end
 
 			ucenik.fee = @fee
+
+			
+			@pay.each do |p|
+				if p.uplata != nil
+					@fee = @fee - p.uplata
+				end
+			end
+		
+
 			ucenik.fee_to_pay = @fee
+			
 
 			if ucenik.placanje_na_rate?
 				ucenik.groups.each do |group|
