@@ -78,7 +78,7 @@ $(document).ready(function() {
 			</tr>
 	    </thead>
 	    <tbody>
-	    <% @obavijesti.each do |obavijest| %>
+	    <% @obavijesti.sort {|a,b| b.created_at <=> a.created_at}.each do |obavijest| %>
 	    	<tr>
 	    		<th scope="row"><span class="glyphicons glyphicons-envelope">✉</span></th>
 	    			<td><%= link_to obavijest.title, message_path(obavijest.id) %></td>
