@@ -33,11 +33,11 @@ respond_to :json
 
             @ev = "<p><a href ='/single_event/show."+s_event.id.to_s+"'>Stranica predavanja</a></p>"
 
-            if s_event.odrzano? && s_event.date.to_s <= Date.today.strftime("%Y-%m-%d")
+            if s_event.odrzano? && s_event.date <= Date.today
               @col = "#00FF00"
-            elsif !s_event.odrzano? && s_event.date.to_s < Date.today.strftime("%Y-%m-%d")
+            elsif !s_event.odrzano? && s_event.date < Date.today
               @col = "#FF0000"
-            elsif !s_event.odrzano? && s_event.date.to_s == Date.today.strftime("%Y-%m-%d")
+            elsif !s_event.odrzano? && s_event.date == Date.today
               @col = "#FF9900"
             end
 
