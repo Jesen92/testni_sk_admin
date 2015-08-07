@@ -40,7 +40,7 @@ menu :label => "Udžbenici", :priority => 7
   	attributes_table do
   	row :id
   	row :title
-  	row "Broj komada", :num
+  	row ("Broj komada") {book.num}
 
   	panel "Učenici" do
         table_for book.uceniks do 

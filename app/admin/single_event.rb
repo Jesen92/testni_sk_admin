@@ -49,6 +49,7 @@ menu :label => "Predavanja", :priorty => 5
       row :where
       row :start
       row :end
+      row :odrzano
       row :date
       row :created_at
       row :updated_at

@@ -4,7 +4,7 @@ ActiveAdmin.register Ucenik do
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :email,:tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata ,:placanje_na_rate,:prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books: []
+permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -51,21 +51,25 @@ permit_params :name, :OIB, :email,:tel, :parents_name, :adresa, :fee, :fee_to_pa
       f.input :books, :label => "Udžbenici", :as => :check_boxes
       f.input :fee, :label => "Ukupno za platiti"
       f.input :fee_to_pay, :label => "Preostalo za platiti"
+    end
 
-      f.input :placanje_na_rate, :label => "Plaćanje an rate"
+    f.inputs "Plaćanje na rate" do
+      f.input :placanje_na_rate, :label => "Plaćanje na rate"
       f.input :prvi_mj_placanja, :label => "Mjesec prve uplate", :as => :datepicker
       f.input :br_rata, :label => "Broj rata"
+
+
+      end 
 
        ucenik.books.each do |book|
         @books.unshift(book.title)
        end
 
-      f.has_many :ucenik_books, heading: "Plaćeni udžbenik", new_record: false  do |a|
-
-          a.input :placeno, :label => @books.pop
-
+      f.inputs do
+        f.has_many :ucenik_books, heading: "Plaćeni udžbenik", new_record: false  do |a|
+            a.input :paid, :label => @books.pop
+        end
       end
-
      # panel "Plaćeni udžbenik" do
      #   ucenik.ucenik_books.each do |book|
      #     f.input book.placeno
@@ -74,7 +78,7 @@ permit_params :name, :OIB, :email,:tel, :parents_name, :adresa, :fee, :fee_to_pa
 
 
       f.actions
-    end
+
   end
 
 
@@ -106,7 +110,7 @@ show do
       end
 
       ucenik.ucenik_books.each do |book|
-        @placeno.unshift(book.placeno)
+        @placeno.unshift(book.paid)
       end
 
       panel "Popis udžbenika" do

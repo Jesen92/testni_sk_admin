@@ -7,14 +7,12 @@ class Ucenik < ActiveRecord::Base
 	has_many :ucenik_events
 	has_many :single_events, through: :ucenik_events
 
-	has_many :ucenik_books
-	has_many :books, through: :ucenik_books
-
 	has_many :payments
 
+	has_many :ucenik_books
+	has_many :books, through: :ucenik_books
+	
 	accepts_nested_attributes_for :ucenik_books
-	accepts_nested_attributes_for :payments
-
 
 		after_commit{ |ucenik| 
 
@@ -60,7 +58,7 @@ class Ucenik < ActiveRecord::Base
 						payment.ucenik_id = ucenik.id
 						payment.group_id = group.id
 						payment.date = ucenik.prvi_mj_placanja + @i.month
-						payment.title = ucenik.name+" "+group.name+" "+payment.date.strftime(" %m.%Y.").to_s
+						payment.title = ucenik.name+" "+group.name
 
 						payment.save
 						@i+=1
@@ -72,4 +70,5 @@ class Ucenik < ActiveRecord::Base
 
 
 	}
+
 end

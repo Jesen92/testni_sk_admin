@@ -105,9 +105,11 @@ ActiveRecord::Schema.define(version: 20150806104838) do
   end
 
   create_table "payments", force: true do |t|
+    t.string   "title",      limit: 50,                 null: false
     t.integer  "ucenik_id"
     t.integer  "group_id"
     t.integer  "uplata"
+    t.boolean  "uplaceno",              default: false, null: false
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -148,7 +150,7 @@ ActiveRecord::Schema.define(version: 20150806104838) do
     t.string   "title"
     t.string   "start"
     t.string   "end"
-    t.string   "date"
+    t.date     "date"
     t.boolean  "odrzano",     default: false, null: false
     t.integer  "profesor_id"
     t.integer  "group_id"
@@ -160,7 +162,7 @@ ActiveRecord::Schema.define(version: 20150806104838) do
   create_table "ucenik_books", force: true do |t|
     t.integer  "book_id"
     t.integer  "ucenik_id"
-    t.boolean  "placeno",    default: false, null: false
+    t.boolean  "paid",       default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
