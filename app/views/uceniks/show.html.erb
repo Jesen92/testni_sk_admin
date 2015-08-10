@@ -36,6 +36,10 @@ p.prikaz{
 		t.uplaceno? ? "Da" : "Ne"
 	end
 
+	g.column name: "Uplata(kn)", attribute: 'uplata' do |t|
+		t.uplata
+	end
+
 	g.column do |t|
 		link_to("Plaćanje", uplata_path(t.id))
 	end

@@ -13,7 +13,7 @@ p.prikaz{
 <h3>Popis svih učenika</h3>
 <ul>
 	<% @event.group.uceniks.each do |ucenik| %>
-	<li><%= ucenik.name %></li>
+	<li><%= link_to ucenik.name, ucenik_path(ucenik.id) %></li>
 
 	<% end %>
 </ul>

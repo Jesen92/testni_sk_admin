@@ -1,0 +1,2 @@
+module KapustaHelper
+end
