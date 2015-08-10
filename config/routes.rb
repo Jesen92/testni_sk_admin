@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'payments/edit' => 'payments#edit', :as => :uplata
+
+  get 'payments/update'
+
   get 'messages/index' => 'messages#index', :as => :messages
 
   get 'messages/show' => 'messages#show', :as => :message
@@ -11,6 +15,10 @@ Rails.application.routes.draw do
   get 'uceniks/index'
 
   get 'uceniks/show' => 'uceniks#show', :as => :ucenik
+
+  get 'uceniks/edit' 
+
+  get 'uceniks/update'
 
   get 'profesors/index'
 
@@ -68,6 +76,7 @@ Rails.application.routes.draw do
   resources :profesors
   resources :uceniks
   resources :users
+  resources :payments
 
   resources :single_events do
     get :get_events, on: :collection

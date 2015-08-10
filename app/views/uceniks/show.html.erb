@@ -13,3 +13,31 @@ p.prikaz{
 		<li><p class="prikaz">Broj telefona/mobitela:</p> <%= @ucenik.tel %><p></p></li>
 		<li><p class="prikaz">e-mail:</p> <%= @ucenik.email %></li>
 	</ul>
+
+<%= grid(@ucenik_grid, show_filters: :always) do |g| 
+
+	g.column name: "ID", attribute: 'id'  do |t|
+		t.id
+	end
+
+	g.column name: "Grupa", attribute: 'name', custom_filter: :auto , model: Group do |t|
+		if t.group != nil
+		 t.group.name#link_to(t.group.name, grupa_path(t.id))
+		else
+			"Nema grupe"
+		end
+	end
+
+	g.column name: "Mjesec", attribute: 'date', ordering: true, custom_filter: :auto  do |t|
+		t.date.strftime(" %m.%Y. ")
+	end
+
+	g.column name: "Plaćeno", attribute: 'uplaceno'  do |t|
+		t.uplaceno? ? "Da" : "Ne"
+	end
+
+	g.column do |t|
+		link_to("Plaćanje", uplata_path(t.id))
+	end
+
+end-%>
