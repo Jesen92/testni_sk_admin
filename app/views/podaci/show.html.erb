@@ -1,0 +1,23 @@
+<style>
+p.prikaz{
+	font-weight: bold;
+}
+</style>
+<h2><%= @user.name %></h2>
+	<ul>
+		<li><p class="prikaz">OIB:</p> <%= @user.OIB %><p></p></li>
+		<li><p class="prikaz">Adresa:</p> <%= @user.adresa %><p></p></li>
+		<li><p class="prikaz">Jezik:</p> <%= @user.jezik %><p></p></li>
+		<li><p class="prikaz">Radi za nas</p> <%= @user.radi_za_nas %><p></p></li>
+		<li><p class="prikaz">e-mail:</p> <%= @user.mail %></li>
+		<li><p class="prikaz">Grad:</p> <%= @user.grad %></li>
+		<li><p class="prikaz">Mobitel:</p> <%= @user.mobitel %></li>
+		<li><p class="prikaz">Telefon:</p> <%= @user.telefon %></li>
+		<li><p class="prikaz">Obrazovanje:</p> <%= @user.obrazovanje %></li>
+		<li><p class="prikaz">Karijerska pozicija:</p> <%= @user.karijerska_pozicija %></li>
+		<li><p class="prikaz">Inozemno iskustvo:</p> <%= @user.inozemno_iskustvo %></li>
+		<li><p class="prikaz">Datum rođenja:</p> <%= @user.datum_rodenja.strftime(" %d.%m.%Y. ") %></li>
+		<li><p class="prikaz">Mjesto rođenja:</p> <%= @user.mjesto_rodenja %></li>
+		<li><p class="prikaz">Poštanski broj:</p> <%= @user.postanski_broj %></li>
+		<li><p class="prikaz">Račun banke:</p> <%= @user.racun_banke %></li>
+	</ul>

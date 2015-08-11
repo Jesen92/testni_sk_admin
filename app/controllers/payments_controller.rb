@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   def edit
   	@payment = Payment.find(params[:format])
+    @page_title = @payment.title
   end
 
   def update

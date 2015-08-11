@@ -18,8 +18,8 @@
 		end
 	end
 
-	g.column name: "Datum predavanja", attribute: 'date', ordering: true, custom_filter: :auto  do |t|
-		t.date
+	g.column name: "Datum predavanja", attribute: 'date', ordering: true, helper_style: :standard do |t|
+		t.date.strftime(" %d.%m.%Y. ")
 	end
 
 	g.column name: "Početak predavanja", attribute: 'start' do |t|

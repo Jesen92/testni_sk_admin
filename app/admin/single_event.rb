@@ -63,11 +63,6 @@ menu :label => "Predavanja", :priorty => 5
       end
       #row :recurring_rule
 
-
-
-
-
-      
     end
   end
 

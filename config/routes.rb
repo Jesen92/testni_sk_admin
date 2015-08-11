@@ -76,6 +76,7 @@ Rails.application.routes.draw do
   resources :profesors
   resources :uceniks
   resources :users
+  resources :podaci
   resources :payments
 
   resources :single_events do
