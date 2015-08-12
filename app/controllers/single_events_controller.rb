@@ -149,6 +149,8 @@ end
 
   def edit
     @event = SingleEvent.find(params[:format])
+    @page_title = @event.title
+
   end
 
   private
