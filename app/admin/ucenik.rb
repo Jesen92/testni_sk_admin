@@ -13,7 +13,7 @@ end
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid]
+permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
