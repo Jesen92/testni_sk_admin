@@ -1,4 +1,6 @@
 class Message < ActiveRecord::Base
+	has_paper_trail
+	
 	belongs_to :profesor
 
 	after_create{ |message|

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806104838) do
+ActiveRecord::Schema.define(version: 20150812105825) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(version: 20150806104838) do
     t.integer  "OIB",              limit: 8
     t.string   "parents_name",     limit: 25
     t.string   "email",            limit: 20
-    t.integer  "tel",                                     null: false
+    t.string   "tel",              limit: 25,             null: false
     t.string   "adresa"
     t.integer  "group_id"
     t.integer  "fee",                         default: 0, null: false
@@ -210,6 +210,17 @@ ActiveRecord::Schema.define(version: 20150806104838) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "versions", force: true do |t|
+    t.string   "item_type",                     null: false
+    t.integer  "item_id",                       null: false
+    t.string   "event",                         null: false
+    t.string   "whodunnit"
+    t.text     "object",     limit: 2147483647
+    t.datetime "created_at"
+  end
+
+  add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
 
   create_table "wheres", force: true do |t|
     t.string   "name"

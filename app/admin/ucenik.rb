@@ -1,5 +1,14 @@
 ActiveAdmin.register Ucenik do
  
+ controller do
+  def show
+      @ucenik = Ucenik.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :versionate, :partial => "layouts/version", :only => :show
  
 
  menu :label => "Učenici", :priority => 10
@@ -18,6 +27,12 @@ permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_p
 #   permitted << :other if resource.something?
 #   permitted
 # end
+
+  member_action :history do
+    @ucenik = Ucenik.find(params[:id])
+    @versions = @ucenik.versions
+    render "layouts/history"
+  end
 
 
   index :title => 'Učenici' do
@@ -143,7 +158,10 @@ show do
           end
         end
       end
-    end
+
+
+
+  end
   end
 
 end

@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
 	require 'date'
+  
+  has_paper_trail
 
 	belongs_to :profesor
 	belongs_to :group

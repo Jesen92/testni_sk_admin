@@ -28,6 +28,13 @@ gem 'formtastic'
 gem "wice_grid", '3.5.0'
 gem 'rails_12factor', group: :production
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'paper_trail'
+
+group :development do
+  gem "better_errors"
+end
+
+gem "binding_of_caller"
 
 
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"

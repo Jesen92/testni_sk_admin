@@ -1,4 +1,6 @@
 class Profesor < ActiveRecord::Base
+	has_paper_trail
+	
 	has_one :user
 	has_many :groups
 	has_many :events
