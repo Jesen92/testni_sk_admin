@@ -3,16 +3,26 @@ p.prikaz{
 	font-weight: bold;
 }
 </style>
-<h2><%= @ucenik.name %></h2>
-	<ul>
-		<li><p class="prikaz">OIB:</p> <%= @ucenik.OIB %><p></p></li>
-		<li><p class="prikaz">Adresa:</p> <%= @ucenik.adresa %><p></p></li>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h2><%= @ucenik.name %></h2></h3>
+  </div>
+  <div class="panel-body">
+ 	<ul>
+		<li><div class="well well-sm"><p class="prikaz">OIB:</p> <%= @ucenik.OIB %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Adresa:</p> <%= @ucenik.adresa %><p></p></li>
 		<% if @ucenik.parents_name? %>
-		<li><p class="prikaz">Ime Roditelja:</p> <%= @ucenik.parents_name %><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Ime Roditelja:</p> <%= @ucenik.parents_name %></div><p></p></li>
 		<% end %>
-		<li><p class="prikaz">Broj telefona/mobitela:</p> <%= @ucenik.tel %><p></p></li>
-		<li><p class="prikaz">e-mail:</p> <%= @ucenik.email %></li>
-	</ul>
+		<li><div class="well well-sm"><p class="prikaz">Broj telefona/mobitela:</p> <%= @ucenik.tel %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">e-mail:</p> <%= @ucenik.email %></div></li>
+	</ul> 	
+  </div>
+</div>
+
+
+
 
 <%= grid(@ucenik_grid, show_filters: :always) do |g| 
 
@@ -28,7 +38,7 @@ p.prikaz{
 		end
 	end
 
-	g.column name: "Mjesec", attribute: 'date', ordering: true, custom_filter: :auto  do |t|
+	g.column name: "Mjesec", attribute: 'date', ordering: true, filter: false  do |t|
 		t.date.strftime(" %m.%Y. ")
 	end
 

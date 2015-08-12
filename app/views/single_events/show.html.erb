@@ -3,24 +3,40 @@ p.prikaz{
 	font-weight: bold;
 }
 </style>
-<h2><%=  @event.title %></h2>
-<ul>
-	<li><p class="prikaz">Grupa:</p><%= link_to @event.group.name, grupa_path(@event.group.id) %><p></p></li>
-	<li><p class="prikaz">Vrijeme početka:</p><%= @event.start %><p></p></li>
-	<li><p class="prikaz">Vrijeme završetka</p><%= @event.end %><p></p></li>
-	<li><p class="prikaz">Datum:</p><%= @event.date.strftime("%d.%m.%Y.") %><p></p></li>
-</ul>
-<h3>Popis svih učenika</h3>
-<ul>
-	<% @event.group.uceniks.each do |ucenik| %>
-	<li><%= link_to ucenik.name, ucenik_path(ucenik.id) %></li>
 
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h2><%=  @event.title %></h2></h3>
+  </div>
+  <div class="panel-body">
+  	<p><div class="well well-sm"><h3><%= link_to "Izmjeni", edit_event_path(@event.id) %></h3></div></p>
+	<ul>
+		<% if @event.group != nil %>
+		<li><div class="well well-sm"><p class="prikaz">Grupa:</p><%= link_to @event.group.name, grupa_path(@event.group.id) %></div><p></p></li>
+		<% end %>
+		<li><div class="well well-sm"><p class="prikaz">Datum:</p><%= @event.date.strftime("%d.%m.%Y.") %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Vrijeme početka:</p><%= @event.start %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.end %></div><p></p></li>
+
+	</ul>
+	<% if @event.group != nil %>
+	<div class="well well-lg"><h3>Popis svih učenika</h3>
+	<ul>
+		<% @event.group.uceniks.each do |ucenik| %>
+		<li><%= link_to ucenik.name, ucenik_path(ucenik.id) %></li>
+
+		<% end %>
+	</ul></div>
+	<div class="well well-sm"><h3>Prisutni učenici</h3>
+	<ul>
+		<% @event.uceniks.each do |ucenik| %>
+		<li><%= ucenik.name %></li>
+		<% end %>	
+	</ul></div>
 	<% end %>
-</ul>
-<h3>Prisutni učenici</h3>
-<ul>
-	<% @event.uceniks.each do |ucenik| %>
-	<li><%= ucenik.name %></li>
-	<% end %>	
-</ul>
-<p><%= link_to "Izmjeni", edit_event_path(@event.id) %></p>
+  </div>
+</div>
+
+
+
+

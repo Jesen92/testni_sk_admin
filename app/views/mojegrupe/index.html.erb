@@ -1,12 +1,20 @@
-<h2>Moje Grupe</h2>
-<% if @user != nil %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><h2>Moje Grupe</h2></h3>
+  </div>
+  <div class="panel-body">
+    <% if @user != nil %>
 <% if @groups == nil %>
 	<h2>Nema grupa!</h2>
 <% else %>
 	<% @groups.each do |group| %>
 		<ul>
-			<li><td><%= link_to group.name, grupa_path(group.id) %></li>
+			<li><div class="well well-sm"><td><%= link_to group.name, grupa_path(group.id) %></td></li>
 		</ul>
 	<% end %>
 <% end %>
 <% end %>
+  </div>
+</div>
+
+
