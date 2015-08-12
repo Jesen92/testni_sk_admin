@@ -1,8 +1,18 @@
 ActiveAdmin.register Group do
 
+   controller do
+  def show
+      @ucenik = Group.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :verzije, :partial => "layouts/version", :only => :show
+
 menu :label => "Grupe", :priority => 4
 
-permit_params :id, :name, :profesor_id, :level
+permit_params :id, :name, :profesor_id, :level, :cijena
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -34,6 +44,7 @@ permit_params :id, :name, :profesor_id, :level
       f.input :name, :label => "Name"
       f.input :profesor, :label => "Profesor"
       f.input :level, :label => "Level"
+      f.input :cijena
       f.actions
     end
   end

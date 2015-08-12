@@ -8,7 +8,7 @@ ActiveAdmin.register Ucenik do
       show! #it seems to need this
   end
 end
-  sidebar :versionate, :partial => "layouts/version", :only => :show
+  sidebar :verzije, :partial => "layouts/version", :only => :show
  
 
  menu :label => "Učenici", :priority => 10

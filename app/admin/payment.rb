@@ -1,5 +1,15 @@
 ActiveAdmin.register Payment do
 
+     controller do
+  def show
+      @ucenik = Payment.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :verzije, :partial => "layouts/version", :only => :show
+
 menu :label => "Plaćanje", :priority => 12
 
 permit_params :uplaceno, :uplata

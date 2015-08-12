@@ -1,5 +1,15 @@
 ActiveAdmin.register SingleEvent do
 
+ controller do
+  def show
+      @ucenik = SingleEvent.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :verzije, :partial => "layouts/version", :only => :show
+
 permit_params :odrzano, :title,:start, :ucenik_events, :end, :br_pred, :ucenik_id, :date, :where_id, :profesor_id, :group_id, :event_id, ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

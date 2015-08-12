@@ -1,6 +1,17 @@
 ActiveAdmin.register Profesor do
 
+   controller do
+  def show
+      @ucenik = Profesor.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :verzije, :partial => "layouts/version", :only => :show
+
 menu :label => "Suradnici", :priority => 2
+
 
 
 
@@ -49,11 +60,9 @@ permit_params :name, :OIB, :adresa, :group, :jezik, :radi_za_nas, :komentar,:sud
 index :title => 'Suradnici' do
 	selectable_column
 	column :name
-	column :OIB
 	column :jezik
 	column :radi_za_nas
 	column :sudski_tumac
-	column :obrazovanje
 	column "Prebivalište", :grad  
 	column :karijerska_pozicija
 	column :inozemno_iskustvo

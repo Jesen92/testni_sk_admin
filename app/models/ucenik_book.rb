@@ -1,4 +1,6 @@
 class UcenikBook < ActiveRecord::Base
+		has_paper_trail
+	
 	belongs_to :ucenik
 	belongs_to :book
 

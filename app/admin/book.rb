@@ -1,4 +1,13 @@
 ActiveAdmin.register Book do
+   controller do
+  def show
+      @ucenik = Book.includes(versions: :item).find(params[:id])
+      @versions = @ucenik.versions 
+      @ucenik = @ucenik.versions[params[:version].to_i].reify if params[:version]
+      show! #it seems to need this
+  end
+end
+  sidebar :verzije, :partial => "layouts/version", :only => :show
 
 permit_params :num, :title
 

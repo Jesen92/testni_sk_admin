@@ -26,13 +26,12 @@ class Ucenik < ActiveRecord::Base
 
 			ucenik.fee = @fee
 
-			
-			@pay.each do |p|
-				if p.uplata != nil
-					@fee = @fee - p.uplata
+				@pay.each do |p|
+					if p.uplata != nil
+						@fee = @fee - p.uplata
+					end
 				end
-			end
-		
+
 
 			ucenik.fee_to_pay = @fee
 			
