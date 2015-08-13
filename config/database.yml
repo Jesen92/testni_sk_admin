@@ -6,12 +6,15 @@
 #
 default: &default
   adapter: mysql2
-  database: skola_development
-  #database: skola
-  username: jesen
-  password: VYFjqwF92
-  #host: 85.10.205.173
-  #port: 3306
+  #database: skola_development
+  #username: jesen
+  #password: VYFjqwF92
+
+  host: sql2.freemysqlhosting.net
+  database: sql286804
+  username: sql286804
+  password: aD8%eP8*
+  port: 3306
   pool: 5
   timeout: 5000
 
