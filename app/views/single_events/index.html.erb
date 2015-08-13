@@ -1,5 +1,7 @@
 <%# show_filters: :when_filtered %>
-<h3><%= link_to "Kreiraj novo predavanje", new_event_path %></h3>
+
+ <div class="gumb" style="padding-left:10px; padding-top:20px; padding-bottom:10px;" ><%= link_to "Kreiraj novo predavanje", new_event_path, :class => "btn btn-primary" %></div>
+
 <%= grid(@event_grid, show_filters: :always) do |g| 
 
 	g.column name: "ID", attribute: 'id'  do |t|
