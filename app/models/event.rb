@@ -10,7 +10,15 @@ class Event < ActiveRecord::Base
 	has_many :single_events
 	belongs_to :where
 
+  validate :provjera_datuma ,on: :create
 	validates :start,:end,:start_date, presence: true
+
+  def provjera_datuma
+    @dan = start_date.wday == 7 ? 0 : start_date.wday
+    if @dan != days.first.id
+      errors.add(:days, "Dan datuma početka predavanja mora biti odabran")
+    end
+  end
 
 
     after_create { |event|  #svako predavanje se pojedinačno zapisuje u bazu
@@ -25,7 +33,7 @@ class Event < ActiveRecord::Base
     if event.repeat?
 
     	@first_day = event.days.first.id
-    	@d_c = @first_day
+    	@d_c = @first_day 
 
     		event.days.each do |day|
     			temp = day.id-@d_c
