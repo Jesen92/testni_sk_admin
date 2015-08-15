@@ -11,7 +11,7 @@ class Event < ActiveRecord::Base
 	belongs_to :where
 
   validate :provjera_datuma ,on: :create
-	validates :start,:end,:start_date, presence: true
+	validates :start,:end,:start_date, :title, presence: true
 
   def provjera_datuma
     @dan = start_date.wday == 7 ? 0 : start_date.wday

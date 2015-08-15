@@ -57,7 +57,7 @@ permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_p
 
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime", :required => true
-      f.input :OIB, :label => "OIB"
+      f.input :OIB, :label => "OIB", :required => true
       f.input :adresa, :label => "Adresa", :required => true
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"

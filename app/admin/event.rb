@@ -81,15 +81,15 @@ show do
 
   form do |f|
     f.inputs "Details" do
-      f.input :title, :label => "Title"
+      f.input :title, :label => "Title", :required => true
       f.input :profesor, :label => "Profesor"
       f.input :group, :label => "Grupa"
-      f.input :start, :label => "Vrijeme početka:", :as => :time_picker
-      f.input :end, :label => "Vrijeme završetka:", :as => :time_picker
+      f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
+      f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, :required => true
       f.input :where, :label => "Mjesto predavanja",  :as => :select
 
 
-      f.input :start_date, :label => "Datum početka:", :as => :datepicker
+      f.input :start_date, :label => "Datum početka:", :as => :datepicker, :required => true
 
       f.input :repeat,:label => "Tjedno Ponavljanje:" 
       f.input :br_pred, :label => "Broj predavanja"
