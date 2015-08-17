@@ -7,7 +7,7 @@ module ActiveAdmin
         super :style => "text-align: center;"                                     
 
         div do                                                                   
-          para "Copyright &copy; #{Date.today.year.to_s} #{link_to('Frontend', home_path)}".html_safe                                     
+          para " <h1>#{link_to('Frontend', home_path)}</h1> Copyright &copy; #{Date.today.year.to_s}".html_safe                                     
         end
       end
 
