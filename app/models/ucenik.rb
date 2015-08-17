@@ -14,7 +14,7 @@ class Ucenik < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :ucenik_books
 
-	validates :name, :oib, :tel, :adresa, presence: true
+	validates :name, :OIB, :tel, :adresa, presence: true
 
 		after_commit{ |ucenik| 
 

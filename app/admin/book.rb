@@ -36,7 +36,7 @@ menu :label => "Udžbenici", :priority => 7
 
   form do |f|
     f.inputs "Details" do
-      f.input :title, :label => "Naziv"
+      f.input :title, :label => "Naziv", :required => true
       f.input :num, :label => "Broj komada"
 
 

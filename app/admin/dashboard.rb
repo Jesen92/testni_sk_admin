@@ -10,9 +10,23 @@ columns do
         panel "Nedavno izmjenjen sadržaj" do
           table_for PaperTrail::Version.order('id desc').limit(20) do  # Use PaperTrail::Version if this throws an error
             #column("Item") { |v| v.item }
-            column ("Item") { |v| link_to v.item.has_attribute?(:name) ? v.item.name : v.item.title, [:admin, v.item] } # Uncomment to display as link
-            column("Type") { |v| v.item_type.underscore.humanize }
-            column("Izmjenjeno") { |v| v.created_at.to_s :long }
+            column "Item" do |v|
+                if v.event.to_s == "destroy"
+                    v.item
+                else
+                    if v.item.try(:name)
+                        link_to v.item.name, [:admin, v.item]
+                    elsif v.item.try(:title)
+                        link_to v.item.title, [:admin, v.item]
+                    else
+                        v.item
+                    end                        
+                end
+            end
+   
+            column("Tip") { |v| v.item_type.underscore.humanize }
+            column("Događaj") { |v| v.event }
+            column("Vrijeme") { |v| v.created_at.to_s :long }
             column("Korisnik") { |v| link_to User.find(v.whodunnit).email, [:admin, User.find(v.whodunnit)] }
           end
     end

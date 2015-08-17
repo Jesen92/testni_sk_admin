@@ -21,6 +21,7 @@ class Event < ActiveRecord::Base
   end
 
 
+
     after_create { |event|  #svako predavanje se pojedinačno zapisuje u bazu
     	@dani = Array.new(7)
     	@i = 0
@@ -45,11 +46,20 @@ class Event < ActiveRecord::Base
     			@dani_count+=1
     		end
 
-    	@br = event.br_pred/@dani_count-1
+        @ost = event.br_pred % @dani_count
+
+      #if @ost != 0
+      #  @t = 0
+      #else
+      #  @t = -1
+      #end
+
+    	@br = (event.br_pred/@dani_count)-1
     	@i = @br
 
     	@dani_count-=1 	
     end
+
 
 
     while @i >= 0 && @dani_count >= 0
@@ -82,9 +92,22 @@ class Event < ActiveRecord::Base
       @i-=1
 
       if @i < 0 && @dani_count > 0
-      	@dani_count-=1
-      	@i = @br
+        @dani_count-=1
+
+        if @ost == 0
+          @i = @br
+        else
+          if @dani_count <= @ost-1
+            @i = @br+1
+          else
+            @i = @br
+          end
+        end
+
+
       	@zbr = 0
+
+ 
       end
   end
 
