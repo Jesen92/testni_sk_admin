@@ -31,9 +31,14 @@ config.per_page = 20
 
 config.sort_order = 'date_asc'
 
+scope("Neodržano predavanje") { |scope| scope.where(odrzano: false)}
+
 menu :label => "Predavanja", :priorty => 5
 
  index :title => 'Predavanja' do
+
+
+
     selectable_column
     column :id
     column :event
