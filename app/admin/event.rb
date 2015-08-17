@@ -62,6 +62,31 @@ show do
       row :created_at
       row :updated_at
 
+      panel "Popis grupa" do
+        table_for event.single_events do 
+
+          column "Naziv" do |e|
+            link_to e.title, [:admin, e]
+          end
+
+          column "Datum" do |e|
+            link_to e.date, [:admin, e]
+          end
+
+          column "Vrijeme predavanja" do |e|
+            e.start+" - "+e.end
+          end
+
+          column "Profesor" do |e|
+            link_to e.profesor.name, [:admin, e.profesor]
+          end
+
+          column "Predavaonica" do |e|
+            link_to e.where.name, [:admin, e.where]
+          end
+
+        end
+      end
       
     end
   end
