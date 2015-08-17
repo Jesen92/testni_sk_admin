@@ -8,7 +8,7 @@ config.clear_sidebar_sections!
 columns do
     column do
         panel "Nedavno izmjenjen sadržaj" do
-          table_for PaperTrail::Version.order('id desc').limit(20) do  # Use PaperTrail::Version if this throws an error
+          table_for PaperTrail::Version.order('id desc').limit(50) do  # Use PaperTrail::Version if this throws an error
             #column("Item") { |v| v.item }
             column "Item" do |v|
                 if v.event.to_s == "destroy"
@@ -27,7 +27,14 @@ columns do
             column("Tip") { |v| v.item_type.underscore.humanize }
             column("Događaj") { |v| v.event }
             column("Vrijeme") { |v| v.created_at.to_s :long }
-            column("Korisnik") { |v| link_to User.find(v.whodunnit).email, [:admin, User.find(v.whodunnit)] }
+
+            column"Korisnik" do |v|
+                if User.find(v.whodunnit) != nil
+                    link_to User.find(v.whodunnit).email, [:admin, User.find(v.whodunnit)] 
+                else
+                    deleted user
+                end
+            end
           end
     end
 end
