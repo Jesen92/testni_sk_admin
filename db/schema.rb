@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812105825) do
+ActiveRecord::Schema.define(version: 20150823100317) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -63,6 +63,19 @@ ActiveRecord::Schema.define(version: 20150812105825) do
     t.string   "name_eng",   limit: 11, null: false
   end
 
+  create_table "entries", force: true do |t|
+    t.integer  "mjesto_id"
+    t.integer  "jezik_id"
+    t.integer  "vrsta_id"
+    t.string   "name"
+    t.string   "parents_name"
+    t.string   "tel"
+    t.string   "email"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
     t.string   "title"
     t.string   "start",          limit: 20
@@ -96,10 +109,35 @@ ActiveRecord::Schema.define(version: 20150812105825) do
     t.datetime "updated_at"
   end
 
+  create_table "jeziks", force: true do |t|
+    t.string   "naziv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "messages", force: true do |t|
     t.string   "title"
     t.text     "body"
     t.integer  "profesor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mjestos", force: true do |t|
+    t.string   "naziv"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "novi_uceniks", force: true do |t|
+    t.integer  "mjesto_id"
+    t.integer  "jezik_id"
+    t.integer  "vrsta_tecaja_id"
+    t.string   "name"
+    t.string   "parents_name"
+    t.string   "tel"
+    t.string   "email"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -221,6 +259,12 @@ ActiveRecord::Schema.define(version: 20150812105825) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id", using: :btree
+
+  create_table "vrsta_tecajas", force: true do |t|
+    t.string   "vrsta"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wheres", force: true do |t|
     t.string   "name"

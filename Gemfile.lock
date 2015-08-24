@@ -127,6 +127,9 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
+    httparty (0.13.5)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     inherited_resources (1.6.0)
       actionpack (>= 3.2, < 5)
@@ -153,6 +156,7 @@ GEM
     momentjs-rails (2.10.2)
       railties (>= 3.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     mysql2 (0.3.18-x86-mingw32)
     orm_adapter (0.5.0)
     paper_trail (4.0.0)
@@ -246,6 +250,7 @@ DEPENDENCIES
   devise (~> 3.4.1)
   formtastic
   fullcalendar-rails
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails

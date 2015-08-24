@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mjesto_id: 1
+  jezik_id: 1
+  vrsta_id: 1
+  name: MyString
+  parents_name: MyString
+  tel: MyString
+  email: MyString
+  comment: MyText
+
+two:
+  mjesto_id: 1
+  jezik_id: 1
+  vrsta_id: 1
+  name: MyString
+  parents_name: MyString
+  tel: MyString
+  email: MyString
+  comment: MyText

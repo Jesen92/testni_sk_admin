@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'apps/json_parse' => 'apps#json_parse'
+
   get 'payments/edit' => 'payments#edit', :as => :uplata
 
   get 'payments/update'
@@ -78,6 +80,7 @@ Rails.application.routes.draw do
   resources :users
   resources :podaci
   resources :payments
+  resources :apps
 
   resources :single_events do
     get :get_events, on: :collection
