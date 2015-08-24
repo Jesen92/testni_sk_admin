@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'apps/json_parse' => 'apps#json_parse'
+  post 'apps/create' => 'apps#create'
 
   get 'payments/edit' => 'payments#edit', :as => :uplata
 
