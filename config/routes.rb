@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  match 'androids/get_json' => 'androids#get_json', via: [:post]
+  get 'novi_uceniks/new'
+
+  post 'novi_uceniks/create' => 'novi_uceniks#create'
 
   get 'payments/edit' => 'payments#edit', :as => :uplata
 
@@ -80,9 +82,7 @@ Rails.application.routes.draw do
   resources :users
   resources :podaci
   resources :payments
-  resources :apps
-
-  resources :androids
+  resources :novi_uceniks, only: [:create]
 
   resources :single_events do
     get :get_events, on: :collection
