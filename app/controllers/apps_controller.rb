@@ -1,5 +1,5 @@
 class AppsController < ApplicationController
-	  include HTTParty
+
 
 	  format :json
 

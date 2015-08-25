@@ -30,7 +30,7 @@ gem 'rails_12factor', group: :production
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'paper_trail'
 
-gem 'httparty'
+gem 'httparty', '~> 0.13.5'
 
 group :development do
   gem "better_errors"

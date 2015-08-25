@@ -250,7 +250,7 @@ DEPENDENCIES
   devise (~> 3.4.1)
   formtastic
   fullcalendar-rails
-  httparty
+  httparty (~> 0.13.5)
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails
