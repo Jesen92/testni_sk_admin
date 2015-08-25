@@ -15,7 +15,7 @@ menu :label => "Suradnici", :priority => 2
 
 
 
-permit_params :name, :OIB, :adresa, :group, :jezik, :radi_za_nas, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :racun_banke
+permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_nas, :bank_id, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :IBAN, jezik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -35,8 +35,10 @@ permit_params :name, :OIB, :adresa, :group, :jezik, :radi_za_nas, :komentar,:sud
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime"
       f.input :OIB, :label => "OIB"
-      f.input :adresa, :label => "Adresa"
-  	  f.input :jezik
+      f.input :grad
+      f.input :ulica
+      f.input :postanski_broj
+  	  f.input :jeziks, :label => "Jezici" ,:as => :check_boxes
   	  f.input :radi_za_nas
   	  f.input :komentar
   	  f.input :sudski_tumac
@@ -46,11 +48,12 @@ permit_params :name, :OIB, :adresa, :group, :jezik, :radi_za_nas, :komentar,:sud
   	  f.input :obrazovanje
   	  f.input :karijerska_pozicija
   	  f.input :inozemno_iskustvo
+      f.input :inozemno_iskustvo_comment
   	  f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year
   	  f.input :mjesto_rodenja
-  	  f.input :grad
-  	  f.input :postanski_broj
-  	  f.input :racun_banke
+
+  	  f.input :IBAN
+      f.input :bank
 
   	
       f.actions
@@ -59,6 +62,7 @@ permit_params :name, :OIB, :adresa, :group, :jezik, :radi_za_nas, :komentar,:sud
 
 index :title => 'Suradnici' do
 	selectable_column
+  column :id
 	column :name
 	column :jezik
 	column :radi_za_nas
@@ -73,7 +77,9 @@ end
     attributes_table do
       row :name, :label => "Ime i prezime"
       row :OIB, :label => "OIB"
-      row :adresa, :label => "Adresa"
+      row :grad
+      row :ulica
+      row :postanski_broj
       row :jezik
       row :radi_za_nas
       row :komentar
@@ -88,8 +94,17 @@ end
       row :mjesto_rodenja
       row :grad
       row :postanski_broj
-      row :racun_banke
+      row :IBAN
+      row :bank
       row :document, :required => false , :as => :file 
+
+      panel "Jezici" do
+        table_for profesor.jeziks do
+          column "Jezik" do |jezik|
+            link_to jezik.name, [:admin, jezik]
+          end
+        end
+      end
 
       panel "Grupe" do
         table_for profesor.groups do 
@@ -98,6 +113,9 @@ end
          end
         end
       end
+
+
+
     end
   end
 

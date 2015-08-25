@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 	require 'date'
   
-  has_paper_trail
+  has_paper_trail :ignore => [:updated_at]
 
 	belongs_to :profesor
 	belongs_to :group
@@ -11,7 +11,15 @@ class Event < ActiveRecord::Base
 	belongs_to :where
 
   validate :provjera_datuma ,on: :create
-	validates :start,:end,:start_date, :title, presence: true
+	validates :start,:end,:start_date, presence: true
+ 
+ after_commit { |event|
+
+  event.title = event.group.name
+
+  event.save
+
+ }
 
   def provjera_datuma
     @dan = start_date.wday == 7 ? 0 : start_date.wday

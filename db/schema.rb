@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150823100317) do
+ActiveRecord::Schema.define(version: 20150825112402) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -48,6 +48,12 @@ ActiveRecord::Schema.define(version: 20150823100317) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "banks", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "books", force: true do |t|
     t.string   "title"
@@ -130,9 +136,9 @@ ActiveRecord::Schema.define(version: 20150823100317) do
   end
 
   create_table "novi_uceniks", force: true do |t|
-    t.integer  "mjesto_id"
-    t.integer  "jezik_id"
-    t.integer  "vrsta_tecaja_id"
+    t.string   "mjesto",       limit: 15
+    t.string   "jezik",        limit: 15
+    t.string   "vrsta_tecaja", limit: 15
     t.string   "name"
     t.string   "parents_name"
     t.string   "tel"
@@ -160,25 +166,32 @@ ActiveRecord::Schema.define(version: 20150823100317) do
     t.datetime "updated_at"
   end
 
+  create_table "profesor_jeziks", force: true do |t|
+    t.integer  "profesor_id"
+    t.integer  "jezik_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profesors", force: true do |t|
-    t.string   "name",                limit: 50,  null: false
-    t.integer  "OIB",                 limit: 8
-    t.string   "adresa"
-    t.string   "jezik"
+    t.string   "name",                      limit: 50,  null: false
+    t.integer  "OIB",                       limit: 8
+    t.string   "ulica",                     limit: 50
     t.boolean  "radi_za_nas"
     t.text     "komentar"
     t.boolean  "sudski_tumac"
-    t.string   "mobitel",             limit: 20
-    t.string   "telefon",             limit: 20
-    t.string   "mail",                limit: 30
-    t.string   "obrazovanje",         limit: 100
-    t.string   "karijerska_pozicija", limit: 100
+    t.string   "mobitel",                   limit: 20
+    t.string   "telefon",                   limit: 20
+    t.string   "mail",                      limit: 30
+    t.string   "obrazovanje",               limit: 100
+    t.string   "karijerska_pozicija",       limit: 100
     t.boolean  "inozemno_iskustvo"
-    t.date     "datum_rodenja",                   null: false
-    t.string   "mjesto_rodenja",      limit: 100, null: false
-    t.string   "postanski_broj",      limit: 5,   null: false
-    t.string   "grad",                limit: 20
-    t.string   "racun_banke",         limit: 30
+    t.text     "inozemno_iskustvo_comment"
+    t.date     "datum_rodenja",                         null: false
+    t.string   "mjesto_rodenja",            limit: 100, null: false
+    t.string   "postanski_broj",            limit: 5,   null: false
+    t.string   "grad",                      limit: 20
+    t.string   "IBAN",                      limit: 40
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -215,10 +228,13 @@ ActiveRecord::Schema.define(version: 20150823100317) do
   create_table "uceniks", force: true do |t|
     t.string   "name",             limit: 50,             null: false
     t.integer  "OIB",              limit: 8
+    t.string   "ulica",            limit: 50
+    t.integer  "postanski_broj"
+    t.string   "grad",             limit: 25
     t.string   "parents_name",     limit: 25
     t.string   "email",            limit: 20
     t.string   "tel",              limit: 25,             null: false
-    t.string   "adresa"
+    t.date     "datum_rodenja"
     t.integer  "group_id"
     t.integer  "fee",                         default: 0, null: false
     t.integer  "fee_to_pay",                  default: 0, null: false
@@ -250,11 +266,12 @@ ActiveRecord::Schema.define(version: 20150823100317) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "versions", force: true do |t|
-    t.string   "item_type",                     null: false
-    t.integer  "item_id",                       null: false
-    t.string   "event",                         null: false
+    t.string   "item_type",                         null: false
+    t.integer  "item_id",                           null: false
+    t.string   "event",                             null: false
     t.string   "whodunnit"
-    t.text     "object",     limit: 2147483647
+    t.text     "object",         limit: 2147483647
+    t.text     "object_changes",                    null: false
     t.datetime "created_at"
   end
 
@@ -269,6 +286,7 @@ ActiveRecord::Schema.define(version: 20150823100317) do
   create_table "wheres", force: true do |t|
     t.string   "name"
     t.string   "adress"
+    t.integer  "Kapacitet"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

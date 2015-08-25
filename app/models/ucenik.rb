@@ -1,5 +1,5 @@
 class Ucenik < ActiveRecord::Base
-	has_paper_trail
+	has_paper_trail :ignore => [:updated_at]
 
 	has_many :groups, through: :group_uceniks
 	has_many :group_uceniks
@@ -14,7 +14,7 @@ class Ucenik < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :ucenik_books
 
-	validates :name, :OIB, :tel, :adresa, presence: true
+	validates :name, :tel, presence: true
 
 		after_commit{ |ucenik| 
 

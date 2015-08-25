@@ -1,13 +1,30 @@
 class AppsController < ApplicationController
 	  include HTTParty
-skip_before_filter  :verify_authenticity_token
+
+	  format :json
+
 
   def create
-	response = HTTParty.get('http://localhost:3000/apps/create')
-	body = JSON.parse(response.body)
-	@ucenik = NoviUcenik.new(ucenik_params)
-	@ucenik.name = body["name"]
-	@ucenik.save
+
+  end
+
+  def show
+  end
+
+  def new
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def index
+  	
+  end
+
+  def destroy
   end
 
   private

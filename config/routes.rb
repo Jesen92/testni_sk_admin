@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post 'apps/create' => 'apps#create'
+  post 'androids/get_json' => 'androids#get_json'
 
   get 'payments/edit' => 'payments#edit', :as => :uplata
 
@@ -81,6 +81,7 @@ Rails.application.routes.draw do
   resources :podaci
   resources :payments
   resources :apps
+  resources :androids
 
   resources :single_events do
     get :get_events, on: :collection

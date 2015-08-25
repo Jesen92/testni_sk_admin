@@ -39,7 +39,7 @@ p.prikaz{
 	end
 
 	g.column name: "Mjesec", attribute: 'date', ordering: true, filter: false  do |t|
-		t.date.strftime(" %m.%Y. ")
+		t.date.strftime(" %d.%m.%Y. ")
 	end
 
 	g.column name: "Plaćeno", attribute: 'uplaceno'  do |t|

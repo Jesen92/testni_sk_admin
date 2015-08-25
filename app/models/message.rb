@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
-	has_paper_trail
+	has_paper_trail :ignore => [:updated_at]
 	
 	belongs_to :profesor
 

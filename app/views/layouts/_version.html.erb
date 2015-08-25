@@ -11,6 +11,9 @@
       <%= link_to "Prošla verzija", {:version => (params[:version] || @versions.length).to_i - 1}%>
       <br>
     <% end %>
+
+
+
     <% if params[:version] %>
       <h3>This is <%= "#{params[:version]}"%> version</h3>
 
@@ -21,8 +24,15 @@
       <%= User.find(@versions[(params[:version].to_i - 1)].whodunnit).email %>
       <br>
 
+
       <%= link_to "Trenutna verzija"%>
     <% end %>
+
+      </br>
+      <b>Izmjene</b>
+      <%= @versions[(params[:version].to_i - 1)].object_changes.each_line {|s| s } %></li>
+
+
   <% end %>
 <% else %>
   <p>Trenutno nije niti jedna verzija zapisana u logove.</p>

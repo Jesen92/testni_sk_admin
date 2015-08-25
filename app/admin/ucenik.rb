@@ -13,7 +13,7 @@ end
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
+permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, :grad, :postanski_broj, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -57,8 +57,11 @@ permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_p
 
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime", :required => true
-      f.input :OIB, :label => "OIB", :required => true
-      f.input :adresa, :label => "Adresa", :required => true
+      f.input :OIB, :label => "OIB"
+      f.input :grad
+      f.input :ulica
+      f.input :postanski_broj
+      f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"
       f.input :tel, :label => "Broj telefona/mobitela", :required => true
@@ -101,13 +104,16 @@ permit_params :name, :OIB, :email, :tel, :parents_name, :adresa, :fee, :fee_to_p
 show do
   @placeno = Array.new
     attributes_table do
+
       row :id
       row("Ime i prezime") {ucenik.name}      
       row :OIB
       row ("Ime roditelja") {ucenik.parents_name}
       row ("e-mail") {ucenik.email}
       row ("Broj telefona/mobitela") {ucenik.tel}
-      row ("Adresa") {ucenik.adresa}
+      row ("Grad") {ucenik.grad}
+      row ("Ulica") {ucenik.ulica}
+      row ("Poštanski broj") {ucenik.postanski_broj}
       row ("Ukupno za platiti") {ucenik.fee}
       row ("Preostalo za platiti") {ucenik.fee_to_pay}
       row ("Plaćanje na rate") {ucenik.placanje_na_rate}

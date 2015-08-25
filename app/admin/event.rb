@@ -106,7 +106,6 @@ show do
 
   form do |f|
     f.inputs "Details" do
-      f.input :title, :label => "Title", :required => true
       f.input :profesor, :label => "Profesor"
       f.input :group, :label => "Grupa"
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
