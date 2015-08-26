@@ -11,5 +11,8 @@ class Profesor < ActiveRecord::Base
 
 	has_many :jeziks, through: :profesor_jeziks
 	has_many :profesor_jeziks
+
+	has_many :books, through: :profesor_books
+	has_many :profesor_books
 	#validates_attachment_content_type :document, :content_type => ['application/pdf', 'application/msword', 'text/plain']
 end

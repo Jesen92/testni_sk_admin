@@ -58,6 +58,7 @@ class Ucenik < ActiveRecord::Base
 
 						payment.ucenik_id = ucenik.id
 						payment.group_id = group.id
+						payment.default_uplata = group.cijena/br_rata
 						payment.date = ucenik.prvi_mj_placanja + @i.month
 						payment.title = ucenik.name+" "+group.name
 

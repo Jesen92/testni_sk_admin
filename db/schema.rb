@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150825112402) do
+ActiveRecord::Schema.define(version: 20150826124443) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20150825112402) do
   end
 
   create_table "jeziks", force: true do |t|
-    t.string   "naziv"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -166,6 +166,13 @@ ActiveRecord::Schema.define(version: 20150825112402) do
     t.datetime "updated_at"
   end
 
+  create_table "profesor_books", force: true do |t|
+    t.integer  "profesor_id"
+    t.integer  "book_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profesor_jeziks", force: true do |t|
     t.integer  "profesor_id"
     t.integer  "jezik_id"
@@ -192,6 +199,7 @@ ActiveRecord::Schema.define(version: 20150825112402) do
     t.string   "postanski_broj",            limit: 5,   null: false
     t.string   "grad",                      limit: 20
     t.string   "IBAN",                      limit: 40
+    t.integer  "bank_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

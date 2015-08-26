@@ -66,7 +66,7 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
       f.input :email, :label => "e-mail"
       f.input :tel, :label => "Broj telefona/mobitela", :required => true
       f.input :groups, :label => "Grupe", :input_html => {:class => "chosen" ,:multiple => true}
-      f.input :books, :label => "Udžbenici", :as => :check_boxes
+      f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :fee, :label => "Ukupno za platiti"
       f.input :fee_to_pay, :label => "Preostalo za platiti"
     end

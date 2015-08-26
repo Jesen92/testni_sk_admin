@@ -15,7 +15,7 @@ menu :label => "Suradnici", :priority => 2
 
 
 
-permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_nas, :bank_id, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :IBAN, jezik_ids: []
+permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_nas, :bank_id, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :IBAN, jezik_ids: [], book_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -39,6 +39,7 @@ permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_
       f.input :ulica
       f.input :postanski_broj
   	  f.input :jeziks, :label => "Jezici" ,:as => :check_boxes
+      f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
   	  f.input :radi_za_nas
   	  f.input :komentar
   	  f.input :sudski_tumac
@@ -102,6 +103,15 @@ end
         table_for profesor.jeziks do
           column "Jezik" do |jezik|
             link_to jezik.name, [:admin, jezik]
+          end
+        end
+      end
+
+
+      panel "Popis udžbenika" do
+        table_for profesor.books do
+          column "Naziv" do |book|
+            link_to book.title, [:admin, book]
           end
         end
       end
