@@ -29,6 +29,7 @@ gem "wice_grid", '3.5.0'
 gem 'rails_12factor', group: :production
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'paper_trail'
+gem 'chosen-rails'
 
 gem 'httparty', '~> 0.13.5'
 

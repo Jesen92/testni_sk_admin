@@ -12,7 +12,7 @@ end
 
 menu :label => "Grupe", :priority => 4
 
-permit_params :id, :name, :profesor_id, :level, :cijena
+permit_params :id, :name, :profesor_id, :level, :cijena, ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -45,6 +45,7 @@ permit_params :id, :name, :profesor_id, :level, :cijena
       f.input :profesor, :label => "Profesor"
       f.input :level, :label => "Level"
       f.input :cijena
+      f.input :uceniks, :label => "Učenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.actions
     end
   end

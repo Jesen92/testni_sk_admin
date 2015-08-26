@@ -11,7 +11,9 @@ p.prikaz{
   <div class="panel-body">
  	<ul>
 		<li><div class="well well-sm"><p class="prikaz">OIB:</p> <%= @ucenik.OIB %></div><p></p></li>
-		<li><div class="well well-sm"><p class="prikaz">Adresa:</p> <%= @ucenik.adresa %><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Grad:</p> <%= @ucenik.grad %><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Ulica:</p> <%= @ucenik.ulica %><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Poštanski broj:</p> <%= @ucenik.postanski_broj %><p></p></li>
 		<% if @ucenik.parents_name? %>
 		<li><div class="well well-sm"><p class="prikaz">Ime Roditelja:</p> <%= @ucenik.parents_name %></div><p></p></li>
 		<% end %>
