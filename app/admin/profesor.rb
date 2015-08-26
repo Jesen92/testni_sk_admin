@@ -38,7 +38,7 @@ permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_
       f.input :grad
       f.input :ulica
       f.input :postanski_broj
-  	  f.input :jeziks, :label => "Jezici" ,:as => :check_boxes
+  	  f.input :jeziks, :label => "Jezici" , :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
   	  f.input :radi_za_nas
   	  f.input :komentar
@@ -65,7 +65,6 @@ index :title => 'Suradnici' do
 	selectable_column
   column :id
 	column :name
-	column :jezik
 	column :radi_za_nas
 	column :sudski_tumac
 	column "Prebivalište", :grad  
@@ -81,7 +80,6 @@ end
       row :grad
       row :ulica
       row :postanski_broj
-      row :jezik
       row :radi_za_nas
       row :komentar
       row :sudski_tumac
@@ -97,7 +95,6 @@ end
       row :postanski_broj
       row :IBAN
       row :bank
-      row :document, :required => false , :as => :file 
 
       panel "Jezici" do
         table_for profesor.jeziks do
