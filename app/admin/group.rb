@@ -12,7 +12,7 @@ end
 
 menu :label => "Grupe", :priority => 4
 
-permit_params :id, :name, :profesor_id, :level, :cijena, ucenik_ids: []
+permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:cijena, ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -34,16 +34,22 @@ permit_params :id, :name, :profesor_id, :level, :cijena, ucenik_ids: []
     column :id 
     column :name, :sortable => :name
     column :profesor, :sortable => :profesor
+    column :jezik, :sortable => :jezik
+    column :nivo, :sortable => :nivo
+    column :dob, :sortable => :dob
+    column :dodatak
     column :created_at, :sortable => :created_at
-    column :level, :sortable => :level
     actions
   end
 
   form do |f|
     f.inputs "Details" do
-      f.input :name, :label => "Name"
+      
+      f.input :jezik
+      f.input :nivo
+      f.input :dob
+      f.input :dodatak 
       f.input :profesor, :label => "Profesor"
-      f.input :level, :label => "Level"
       f.input :cijena
       f.input :uceniks, :label => "Učenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.actions
@@ -55,7 +61,10 @@ permit_params :id, :name, :profesor_id, :level, :cijena, ucenik_ids: []
       row :id
       row :name
       row :profesor
-      row :level
+      row :jezik
+      row :nivo
+      row :dob
+      row :dodatak
       row :created_at
       row :updated_at
       row :cijena

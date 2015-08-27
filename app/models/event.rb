@@ -9,13 +9,23 @@ class Event < ActiveRecord::Base
 	has_many :picked_days
 	has_many :single_events
 	belongs_to :where
+  belongs_to :skolska_god
+  belongs_to :polje
 
   validate :provjera_datuma ,on: :create
 	validates :start,:end,:start_date, presence: true
  
  after_commit { |event|
 
-  event.title = event.group.name
+  event.title = event.group.name+"/ "+event.skolska_god.name
+
+  if event.polje != "" && event.polje != nil
+    event.title = event.title+" / "+event.polje.name
+  end
+
+  if event.dodatak != ""
+    event.title = event.title+" / "+event.dodatak
+  end
 
   event.save
 

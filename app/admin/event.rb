@@ -11,6 +11,16 @@ end
 
 menu :label => "Tečajevi", :priority => 3
 
+csv do
+  column :id
+  column :title
+  column :start
+  column :end
+  column :start_date
+  column :where
+  column :profesor
+end
+
  index :title => 'Tečajevi' do
     selectable_column
     column :id
@@ -30,7 +40,7 @@ menu :label => "Tečajevi", :priority => 3
 
 
 
-permit_params :title,:start, :end, :br_pred, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: []
+permit_params :title,:start, :end, :br_pred, :dodatak,:skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -49,6 +59,9 @@ show do
     attributes_table do
       row :id
       row :title
+      row :skolska_god
+      row :polje
+      row :dodatak
       row :profesor
       row :group
       row :where
@@ -108,6 +121,9 @@ show do
     f.inputs "Details" do
       f.input :profesor, :label => "Profesor"
       f.input :group, :label => "Grupa"
+      f.input :skolska_god, :label => "Školska godina"
+      f.input :polje
+      f.input :dodatak
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
       f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, :required => true
       f.input :where, :label => "Mjesto predavanja",  :as => :select

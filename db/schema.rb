@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150826124443) do
+ActiveRecord::Schema.define(version: 20150827110341) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -69,6 +69,12 @@ ActiveRecord::Schema.define(version: 20150826124443) do
     t.string   "name_eng",   limit: 11, null: false
   end
 
+  create_table "dobs", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "entries", force: true do |t|
     t.integer  "mjesto_id"
     t.integer  "jezik_id"
@@ -84,6 +90,9 @@ ActiveRecord::Schema.define(version: 20150826124443) do
 
   create_table "events", force: true do |t|
     t.string   "title"
+    t.string   "skolska_god",    limit: 20
+    t.string   "polje",          limit: 2
+    t.string   "dodatak",        limit: 20
     t.string   "start",          limit: 20
     t.string   "end",            limit: 20
     t.string   "allDay"
@@ -108,9 +117,12 @@ ActiveRecord::Schema.define(version: 20150826124443) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
+    t.integer  "jezik_id"
+    t.integer  "nivo_id"
+    t.integer  "dob_id"
+    t.string   "dodatak",     limit: 30
     t.integer  "profesor_id"
-    t.string   "level"
-    t.integer  "cijena",      null: false
+    t.integer  "cijena",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -135,6 +147,12 @@ ActiveRecord::Schema.define(version: 20150826124443) do
     t.datetime "updated_at"
   end
 
+  create_table "nivos", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "novi_uceniks", force: true do |t|
     t.string   "mjesto",       limit: 15
     t.string   "jezik",        limit: 15
@@ -149,12 +167,13 @@ ActiveRecord::Schema.define(version: 20150826124443) do
   end
 
   create_table "payments", force: true do |t|
-    t.string   "title",      limit: 50,                 null: false
+    t.string   "title",          limit: 50,                 null: false
     t.integer  "ucenik_id"
     t.integer  "group_id"
     t.integer  "uplata"
-    t.boolean  "uplaceno",              default: false, null: false
+    t.boolean  "uplaceno",                  default: false, null: false
     t.date     "date"
+    t.integer  "default_uplata"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -162,6 +181,11 @@ ActiveRecord::Schema.define(version: 20150826124443) do
   create_table "picked_days", force: true do |t|
     t.integer  "day_id"
     t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poljes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -214,6 +238,12 @@ ActiveRecord::Schema.define(version: 20150826124443) do
     t.integer  "profesor_id"
     t.integer  "group_id"
     t.integer  "where_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "skolska_gods", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
