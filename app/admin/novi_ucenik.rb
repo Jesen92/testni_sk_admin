@@ -1,6 +1,6 @@
 ActiveAdmin.register NoviUcenik do
 
-menu :label => "Novi učenici", :priority => 2
+menu :label => "Android prijava", :priority => 2
 
 permit_params :id, :name, :parents_name, :jezik, :vrsta_tecaja, :mjesto, :email, :tel, :comment, :created_at, :updated_at
 # See permitted parameters documentation:
@@ -16,7 +16,7 @@ permit_params :id, :name, :parents_name, :jezik, :vrsta_tecaja, :mjesto, :email,
 #   permitted
 # end
 
-index :title => 'Novi učenici' do
+index :title => 'Android prijava' do
 	selectable_column
  	column :id
 	column :name
