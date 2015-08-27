@@ -61,7 +61,11 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
       f.input :grad
       f.input :ulica
       f.input :postanski_broj
-      f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker, :input_html => {:class => 'form-control', :value => f.object.datum_rodenja.strftime('%Y-%m-%d') }
+      if f.object.datum_rodenja != nil
+      f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker, :input_html => {:class => 'form-control', :value => f.object.datum_rodenja.to_date.strftime("%Y-%m-%d") }
+      else
+      f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker
+      end
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"
       f.input :tel, :label => "Broj telefona/mobitela", :required => true
