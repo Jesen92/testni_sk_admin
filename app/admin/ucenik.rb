@@ -131,8 +131,12 @@ show do
           column "Naziv" do |group|
            link_to group.name, [:admin, group]
          end
-        end
+
+          column "Mjesečna rata" do |group|
+            group.cijena/ucenik.br_rata
+          end
       end
+    end
 
       ucenik.ucenik_books.each do |book|
         @placeno.unshift(book.paid)

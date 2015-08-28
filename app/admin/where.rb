@@ -23,9 +23,9 @@ permit_params :name, :adress
 #   permitted
 # end
 
-menu :label => "Predavaonice", :priorty => 6
+menu :label => "Učionice", :priorty => 6
 
- index :title => 'Predavaonice' do
+ index :title => 'Učionice' do
     selectable_column
     column :id, :sortable => :id
     column :name
