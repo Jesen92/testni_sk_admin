@@ -12,24 +12,9 @@ class Event < ActiveRecord::Base
   belongs_to :skolska_god
   belongs_to :polje
 
-  validate :provjera_datuma ,on: :create
+  validate :provjera_datuma
 	validates :start,:end,:start_date, presence: true
  
- after_commit { |event|
-
-  event.title = event.group.name+"/ "+event.skolska_god.name
-
-  if event.polje != "" && event.polje != nil
-    event.title = event.title+" / "+event.polje.name
-  end
-
-  if event.dodatak != ""
-    event.title = event.title+" / "+event.dodatak
-  end
-
-  event.save
-
- }
 
   def provjera_datuma
     @dan = start_date.wday == 7 ? 0 : start_date.wday
@@ -37,6 +22,22 @@ class Event < ActiveRecord::Base
       errors.add(:days, "Dan datuma početka predavanja mora biti odabran")
     end
   end
+
+
+  after_commit{ |event|
+
+        event.title = event.group.name+"/ "+event.skolska_god.name
+
+      if event.polje != "" && event.polje != nil
+        event.title = event.title+" / "+event.polje.name
+      end
+
+      if event.dodatak != ""
+        event.title = event.title+" / "+event.dodatak
+      end
+
+      event.save
+  }
 
 
 
@@ -48,6 +49,18 @@ class Event < ActiveRecord::Base
     	@zbr = 0
 
       event.start_date = event.start_date.to_date.strftime(" %Y-%m-%d ")
+
+        event.title = event.group.name+"/ "+event.skolska_god.name
+
+          if event.polje != "" && event.polje != nil
+            event.title = event.title+" / "+event.polje.name
+          end
+
+          if event.dodatak != ""
+            event.title = event.title+" / "+event.dodatak
+          end
+
+          event.save
 
     if event.repeat?
 
@@ -83,7 +96,17 @@ class Event < ActiveRecord::Base
     while @i >= 0 && @dani_count >= 0
       s_event = SingleEvent.new
       s_event.event_id = event.id
-      s_event.title = event.title
+      s_event.title = event.group.name+"/ "+event.skolska_god.name
+
+          if event.polje != "" && event.polje != nil
+            s_event.title = s_event.title+" / "+event.polje.name
+          end
+
+          if event.dodatak != ""
+            s_event.title = s_event.title+" / "+event.dodatak
+          end
+
+
       s_event.start = event.start
       s_event.end = event.end
 
@@ -124,6 +147,103 @@ class Event < ActiveRecord::Base
 
 
       	@zbr = 0
+
+ 
+      end
+  end
+
+    }
+
+
+    after_update { |event|
+
+        SingleEvent.delete_all(event.id == "event_id")
+
+      @dani = Array.new(7)
+      @i = 0
+      @dani_count = 0
+      @br = 0
+      @zbr = 0
+
+      event.start_date = event.start_date.to_date.strftime(" %Y-%m-%d ")
+
+
+
+    if event.repeat?
+
+      @first_day = event.days.first.id
+      @d_c = @first_day 
+
+        event.days.each do |day|
+          temp = day.id-@d_c
+          if temp < 0
+            temp = (day.id+7)-@d_c
+          end
+          date = event.start_date
+          @dani[@dani_count] = date+(temp)
+          @dani_count+=1
+        end
+
+        @ost = event.br_pred % @dani_count
+
+      #if @ost != 0
+      #  @t = 0
+      #else
+      #  @t = -1
+      #end
+
+      @br = (event.br_pred/@dani_count)-1
+      @i = @br
+
+      @dani_count-=1  
+    end
+
+
+
+    while @i >= 0 && @dani_count >= 0
+      s_event = SingleEvent.new
+      s_event.event_id = event.id
+      s_event.title = event.group.name
+      s_event.start = event.start
+      s_event.end = event.end
+
+      if event.repeat?
+        s_event.date = @dani[@dani_count]+@zbr
+      else
+        s_event.date = event.start_date.to_date.strftime(" %Y-%m-%d ")
+      end
+
+      if event.profesor_id?
+        s_event.profesor_id = event.profesor_id
+      end
+
+      if event.where_id?
+        s_event.where_id = event.where_id
+      end
+
+      if event.group_id?
+        s_event.group_id = event.group_id
+      end
+
+      s_event.save
+      @zbr+=7
+      @i-=1
+
+      if @i < 0 && @dani_count > 0
+        @dani_count-=1
+
+        if @ost == 0
+          @i = @br
+        else
+          if @dani_count <= @ost-1
+            @i = @br+1
+          else
+            @i = @br
+          end
+        end
+
+
+        @zbr = 0
 
  
       end

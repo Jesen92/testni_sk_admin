@@ -74,6 +74,19 @@ index :title => 'Suradnici' do
 end
 
   show do
+    @pr_mj=0
+    @mj=0
+
+    profesor.single_events.each do |event|
+      if event.odrzano? && event.date.strftime("%m.%Y.") == Time.now.strftime("%m.%Y.")
+        @mj+=1
+      elsif event.odrzano? && event.date.strftime("%m.%Y.") == (Time.now.-1.month).strftime("%m.%Y.")
+        @pr_mj+=1
+      end
+
+
+    end
+
     attributes_table do
       row :name, :label => "Ime i prezime"
       row :OIB, :label => "OIB"
@@ -95,6 +108,11 @@ end
       row :postanski_broj
       row :IBAN
       row :bank
+
+      row ("Broj održanih predavanja prošlog mjeseca") {@pr_mj}
+      row ("Broj održanih predavanja tekućeg mjeseca") {@mj}
+
+  
 
       panel "Jezici" do
         table_for profesor.jeziks do
