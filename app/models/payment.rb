@@ -12,7 +12,7 @@ class Payment < ActiveRecord::Base
 
 		@ucenik = Ucenik.find(pay.ucenik_id)
 
-		@ucenik.fee_to_pay = @ucenik.fee_to_pay - pay.uplata
+		@ucenik.preostalo_za_platiti = @ucenik.preostalo_za_platiti - pay.uplata
 
 		@ucenik.save
 	}

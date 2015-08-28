@@ -23,10 +23,16 @@ class Ucenik < ActiveRecord::Base
 			@pay = Payment.where({ucenik_id: ucenik.id})
 
 			ucenik.groups.each do |group|
-				@fee += group.cijena
+				@fee = @fee + group.cijena
 			end
 
-			ucenik.fee = @fee
+			ucenik.cijena_prije_popusta = @fee
+
+
+			@fee = @fee - (@fee*ucenik.popust/100)
+
+
+			ucenik.cijena = @fee
 
 				@pay.each do |p|
 					if p.uplata != nil
@@ -35,7 +41,7 @@ class Ucenik < ActiveRecord::Base
 				end
 
 
-			ucenik.fee_to_pay = @fee
+			ucenik.preostalo_za_platiti= @fee
 			
 
 			if ucenik.placanje_na_rate?
@@ -58,7 +64,14 @@ class Ucenik < ActiveRecord::Base
 
 						payment.ucenik_id = ucenik.id
 						payment.group_id = group.id
-						payment.default_uplata = group.cijena/br_rata
+
+						if ucenik.popust != 0
+							payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
+						elsif
+							payment.default_uplata = group.cijena/ucenik.br_rata 
+						end
+							
+
 						payment.date = ucenik.prvi_mj_placanja + @i.month
 						payment.title = ucenik.name+" "+group.name
 

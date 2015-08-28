@@ -13,7 +13,7 @@ end
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, :grad, :postanski_broj, :fee, :fee_to_pay, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
+permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, :grad, :postanski_broj, :popust,:preostalo_za_platiti, :cijena_prije_popusta, :cijena, :br_rata, :placanje_na_rate, :prvi_mj_placanja, group_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -71,8 +71,10 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
       f.input :tel, :label => "Broj telefona/mobitela", :required => true
       f.input :groups, :label => "Grupe", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
-      f.input :fee, :label => "Ukupno za platiti"
-      f.input :fee_to_pay, :label => "Preostalo za platiti"
+      f.input :popust, :label => "Popust(%)"
+      f.input :cijena_prije_popusta, :label => "Cijena prije popusta"
+      f.input :cijena
+      f.input :preostalo_za_platiti, :label => "Preostalo za platiti"
     end
 
     f.inputs "Plaćanje na rate" do
@@ -118,8 +120,10 @@ show do
       row ("Grad") {ucenik.grad}
       row ("Ulica") {ucenik.ulica}
       row ("Poštanski broj") {ucenik.postanski_broj}
-      row ("Ukupno za platiti") {ucenik.fee}
-      row ("Preostalo za platiti") {ucenik.fee_to_pay}
+      row ("Popust(%)") {ucenik.popust}
+      row ("Cijena prije popusta") {ucenik.cijena_prije_popusta}
+      row ("Cijena") {ucenik.cijena}
+      row ("Preostalo za platiti") {ucenik.preostalo_za_platiti}
       row ("Plaćanje na rate") {ucenik.placanje_na_rate}
       row ("Broj rata") {ucenik.br_rata}
       row ("Mjesec prve rate") {ucenik.prvi_mj_placanja}
@@ -133,7 +137,15 @@ show do
          end
 
           column "Mjesečna rata" do |group|
-            group.cijena/ucenik.br_rata
+
+            if ucenik.popust != "0"
+              (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
+            elsif 
+              group.cijena/ucenik.br_rata
+            end
+              
+            
+            
           end
       end
     end
