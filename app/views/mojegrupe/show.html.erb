@@ -5,18 +5,43 @@
   <div class="panel-body">
 	<ul>
 		<li><div class="well well-sm"><%= @group.profesor.name %></div></li>
-		<li><div class="well well-sm"><%= @group.level %></div></li>
+		<li><div class="well well-sm"><%= @group.jezik.name %></div></li>
+		<li><div class="well well-sm"><%= @group.nivo.name %></div></li>
+		<li><div class="well well-sm"><%= @group.dob.name %></div></li>
+		<% if @group.dodatak != "" %>		
+			<li><div class="well well-sm"><%= @group.dodatak %></div></li>
+		<% end %>
 	</ul>
 
 	<h3>Popis Učenika</h3>
 	<% @group.uceniks.each do |ucenik| %>
 	<ul>
-		<li><div class="well well-sm"><%= link_to ucenik.name, ucenik_path(ucenik.id) %></div></li>
+		<% @indicator = 0 %>
+		<% ucenik.payments.each do |pay| %>
+		<% if pay.date+14 < Date.today && pay.uplaceno == false %>
+			<% @indicator = 2 %>
+			<% break %>
+		<% elsif pay.date < Date.today && pay.uplaceno == false %>
+			<% @indicator = 1 %>
+			<% break %>
+		<% end %>
+		<% end %>
+
+		<%= @indicator %>
+		<% if @indicator == 1 %>
+			<li><div class="well well-sm"><%= link_to ucenik.name, ucenik_path(ucenik.id), {:style =>'color: #FF9900'} %></div></li>
+		<% elsif @indicator == 2 %>
+			<li><div class="well well-sm"><%= link_to ucenik.name, ucenik_path(ucenik.id), {:style =>'color: #FF0000'} %></div></li>
+		<% else %>
+			<li><div class="well well-sm"><%= link_to ucenik.name, ucenik_path(ucenik.id) %></div></li>
+		<% end %>
 	</ul>
 	<% end %>
 
   </div>
 </div>
+
+
 
 
 

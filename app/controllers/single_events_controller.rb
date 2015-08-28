@@ -135,6 +135,7 @@ end
   def show
     @event = SingleEvent.find(params[:format])
     @page_title = @event.title
+    @indicator
   end 
 
   def update

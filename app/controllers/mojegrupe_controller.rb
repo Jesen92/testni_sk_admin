@@ -16,6 +16,7 @@ before_action :authenticate_user!
   def show
   	@group = Group.find(params[:id])
     @page_title = @group.name
+    @indicator
   end
 
 

@@ -172,7 +172,7 @@ show do
           end
 
           column "Mjesec" do |pay|
-            link_to pay.date.strftime(" %m.%Y. "), [:admin, pay]
+            link_to pay.date.strftime(" %d.%m.%Y. "), [:admin, pay]
           end
   
           column "Plaćeno" do |pay|

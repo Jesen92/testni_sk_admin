@@ -14,19 +14,37 @@ p.prikaz{
 		<% if @event.group != nil %>
 		<li><div class="well well-sm"><p class="prikaz">Grupa:</p><%= link_to @event.group.name, grupa_path(@event.group.id) %></div><p></p></li>
 		<% end %>
+		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.odrzano? ? "Održano" : "Nije održano" %></div><p></p></li>
 		<li><div class="well well-sm"><p class="prikaz">Datum:</p><%= @event.date.strftime("%d.%m.%Y.") %></div><p></p></li>
 		<li><div class="well well-sm"><p class="prikaz">Vrijeme početka:</p><%= @event.start %></div><p></p></li>
 		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.end %></div><p></p></li>
 
+
 	</ul>
 	<% if @event.group != nil %>
 	<div class="well well-lg"><h3>Popis svih učenika</h3>
+	<% @event.group.uceniks.each do |ucenik| %>
 	<ul>
-		<% @event.group.uceniks.each do |ucenik| %>
-		<li><%= link_to ucenik.name, ucenik_path(ucenik.id) %></li>
-
+				<% @indicator = 0 %>
+		<% ucenik.payments.each do |pay| %>
+		<% if pay.date.strftime("%d.%m.%Y.") < Time.now.strftime("%d.%m.%Y.") && pay.uplaceno == 0 %>
+			<% @indicator = 1 %>
+			<% break %>
+		<% elsif pay.date.strftime("%d.%m.%Y.") < (Time.now+14.days).strftime("%d.%m.%Y.") && pay.uplaceno == nil %>
+			<% @indicator = 2 %>
+			<% break %>	
 		<% end %>
-	</ul></div>
+		<% end %>
+
+		<% if @indicator == 1 %>
+			<li><%= link_to ucenik.name, ucenik_path(ucenik.id), {:style =>'color: #FF9900'} %></li>
+		<% elsif @indicator == 2 %>
+			<li><%= link_to ucenik.name, ucenik_path(ucenik.id), {:style =>'color: #FF0000'} %></li>
+		<% else %>
+			<li><%= link_to ucenik.name, ucenik_path(ucenik.id) %></li>
+		<% end %>
+	</ul>
+	<% end %></div>
 	<div class="well well-sm"><h3>Prisutni učenici</h3>
 	<ul>
 		<% @event.uceniks.each do |ucenik| %>
