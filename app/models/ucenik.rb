@@ -16,7 +16,7 @@ class Ucenik < ActiveRecord::Base
 
 	validates :name, :tel, presence: true
 
-		after_commit{ |ucenik| 
+		before_save{ |ucenik| 
 
 
 			@fee = 0
@@ -81,7 +81,7 @@ class Ucenik < ActiveRecord::Base
 				end
 			end
 
-			ucenik.save
+
 
 
 	}

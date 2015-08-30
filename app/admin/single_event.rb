@@ -6,7 +6,7 @@ ActiveAdmin.register SingleEvent do
   column ("Kraj") {|event| event.end}
   column ("Datum") {|event| event.date}
   column ("Odrzano") {|event| event.odrzano? ? "Da" : "Ne"}
-  column ("Profesor") {|event| event.pprofesor != nil ? event.profesor.name : ""}
+  column ("Profesor") {|event| event.profesor != nil ? event.profesor.name : ""}
   column ("Grupa") {|event| event.group != nil ? event.group.name : ""}
   column ("Učionica") {|event| event.where != nil ? event.where.name : ""}
 end

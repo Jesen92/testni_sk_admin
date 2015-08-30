@@ -26,8 +26,12 @@ menu :label => "Tečajevi", :priority => 3
     selectable_column
     column :id
     column :title, :sortable => :title
-    column :start, :sortable => :start_time
-    column :end, :sortable => :end_time
+    column "Početak predavanja", :sortable => :start do |t|
+      t.start.strftime("%H:%M")
+    end
+    column "Kraj predavanja", :sortable => :end do |t|
+      t.end.strftime("%H:%M")
+    end
     column :start_date
     column :where
 
@@ -66,8 +70,8 @@ show do
       row :profesor
       row :group
       row :where
-      row :start
-      row :end
+      row ("Početak predavanja") {event.start.strftime("%H:%M")}
+      row ("Kraj predavanja") {event.end.strftime("%H:%M")}
       row :start_date
       #row :recurring_rule
 
@@ -76,7 +80,7 @@ show do
       row :created_at
       row :updated_at
 
-      panel "Popis grupa" do
+      panel "Predavanja" do
         table_for event.single_events do 
 
           column "Naziv" do |e|

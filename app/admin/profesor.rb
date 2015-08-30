@@ -1,7 +1,7 @@
 ActiveAdmin.register Profesor do
 csv force_quotes: true, col_sep: ';' do
   column :id
-  column :name
+  column ("Ime i prezime") {|prof| prof.name}
   column :OIB
   column ("Radi za nas") {|prof| prof.radi_za_nas? ? "Da" : "Ne"}
   column ("Sudski tumač") {|prof| prof.sudski_tumac? ? "Da" : "Ne"}
@@ -16,7 +16,7 @@ csv force_quotes: true, col_sep: ';' do
   column :mjesto_rodenja
   column :postanski_broj
   column ("Prebivalište") {|prof| prof.grad}
-  column :ulica 
+  column :ulica
   column :IBAN
   column ("Banka") {|prof| prof.bank != nil ? prof.bank.name : "" }
 end

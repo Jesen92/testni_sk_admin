@@ -50,7 +50,7 @@ permit_params :uplaceno, :uplata
 
 	form do |f|
 		f.inputs "Details" do
-		  f.input :date, :label => "Datum"
+		  f.input :date, :label => "Datum", :as => :datepicker
 		  f.input :uplaceno, :label => "Plaćeno"
 		  f.input :uplata, :label => "Uplata(kn)"
 

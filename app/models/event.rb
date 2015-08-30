@@ -36,7 +36,7 @@ after_create { |event|
         event.title = event.title+" / "+event.dodatak
       end
 
-      @update = 1
+
 
       event.save
  

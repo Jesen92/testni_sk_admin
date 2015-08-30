@@ -4,10 +4,14 @@ class Payment < ActiveRecord::Base
 	belongs_to :ucenik
 	belongs_to :group
 
-	after_commit { |pay|
+
+
+	before_save { |pay|
 		
+	if pay.uplaceno == true
+
 		if pay.uplata == nil
-			pay.uplata == pay.default_uplata
+			pay.uplata = pay.default_uplata
 		end
 
 		@ucenik = Ucenik.find(pay.ucenik_id)
@@ -15,5 +19,7 @@ class Payment < ActiveRecord::Base
 		@ucenik.preostalo_za_platiti = @ucenik.preostalo_za_platiti - pay.uplata
 
 		@ucenik.save
+
+	end
 	}
 end
