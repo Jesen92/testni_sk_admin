@@ -1,4 +1,21 @@
 ActiveAdmin.register Ucenik do
+csv force_quotes: true, col_sep: ';' do
+  column :id
+  column ("Ime i prezime") {|ucenik| ucenik.name}
+  column :OIB
+  column :grad
+  column :ulica
+  column :postanski_broj
+  column ("Ime i prezime roditelja") {|ucenik| ucenik.parents_name}
+  column :email
+  column :tel
+  column :datum_rodenja
+  column :cijena_prije_popusta
+  column :cijena
+  column ("Popust(%)") {|ucenik| ucenik.popust}
+  column :prvi_mj_placanja
+  column ("Broj rata") {|ucenik| ucenik.br_rata}
+end
  
  controller do
   def show

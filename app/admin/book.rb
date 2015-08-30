@@ -1,4 +1,11 @@
 ActiveAdmin.register Book do
+csv force_quotes: true, col_sep: ';' do
+  column ("Naziv") {|book| book.title}
+  column :izdavac
+  column :dobavljac
+  column ("Broj komada") {|book| book.num}
+end
+
    controller do
   def show
       @ucenik = Book.includes(versions: :item).find(params[:id])
@@ -9,7 +16,7 @@ ActiveAdmin.register Book do
 end
   sidebar :verzije, :partial => "layouts/version", :only => :show
 
-permit_params :num, :title
+permit_params :num, :title, :izdavac, :dobavljac
 
 config.clear_sidebar_sections!
 # See permitted parameters documentation:
@@ -30,6 +37,8 @@ menu :label => "Udžbenici", :priority => 7
  index :title => 'Udžbenici' do
     selectable_column
     column "Naziv", :title
+    column :izdavac
+    column :dobavljac
     column "Broj komada", :num
     actions
   end
@@ -37,6 +46,8 @@ menu :label => "Udžbenici", :priority => 7
   form do |f|
     f.inputs "Details" do
       f.input :title, :label => "Naziv", :required => true
+      f.input :izdavac
+      f.input :dobavljac
       f.input :num, :label => "Broj komada"
 
 

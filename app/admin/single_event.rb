@@ -1,4 +1,15 @@
 ActiveAdmin.register SingleEvent do
+  csv force_quotes: true, col_sep: ';' do
+  column :id
+  column ("Naziv") {|event| event.title}
+  column ("Početak") {|event| event.start}
+  column ("Kraj") {|event| event.end}
+  column ("Datum") {|event| event.date}
+  column ("Odrzano") {|event| event.odrzano? ? "Da" : "Ne"}
+  column ("Profesor") {|event| event.pprofesor != nil ? event.profesor.name : ""}
+  column ("Grupa") {|event| event.group != nil ? event.group.name : ""}
+  column ("Učionica") {|event| event.where != nil ? event.where.name : ""}
+end
 
  controller do
   def show
@@ -25,6 +36,8 @@ permit_params :odrzano, :title,:start, :ucenik_events, :end, :br_pred, :ucenik_i
 # end 
 
 
+
+
 config.clear_action_items!
 
 config.per_page = 20
@@ -43,8 +56,12 @@ menu :label => "Predavanja", :priorty => 5
     column :id
     column :event
     column :title, :sortable => :title
-    column :start, :sortable => :start
-    column :end, :sortable => :end
+    column "Početak predavanja", :sortable => :start do |t|
+      t.start.strftime("%H:%M")
+    end
+    column "Kraj predavanja", :sortable => :end do |t|
+      t.end.strftime("%H:%M")
+    end
     column :date
     column :odrzano
     column :where
@@ -62,8 +79,8 @@ menu :label => "Predavanja", :priorty => 5
       row :profesor
       row :group
       row :where
-      row :start
-      row :end
+      row ("Početak predavanja") {single_event.start.strftime("%H:%M")}
+      row ("Kraj predavanja") {single_event.end.strftime("%H:%M")}
       row :odrzano
       row :date
       row :created_at

@@ -1,5 +1,25 @@
 ActiveAdmin.register Profesor do
-
+csv force_quotes: true, col_sep: ';' do
+  column :id
+  column :name
+  column :OIB
+  column ("Radi za nas") {|prof| prof.radi_za_nas? ? "Da" : "Ne"}
+  column ("Sudski tumač") {|prof| prof.sudski_tumac? ? "Da" : "Ne"}
+  column :mobitel
+  column :telefon
+  column :mail
+  column :obrazovanje
+  column :karijerska_pozicija
+  column ("Inozemno_iskustvo") {|prof| prof.inozemno_iskustvo? ? "Da" : "Ne"}
+  column :inozemno_iskustvo_comment
+  column :datum_rodenja
+  column :mjesto_rodenja
+  column :postanski_broj
+  column ("Prebivalište") {|prof| prof.grad}
+  column :ulica 
+  column :IBAN
+  column ("Banka") {|prof| prof.bank != nil ? prof.bank.name : "" }
+end
    controller do
   def show
       @ucenik = Profesor.includes(versions: :item).find(params[:id])
@@ -76,12 +96,16 @@ end
   show do
     @pr_mj=0
     @mj=0
+    @sati=0
+    @pr_sati=0
 
     profesor.single_events.each do |event|
       if event.odrzano? && event.date.strftime("%m.%Y.") == Time.now.strftime("%m.%Y.")
         @mj+=1
+        @sati+=event.end.to_time-event.start
       elsif event.odrzano? && event.date.strftime("%m.%Y.") == (Time.now.-1.month).strftime("%m.%Y.")
         @pr_mj+=1
+        @pr_sati+=event.end-event.start
       end
 
 
@@ -110,7 +134,9 @@ end
       row :bank
 
       row ("Broj održanih predavanja prošlog mjeseca") {@pr_mj}
+      row ("Održanih školskih sati prošlog mjeseca") {(@pr_sati/60)/45}
       row ("Broj održanih predavanja tekućeg mjeseca") {@mj}
+      row ("Održanih školskih sati tekućeg mjeseca")  {(@sati/60)/45}
 
   
 

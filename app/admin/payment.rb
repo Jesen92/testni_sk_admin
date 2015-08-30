@@ -1,4 +1,13 @@
 ActiveAdmin.register Payment do
+csv force_quotes: true, col_sep: ';' do
+  column :id
+  column ("Naziv") {|pay| pay.title}
+  column ("Učenik") {|pay| pay.ucenik.name}
+  column ("Grupa") {|pay| pay.group.name}
+  column ("Uplaćeno") {|pay| pay.uplaceno? ? "Da" : "Ne"}
+  column ("Datum") {|pay| pay.date}
+  column ("Rata") {|pay| pay.default_uplata}
+end
 
      controller do
   def show

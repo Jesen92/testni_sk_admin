@@ -1,4 +1,10 @@
 ActiveAdmin.register Where do
+  csv force_quotes: true, col_sep: ';' do
+    column :id
+    column :name
+    column ("Adresa") {|where| where.adress}
+  end
+
    controller do
   def show
       @ucenik = Where.includes(versions: :item).find(params[:id])

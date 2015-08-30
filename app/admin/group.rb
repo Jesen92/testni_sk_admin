@@ -1,4 +1,14 @@
 ActiveAdmin.register Group do
+csv force_quotes: true, col_sep: ';' do
+  column :id
+  column ("Naziv tečaja") {|group| group.name}
+  column ("Jezik") {|group| group.jezik != nil ? group.jezik.name : ""}
+  column ("Razina") {|group| group.nivo != nil ? group.nivo.name : ""}
+  column ("Dob") {|group| group.dob != nil ? group.dob.name : ""}
+  column :dodatak
+  column ("Profesor") {|group| group.profesor != nil ? group.profesor.name : ""}
+  column ("Cijena tečaja(kn)") {|group| group.cijena}
+end
 
    controller do
   def show

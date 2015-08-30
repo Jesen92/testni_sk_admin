@@ -1,4 +1,15 @@
 ActiveAdmin.register Event do
+csv force_quotes: true, col_sep: ';' do
+  column :id
+  column ("Naziv") {|event| event.title}
+  column ("Školska godina") {|event| event.skolska_god != nil ? event.skolska_god.name : ""}
+  column ("Polje") {|event| event.polje != nil ? event.polje.name : ""}
+  column ("Početak") {|event| event.start}
+  column ("Kraj") {|event| event.end}
+  column ("Datum početka tečaja") {|event| event.start_date.strftime("%d.%m.%Y.")} 
+  column ("Učionica") {|event| event.where != nil ? event.where.name : ""}
+  column ("Profesor") {|event| event.profesor != nil ? event.profesor.name : ""}
+end
  controller do
   def show
       @ucenik = Event.includes(versions: :item).find(params[:id])
@@ -10,16 +21,6 @@ end
   sidebar :verzije, :partial => "layouts/version", :only => :show
 
 menu :label => "Tečajevi", :priority => 3
-
-csv do
-  column :id
-  column :title
-  column :start
-  column :end
-  column :start_date
-  column :where
-  column :profesor
-end
 
  index :title => 'Tečajevi' do
     selectable_column

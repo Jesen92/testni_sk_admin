@@ -1,6 +1,17 @@
 ActiveAdmin.register NoviUcenik do
+csv force_quotes: true, col_sep: ';' do
+	column :id
+	column ("Ime i prezime") {|ucenik| ucenik.name}
+	column ("Ime i prezime roditalje") {|ucenik| ucenik.parents_name}
+	column :mjesto
+	column :jezik
+	column :vrsta_tecaja
+	column :tel
+	column :email
+	column :comment
+end
 
-menu :label => "Android prijava", :priority => 2
+menu :label => "Android prijave", :priority => 2
 
 permit_params :id, :name, :parents_name, :jezik, :vrsta_tecaja, :mjesto, :email, :tel, :comment, :created_at, :updated_at
 # See permitted parameters documentation:
@@ -16,7 +27,7 @@ permit_params :id, :name, :parents_name, :jezik, :vrsta_tecaja, :mjesto, :email,
 #   permitted
 # end
 
-index :title => 'Android prijava' do
+index :title => 'Android prijave' do
 	selectable_column
  	column :id
 	column :name
