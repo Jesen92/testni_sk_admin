@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
 
   validate :provjera_datuma
 	validates :start,:end,:start_date, presence: true
- 
+ @update=0
 
   def provjera_datuma
     @dan = start_date.wday == 7 ? 0 : start_date.wday
@@ -24,7 +24,7 @@ class Event < ActiveRecord::Base
   end
 
 
-  after_commit{ |event|
+after_create { |event|
 
         event.title = event.group.name+"/ "+event.skolska_god.name
 
@@ -36,14 +36,18 @@ class Event < ActiveRecord::Base
         event.title = event.title+" / "+event.dodatak
       end
 
+      @update = 1
+
       event.save
-  }
+ 
+}
 
 
 
     after_update { |event|
 
         SingleEvent.where({event_id: event.id}).delete_all
+
 
       @dani = Array.new(7)
       @i = 0

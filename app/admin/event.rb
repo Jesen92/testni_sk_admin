@@ -84,11 +84,11 @@ show do
           end
 
           column "Datum" do |e|
-            link_to e.date, [:admin, e]
+            link_to e.date.strftime("%d.%m.%Y."), [:admin, e]
           end
 
           column "Vrijeme predavanja" do |e|
-            e.start+" - "+e.end
+            e.start.to_s+" - "+e.end.to_s
           end
 
           column "Profesor" do |e|
