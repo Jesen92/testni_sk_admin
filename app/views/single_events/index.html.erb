@@ -25,11 +25,11 @@
 	end
 
 	g.column name: "Početak predavanja", attribute: 'start' do |t|
-		t.start
+		t.start.to_s
 	end
 
 	g.column name: "Kraj predavanja", attribute: 'end' do |t|
-		t.end
+		t.end.to_s
 	end
 
 	g.column name: "Upisano predavanje", attribute: 'odrzano'  do |t|

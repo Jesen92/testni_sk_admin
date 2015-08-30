@@ -16,8 +16,8 @@ p.prikaz{
 		<% end %>
 		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.odrzano? ? "Održano" : "Nije održano" %></div><p></p></li>
 		<li><div class="well well-sm"><p class="prikaz">Datum:</p><%= @event.date.strftime("%d.%m.%Y.") %></div><p></p></li>
-		<li><div class="well well-sm"><p class="prikaz">Vrijeme početka:</p><%= @event.start %></div><p></p></li>
-		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.end %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Vrijeme početka:</p><%= @event.start.to_s %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.end.to_s %></div><p></p></li>
 
 
 	</ul>
