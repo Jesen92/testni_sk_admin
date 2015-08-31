@@ -55,11 +55,10 @@ menu :label => "Predavanja", :priorty => 5
     selectable_column
     column :id
     column :event
-    column :title, :sortable => :title
-    column "Početak predavanja", :sortable => :start do |t|
+    column "Početak", :sortable => :start do |t|
       t.start.strftime("%H:%M")
     end
-    column "Kraj predavanja", :sortable => :end do |t|
+    column "Kraj", :sortable => :end do |t|
       t.end.strftime("%H:%M")
     end
     column :date
