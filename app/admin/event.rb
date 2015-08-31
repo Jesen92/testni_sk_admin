@@ -81,7 +81,7 @@ show do
       row :updated_at
 
       panel "Predavanja" do
-        table_for event.single_events do 
+        table_for event.single_events.sort_by {|event| event.date} do 
 
           column "Naziv" do |e|
             link_to e.title, [:admin, e]
