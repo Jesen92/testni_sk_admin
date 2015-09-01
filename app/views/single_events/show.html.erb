@@ -9,7 +9,7 @@ p.prikaz{
     <h3 class="panel-title"><h2><%=  @event.title %></h2></h3>
   </div>
   <div class="panel-body">
-  	<p><div class="well well-sm"><h3><%= link_to "Izmjeni", edit_event_path(@event.id) %></h3></div></p>
+  	
 	<ul>
 		<% if @event.group != nil %>
 		<li><div class="well well-sm"><p class="prikaz">Grupa:</p><%= link_to @event.group.name, grupa_path(@event.group.id) %></div><p></p></li>
@@ -52,6 +52,7 @@ p.prikaz{
 		<% end %>	
 	</ul></div>
 	<% end %>
+	<p><div class="well well-sm"><h3><%= link_to "Izmijeni", edit_event_path(@event.id) %></h3></div></p>
   </div>
 </div>
 
