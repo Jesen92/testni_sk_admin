@@ -27,12 +27,12 @@ p.prikaz{
 	<ul>
 				<% @indicator = 0 %>
 		<% ucenik.payments.each do |pay| %>
-		<% if pay.date.strftime("%d.%m.%Y.") < Time.now.strftime("%d.%m.%Y.") && pay.uplaceno == 0 %>
+		<% if pay.date+14 < Date.today && pay.uplaceno == false %>
+			<% @indicator = 2 %>
+			<% break %>
+		<% elsif pay.date < Date.today && pay.uplaceno == false %>
 			<% @indicator = 1 %>
 			<% break %>
-		<% elsif pay.date.strftime("%d.%m.%Y.") < (Time.now+14.days).strftime("%d.%m.%Y.") && pay.uplaceno == nil %>
-			<% @indicator = 2 %>
-			<% break %>	
 		<% end %>
 		<% end %>
 
