@@ -14,8 +14,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'mysql2'
-gem 'activeadmin', github: 'activeadmin'
+gem 'mysql2', '~> 0.3.18'
+gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'active_admin_editor'
 
 
@@ -38,9 +38,6 @@ group :development do
 end
 
 gem "binding_of_caller"
-
-
-gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

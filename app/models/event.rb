@@ -17,15 +17,18 @@ class Event < ActiveRecord::Base
  @update=0
 
   def provjera_datuma
+  if repeat?
     @dan = start_date.wday == 7 ? 0 : start_date.wday
     if @dan != days.first.id
       errors.add(:days, "Dan datuma početka predavanja mora biti odabran")
     end
   end
+  end
 
 
 after_create { |event|
 
+    if event.repeat?
         event.title = event.group.name+"/ "+event.skolska_god.name
 
       if event.polje != "" && event.polje != nil
@@ -35,7 +38,7 @@ after_create { |event|
       if event.dodatak != ""
         event.title = event.title+" / "+event.dodatak
       end
-
+    end
 
 
       event.save
@@ -93,7 +96,11 @@ after_create { |event|
     while @i >= 0 && @dani_count >= 0
       s_event = SingleEvent.new
       s_event.event_id = event.id
+    if event.title != nil
+      s_event.title = event.title
+    elsif 
       s_event.title = event.group.name
+    end
       s_event.start = event.start
       s_event.end = event.end
 
