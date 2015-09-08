@@ -132,11 +132,11 @@ show do
 
   form do |f|
     f.inputs "Details" do
-      f.input :profesor, :label => "Profesor"
       f.input :group, :label => "Grupa"
       f.input :skolska_god, :label => "Školska godina"
-      f.input :polje
+      f.input :polje, :label => "Red grupe"
       f.input :dodatak
+      f.input :profesor, :label => "Predavač"
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
       f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, :required => true
       f.input :where, :label => "Mjesto predavanja",  :as => :select

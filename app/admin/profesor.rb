@@ -55,9 +55,9 @@ permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime"
       f.input :OIB, :label => "OIB"
-      f.input :grad
       f.input :ulica
       f.input :postanski_broj
+      f.input :grad
   	  f.input :jeziks, :label => "Jezici" , :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
   	  f.input :radi_za_nas
