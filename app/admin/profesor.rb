@@ -70,8 +70,12 @@ permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_
   	  f.input :karijerska_pozicija
   	  f.input :inozemno_iskustvo
       f.input :inozemno_iskustvo_comment
-  	  f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker,:input_html => {:class => 'form-control', :value => f.object.datum_rodenja.strftime('%Y-%m-%d') }
-  	  f.input :mjesto_rodenja
+        if f.object.datum_rodenja?
+  	  f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker,:input_html => {:class => 'form-control', :value => f.object.datum_rodenja.strftime('%Y-%m-%d') }  	     
+        else
+            f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker,:input_html => {:class => 'form-control' } 
+        end 
+      f.input :mjesto_rodenja
 
   	  f.input :IBAN
       f.input :bank
