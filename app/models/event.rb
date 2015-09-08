@@ -5,12 +5,18 @@ class Event < ActiveRecord::Base
 
 	belongs_to :profesor
 	belongs_to :group
+
 	has_many :days, through: :picked_days
 	has_many :picked_days
+
 	has_many :single_events
+
 	belongs_to :where
   belongs_to :skolska_god
   belongs_to :polje
+
+  has_many :uceniks, through: :group_uceniks
+  has_many :group_uceniks
 
   validate :provjera_datuma
 	validates :start,:end,:start_date, presence: true
@@ -27,6 +33,11 @@ class Event < ActiveRecord::Base
 
 
 after_create { |event|
+
+      event.uceniks.each do |ucenik|
+        @ucenik = Ucenik.find(ucenik.id)
+        @ucenik.save
+      end
 
     if event.repeat?
         event.title = event.group.name+"/ "+event.skolska_god.name
@@ -48,6 +59,11 @@ after_create { |event|
 
 
     after_update { |event|
+
+      event.uceniks.each do |ucenik|
+        @ucenik = Ucenik.find(ucenik.id)
+        @ucenik.save
+      end
 
         SingleEvent.where({event_id: event.id}).delete_all
 

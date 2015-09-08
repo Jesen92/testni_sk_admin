@@ -22,7 +22,7 @@ end
 
 menu :label => "Grupe", :priority => 4
 
-permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:cijena, ucenik_ids: []
+permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:cijena
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -59,9 +59,7 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
       f.input :nivo
       f.input :dob
       f.input :dodatak 
-      f.input :profesor, :label => "Profesor"
       f.input :cijena
-      f.input :uceniks, :label => "Učenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.actions
     end
   end
@@ -78,14 +76,6 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
       row :created_at
       row :updated_at
       row :cijena
-
-      panel "Popis učenika" do
-        table_for group.uceniks do 
-          column :name do |ucenik|
-           link_to ucenik.name, [:admin, ucenik]
-         end
-        end
-      end
     end
   end
 

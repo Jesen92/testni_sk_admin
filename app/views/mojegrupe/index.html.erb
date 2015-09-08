@@ -9,7 +9,7 @@
 <% else %>
 	<% @groups.each do |group| %>
 		<ul>
-			<li><div class="well well-sm"><td><%= link_to group.name, grupa_path(group.id) %></td></li>
+			<li><div class="well well-sm"><td><%= link_to group.title, grupa_path(group.id) %></td></li>
 		</ul>
 	<% end %>
 <% end %>

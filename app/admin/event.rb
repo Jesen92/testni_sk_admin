@@ -45,7 +45,7 @@ menu :label => "Tečajevi", :priority => 3
 
 
 
-permit_params :title,:start, :end, :br_pred, :dodatak,:skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: []
+permit_params :title,:start, :end, :br_pred, :dodatak,:skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: [], ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -79,6 +79,14 @@ show do
 
       row :created_at
       row :updated_at
+
+      panel "Popis učenika" do
+        table_for event.uceniks do 
+          column :name do |ucenik|
+           link_to ucenik.name, [:admin, ucenik]
+         end
+        end
+      end
 
       panel "Predavanja" do
         table_for event.single_events.sort_by {|event| event.date} do 
@@ -132,7 +140,7 @@ show do
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
       f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, :required => true
       f.input :where, :label => "Mjesto predavanja",  :as => :select
-
+      f.input :uceniks, :label => "Učenici", :input_html => {:class => "chosen" ,:multiple => true}
 
       f.input :start_date, :label => "Datum početka:", :as => :datepicker, :required => true
 

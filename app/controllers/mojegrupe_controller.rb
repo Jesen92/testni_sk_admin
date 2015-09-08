@@ -4,9 +4,9 @@ before_action :authenticate_user!
 
   def index
     if current_user
-     @page_title = "Grupe"
+     @page_title = "Tečajevi"
      @profesor = current_user.profesor
-   	 @groups = @profesor.groups
+   	 @groups = @profesor.events
      @user = current_user
    else
      redirect_to new_user_session_path, notice: 'You are not logged in.'
@@ -14,8 +14,8 @@ before_action :authenticate_user!
   end
 
   def show
-  	@group = Group.find(params[:id])
-    @page_title = @group.name
+  	@group = Event.find(params[:id])
+    @page_title = @group.title
     @indicator
   end
 

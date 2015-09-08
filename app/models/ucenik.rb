@@ -1,7 +1,7 @@
 class Ucenik < ActiveRecord::Base
 	has_paper_trail :ignore => [:updated_at]
 
-	has_many :groups, through: :group_uceniks
+	has_many :events, through: :group_uceniks
 	has_many :group_uceniks
 
 	has_many :ucenik_events
@@ -22,8 +22,8 @@ class Ucenik < ActiveRecord::Base
 			@fee = 0
 			@pay = Payment.where({ucenik_id: ucenik.id})
 
-			ucenik.groups.each do |group|
-				@fee = @fee + group.cijena
+			ucenik.events.each do |event|
+				@fee = @fee + event.group.cijena
 			end
 
 			ucenik.cijena_prije_popusta = @fee
