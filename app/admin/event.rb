@@ -45,7 +45,7 @@ menu :label => "Tečajevi", :priority => 3
 
 
 
-permit_params :title,:start, :end, :br_pred, :dodatak,:skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: [], ucenik_ids: []
+permit_params :title,:start, :end, :br_sk_sati, :br_pred, :dodatak, :br_uku_sati, :skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: [], ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -103,12 +103,17 @@ show do
             e.start.to_s+" - "+e.end.to_s
           end
 
+
           column "Profesor" do |e|
+            if e.profesor != nil
             link_to e.profesor.name, [:admin, e.profesor]
+            end
           end
 
           column "Predavaonica" do |e|
+            if e.where != nil
             link_to e.where.name, [:admin, e.where]
+            end
           end
 
         end
@@ -138,14 +143,15 @@ show do
       f.input :dodatak
       f.input :profesor, :label => "Predavač"
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
-      f.input :end, :label => "Vrijeme završetka:", :as => :time_picker, :required => true
+      f.input :br_sk_sati, :label => "Broj školskih sati"
       f.input :where, :label => "Mjesto predavanja",  :as => :select
       f.input :uceniks, :label => "Učenici", :input_html => {:class => "chosen" ,:multiple => true}
 
       f.input :start_date, :label => "Datum početka:", :as => :datepicker, :required => true
 
-      f.input :repeat,:label => "Tjedno Ponavljanje:" 
-      f.input :br_pred, :label => "Broj predavanja"
+      f.input :repeat, :label => "Tjedno Ponavljanje:"
+      f.input :br_uku_sati, :label => "Ukupan broj školskih sati"
+      #f.input :br_pred, :label => "Broj predavanja"
       f.input :days, :label => "Dani ponavljanja:", :as => :check_boxes
 
       end

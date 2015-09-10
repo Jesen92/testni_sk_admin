@@ -19,7 +19,7 @@ class Event < ActiveRecord::Base
   has_many :group_uceniks
 
   validate :provjera_datuma
-	validates :start,:end,:start_date, presence: true
+	validates :start, :start_date, presence: true
  @update=0
 
   def provjera_datuma
@@ -58,7 +58,7 @@ after_create { |event|
 
 
 
-    after_update { |event|
+    before_update { |event|
 
       event.uceniks.each do |ucenik|
         @ucenik = Ucenik.find(ucenik.id)
@@ -76,11 +76,29 @@ after_create { |event|
 
       event.start_date = event.start_date.to_date.strftime(" %Y-%m-%d ")
 
-
+      event.end = event.start + (45*event.br_sk_sati).minutes
 
     if event.repeat?
+############################################################ računanje broja predavanja i završetka zadnjeg predavaja
+      @br_pred = br_uku_sati / br_sk_sati 
 
-      @first_day = event.days.first.id
+      @mno = event.br_uku_sati - (@br_pred.to_i * event.br_sk_sati)
+
+      if @mno != 0
+        @br_pred_t = (@br_pred.to_i)+1
+
+        @end_zadnjeg_predavanja = event.start + (45 * @mno).minutes
+      else
+        @end_zadnjeg_predavanja = event.end
+        @br_pred_t = @br_pred
+      end
+
+      event.br_pred = @br_pred_t
+###########################################################
+
+      
+########################################################### izrada pojedinačnog predavanja
+      @first_day = event.days.first.id 
       @d_c = @first_day 
 
         event.days.each do |day|
@@ -117,8 +135,15 @@ after_create { |event|
     elsif 
       s_event.title = event.group.name
     end
+
+
       s_event.start = event.start
+
+    if @dani_count == 1 && @i == 0
+      s_event.end = @end_zadnjeg_predavanja
+    else
       s_event.end = event.end
+    end
 
       if event.repeat?
         s_event.date = @dani[@dani_count]+@zbr
@@ -158,7 +183,7 @@ after_create { |event|
 
         @zbr = 0
 
- 
+        
       end
   end
 

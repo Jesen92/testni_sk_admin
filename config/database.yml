@@ -6,9 +6,9 @@
 #
 default: &default
   adapter: mysql2
-  #database: skola_development
-  #username: jesen
-  #password: VYFjqwF92
+  database: skola_development
+  username: jesen
+  password: VYFjqwF92
 
   host: sql2.freemysqlhosting.net
   database: sql286804

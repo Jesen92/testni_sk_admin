@@ -35,7 +35,7 @@ menu :label => "Suradnici", :priority => 2
 
 
 
-permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_nas, :bank_id, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :IBAN, jezik_ids: [], book_ids: []
+permit_params :name, :OIB, :ulica, :zemlja, :inozemno_iskustvo_comment, :group, :radi_za_nas, :bank_id, :komentar,:sudski_tumac,:mobitel,:telefon,:mail,:obrazovanje,:karijerska_pozicija,:inozemno_iskustvo,:datum_rodenja,:mjesto_rodenja,:postanski_broj ,:grad, :IBAN, jezik_ids: [], book_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -55,6 +55,9 @@ permit_params :name, :OIB, :ulica, :inozemno_iskustvo_comment, :group, :radi_za_
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime"
       f.input :OIB, :label => "OIB"
+
+      f.input :zemlja, :input_html => {:value => f.object.zemlja? ? f.object.zemlja : "Hrvatska"}
+
       f.input :ulica
       f.input :postanski_broj
       f.input :grad
@@ -118,9 +121,10 @@ end
     attributes_table do
       row :name, :label => "Ime i prezime"
       row :OIB, :label => "OIB"
-      row :grad
+      row :zemlja
       row :ulica
       row :postanski_broj
+      row :grad
       row :radi_za_nas
       row :komentar
       row :sudski_tumac

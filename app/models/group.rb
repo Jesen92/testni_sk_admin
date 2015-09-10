@@ -13,7 +13,7 @@ class Group < ActiveRecord::Base
 
 	after_commit { |group|
 
-
+		
 		group.name = group.jezik.name+"/"+group.nivo.name+"/"+group.dob.name
 
 		if group.dodatak != ""
