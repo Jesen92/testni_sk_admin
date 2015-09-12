@@ -12,7 +12,7 @@ p.prikaz{
   	
 	<ul>
 		<% if @event.group != nil %>
-		<li><div class="well well-sm"><p class="prikaz">Grupa:</p><%= link_to @event.group.name, grupa_path(@event.group.id) %></div><p></p></li>
+		<li><div class="well well-sm"><p class="prikaz">Grupa:</p><%= link_to @event.title, grupa_path(@event.event.id) %></div><p></p></li>
 		<% end %>
 		<li><div class="well well-sm"><p class="prikaz">Vrijeme završetka</p><%= @event.odrzano? ? "Održano" : "Nije održano" %></div><p></p></li>
 		<li><div class="well well-sm"><p class="prikaz">Datum:</p><%= @event.date.strftime("%d.%m.%Y.") %></div><p></p></li>
@@ -21,11 +21,12 @@ p.prikaz{
 
 
 	</ul>
-	<% if @event.group != nil %>
+
 	<div class="well well-lg"><h3>Popis svih učenika</h3>
-	<% @event.group.uceniks.each do |ucenik| %>
+	<% @event.event.uceniks.each do |ucenik| %>
 	<ul>
 				<% @indicator = 0 %>
+		<% if ucenik.payments != nil %>
 		<% ucenik.payments.each do |pay| %>
 		<% if pay.date+14 < Date.today && pay.uplaceno == false %>
 			<% @indicator = 2 %>
@@ -33,6 +34,7 @@ p.prikaz{
 		<% elsif pay.date < Date.today && pay.uplaceno == false %>
 			<% @indicator = 1 %>
 			<% break %>
+		<% end %>
 		<% end %>
 		<% end %>
 
@@ -45,14 +47,14 @@ p.prikaz{
 		<% end %>
 	</ul>
 	<% end %></div>
-	<div class="well well-sm"><h3>Prisutni učenici</h3>
+	<div class="well well-lg"><h3>Prisutni učenici</h3>
 	<ul>
 		<% @event.uceniks.each do |ucenik| %>
 		<li><%= ucenik.name %></li>
 		<% end %>	
 	</ul></div>
-	<% end %>
-	<p><div class="well well-sm"><h3><%= link_to "Izmijeni", edit_event_path(@event.id) %></h3></div></p>
+
+	<p><div class="well well-sm" style="font-size: 20px;"><%= link_to "Izmijeni", edit_event_path(@event.id) %></div></p>
   </div>
 </div>
 
