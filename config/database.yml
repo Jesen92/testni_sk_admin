@@ -24,7 +24,7 @@ default: &default
   host: sql2.freemysqlhosting.net
   database: sql292287
   username: sql292287
-  password: IH1!dY1%
+  password: lH1!dY1%
   port: 3306
 
   pool: 5
