@@ -6,21 +6,26 @@
 #
 default: &default
   adapter: mysql2
+  encoding: utf8
+
+  ###lokalna baza
   #database: skola_development
   #username: jesen
   #password: VYFjqwF92
 
-  host: sql2.freemysqlhosting.net
-  database: sql286804
-  username: sql286804
-  password: aD8%eP8*
-  port: 3306
-
-  #host: localhost
-  #database: pavunaeu_skola
-  #username: pavunaeu_admin
-  #password: Grp84lAEVH?d
+  ###probna baza
+  #host: sql2.freemysqlhosting.net
+  #database: sql286804
+  #username: sql286804
+  #password: aD8%eP8*
   #port: 3306
+
+  ###production baza
+  host: sql2.freemysqlhosting.net
+  database: sql292287
+  username: sql292287
+  password: IH1!dY1%
+  port: 3306
 
   pool: 5
   timeout: 5000
