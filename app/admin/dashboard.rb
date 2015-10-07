@@ -29,10 +29,10 @@ columns do
             column("Vrijeme") { |v| v.created_at.to_s :long }
 
             column"Korisnik" do |v|
-                if User.find(v.whodunnit) != nil
+                if User.where(id: v.whodunnit).nil?
                     link_to User.find(v.whodunnit).email, [:admin, User.find(v.whodunnit)] 
                 else
-                    deleted user
+                    "deleted user"
                 end
             end
           end
