@@ -4,7 +4,7 @@ class Group < ActiveRecord::Base
 
 	
 	has_many :events
-	has_many :payments
+
 
 	belongs_to :profesor
 	belongs_to :dob

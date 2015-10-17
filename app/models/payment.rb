@@ -2,7 +2,7 @@ class Payment < ActiveRecord::Base
 	has_paper_trail :ignore => [:updated_at]
 	
 	belongs_to :ucenik
-	belongs_to :group
+	belongs_to :event
 
 
 

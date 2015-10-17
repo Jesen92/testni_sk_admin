@@ -109,7 +109,7 @@ menu :label => "Predavanja", :priorty => 5
       f.input :odrzano, :label => "Odrzano"
 
       panel "Prisutnost učenika" do
-      	f.input :uceniks,:label => "", :as => :check_boxes , :collection => Ucenik.includes(:groups).where(:groups => {:id => single_event.group_id})
+      	f.input :uceniks,:label => "", :as => :check_boxes , :collection => Ucenik.includes(:events).where(:events => {:id => single_event.event_id})
 
   	  end
       end

@@ -14,7 +14,7 @@ class Ucenik < ActiveRecord::Base
 	
 	accepts_nested_attributes_for :ucenik_books
 
-	validates :name, :tel, presence: true
+	validates :name, presence: true
 
 		before_save{ |ucenik| 
 
@@ -45,7 +45,7 @@ class Ucenik < ActiveRecord::Base
 			
 
 			if ucenik.placanje_na_rate?
-				ucenik.groups.each do |group|
+				ucenik.events.each do |group|
 					@i = 0
 					@indicator = 0
 
@@ -68,12 +68,12 @@ class Ucenik < ActiveRecord::Base
 						if ucenik.popust != 0
 							payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
 						elsif
-							payment.default_uplata = group.cijena/ucenik.br_rata 
+							payment.default_uplata = group.group.cijena/ucenik.br_rata
 						end
 							
 
 						payment.date = ucenik.prvi_mj_placanja + @i.month
-						payment.title = ucenik.name+" "+group.name
+						payment.title = ucenik.name+" "+group.title
 
 						payment.save
 						@i+=1

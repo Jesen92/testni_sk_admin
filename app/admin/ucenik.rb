@@ -75,9 +75,9 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
     f.inputs "Details" do
       f.input :name, :label => "Ime i prezime", :required => true
       f.input :OIB, :label => "OIB"
-      f.input :grad
       f.input :ulica
       f.input :postanski_broj
+      f.input :grad
 
       if f.object.datum_rodenja != nil
       f.input :datum_rodenja, start_year: 1920, end_year: Time.now.year, :as => :date_picker, :input_html => {:class => 'form-control', :value => f.object.datum_rodenja.to_date.strftime("%Y-%m-%d") }
@@ -87,7 +87,7 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
 
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"
-      f.input :tel, :label => "Broj telefona/mobitela", :required => true
+      f.input :tel, :label => "Broj telefona/mobitela"
       f.input :events, :label => "Tečajevi", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :popust, :label => "Popust(%)"
@@ -187,8 +187,8 @@ show do
 
       panel "Uplate" do
         table_for ucenik.payments.order('date ASC') do
-          column "Grupa" do |pay|
-            pay.group.name
+          column "Tečaj" do |pay|
+            pay.event.title
           end
 
           column "Mjesec" do |pay|

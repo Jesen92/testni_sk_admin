@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
 
 	has_many :days, through: :picked_days
 	has_many :picked_days
+  has_many :payments
 
 	has_many :single_events
 
