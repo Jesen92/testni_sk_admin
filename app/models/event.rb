@@ -25,7 +25,23 @@ class Event < ActiveRecord::Base
 
   def provjera_datuma
   if repeat?
+    @ind = 0
+
     @dan = start_date.wday == 7 ? 0 : start_date.wday
+
+=begin
+    days.each do |day|
+      if day.id == @dan
+        @ind = 1
+      end
+    end
+
+
+    if @ind == 0
+      errors.add(:days, "Dan datuma početka predavanja mora biti odabran")
+    end
+=end
+
     if @dan != days.first.id
       errors.add(:days, "Dan datuma početka predavanja mora biti odabran")
     end

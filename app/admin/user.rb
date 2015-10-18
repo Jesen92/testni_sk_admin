@@ -35,7 +35,7 @@ end
     index :title => "Korisnici" do 
         selectable_column
         column :profesor, :sortable => :profesor
-        column :email
+        column ("Username") {|user| user.email}
         column :current_sign_in_at
         column :last_sign_in_at
         column :sign_in_count
@@ -48,7 +48,7 @@ end
     form do |f|
         f.inputs "User Details" do
             f.input :profesor, :label => "Ime i prezime"
-            f.input :email
+            f.input :email, :label => "Username"
             f.input :password
             f.input :password_confirmation
             f.input :role, as: :radio, collection: {None: "none", Administrator: "admin"}
@@ -61,7 +61,7 @@ end
     attributes_table do
       row :id
       row :profesor
-      row :email
+      row ("Username") {|user| user.email}
       row :current_sign_in_at
       row :last_sign_in_at
       row :created_at

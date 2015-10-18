@@ -29,7 +29,7 @@ class Ucenik < ActiveRecord::Base
 			ucenik.cijena_prije_popusta = @fee
 
 
-			@fee = @fee - (@fee*ucenik.popust/100)
+			@fee = @fee - (@fee*(ucenik.popust ? ucenik.popust : 0)/100)
 
 
 			ucenik.cijena = @fee
@@ -52,7 +52,7 @@ class Ucenik < ActiveRecord::Base
 					payments = Payment.all
 
 					payments.each do |pay| #provjera da li uplate vec postoje u bazi
-						if pay.ucenik_id == ucenik.id && pay.group_id == group.id
+						if pay.ucenik_id == ucenik.id && pay.event_id == group.id
 							@indicator = 1
 							break
 						end 
@@ -63,7 +63,7 @@ class Ucenik < ActiveRecord::Base
 						payment = Payment.new
 
 						payment.ucenik_id = ucenik.id
-						payment.group_id = group.id
+						payment.event_id = group.id
 
 						if ucenik.popust != 0
 							payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
@@ -73,6 +73,8 @@ class Ucenik < ActiveRecord::Base
 							
 
 						payment.date = ucenik.prvi_mj_placanja + @i.month
+						payment.default_date = ucenik.prvi_mj_placanja + @i.month
+						payment.ime_ucenika = ucenik.name
 						payment.title = ucenik.name+" "+group.title
 
 						payment.save

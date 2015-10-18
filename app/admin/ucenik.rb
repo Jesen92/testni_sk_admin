@@ -191,7 +191,7 @@ show do
             pay.event.title
           end
 
-          column "Mjesec" do |pay|
+          column "Datum" do |pay|
             link_to pay.date.strftime(" %d.%m.%Y. "), [:admin, pay]
           end
   
