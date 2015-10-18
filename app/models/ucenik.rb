@@ -16,7 +16,7 @@ class Ucenik < ActiveRecord::Base
 
 	validates :name, presence: true
 
-		before_save{ |ucenik| 
+		after_save{ |ucenik|
 
 
 			@fee = 0

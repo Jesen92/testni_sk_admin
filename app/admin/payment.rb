@@ -44,6 +44,7 @@ permit_params :uplaceno, :uplata, :date
     column :ucenik
     column :group, :sortable => :level
     column :uplaceno
+    column :default_uplata
     column :uplata
     column :created_at, :sortable => :created_at
 
