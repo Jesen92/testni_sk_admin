@@ -19,12 +19,8 @@ class Payment < ActiveRecord::Base
 	}
 
 	after_save { |pay|
-		if pay.uplata != nil
+	if pay.uplata != nil
 		@ucenik = Ucenik.find(pay.ucenik_id)
-
-
-		@ucenik.preostalo_za_platiti = @ucenik.preostalo_za_platiti - pay.uplata
-
 
 		@ucenik.save
 	end
