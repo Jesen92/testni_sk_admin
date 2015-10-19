@@ -36,7 +36,7 @@ end
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :datum_rodenja, :comment, :email, :tel, :naziv_poduzeca, :oib_poduzeca, :grad_poduzeca, :postanski_br_poduzeca, :ulica_poduzeca, :parents_name, :ulica, :grad, :postanski_broj, :popust,:preostalo_za_platiti, :cijena_prije_popusta, :cijena, :br_rata, :placanje_na_rate, :prvi_mj_placanja, event_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
+permit_params :name, :OIB, :datum_rodenja, :comment, :popust_kn, :email, :tel, :naziv_poduzeca, :oib_poduzeca, :grad_poduzeca, :postanski_br_poduzeca, :ulica_poduzeca, :parents_name, :ulica, :grad, :postanski_broj, :popust,:preostalo_za_platiti, :cijena_prije_popusta, :cijena, :br_rata, :placanje_na_rate, :prvi_mj_placanja, event_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -105,6 +105,7 @@ permit_params :name, :OIB, :datum_rodenja, :comment, :email, :tel, :naziv_poduze
       f.input :events, :label => "Tečajevi", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :popust, :label => "Popust(%)"
+      f.input :popust_kn, :label => "Popust(Kn)"
       f.input :cijena_prije_popusta, :label => "Cijena prije popusta"
       f.input :cijena
       f.input :preostalo_za_platiti, :label => "Preostalo za platiti"
@@ -159,6 +160,7 @@ show do
       row :ulica_poduzeca
       row :postanski_br_poduzeca
       row ("Popust(%)") {ucenik.popust}
+      row ("Popust(Kn)") {number_to_currency(ucenik.popust_kn, :unit => 'Kn', :format => "%n %u")}
       row ("Cijena prije popusta") {|pay| number_to_currency(pay.cijena_prije_popusta, :unit => 'Kn', :format => "%n %u")}
       row ("Cijena") {|pay| number_to_currency(pay.cijena, :unit => 'Kn', :format => "%n %u")}
       row ("Preostalo za platiti") {|pay| number_to_currency(pay.preostalo_za_platiti, :unit => 'Kn', :format => "%n %u")}

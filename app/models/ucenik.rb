@@ -28,8 +28,9 @@ class Ucenik < ActiveRecord::Base
 
 			ucenik.cijena_prije_popusta = @fee
 
-
 			@fee = @fee - (@fee*(ucenik.popust ? ucenik.popust : 0)/100)
+
+			@fee = @fee - (ucenik.popust_kn ? ucenik.popust_kn : 0)
 
 
 			ucenik.cijena = @fee
