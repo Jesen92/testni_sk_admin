@@ -6,7 +6,7 @@ csv force_quotes: true, col_sep: ';' do
   column ("Razina") {|group| group.nivo != nil ? group.nivo.name : ""}
   column ("Dob") {|group| group.dob != nil ? group.dob.name : ""}
   column :dodatak
-  column ("Profesor") {|group| group.profesor != nil ? group.profesor.name : ""}
+  column :location
   column ("Cijena tečaja(kn)") {|group| group.cijena}
 end
 
@@ -22,7 +22,7 @@ end
 
 menu :label => "Grupe", :priority => 4
 
-permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:cijena
+permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:cijena, :location_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -43,11 +43,12 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
     selectable_column
     column :id 
     column :name, :sortable => :name
-    column :profesor, :sortable => :profesor
     column :jezik, :sortable => :jezik
     column :nivo, :sortable => :nivo
     column :dob, :sortable => :dob
+    column ("Cijena") {|group| number_to_currency(group.cijena, :unit => 'Kn', :format => "%n %u")}
     column :dodatak
+    column :location
     column :created_at, :sortable => :created_at
     actions
   end
@@ -56,9 +57,10 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
     f.inputs "Details" do
       
       f.input :jezik
-      f.input :nivo
       f.input :dob
-      f.input :dodatak 
+      f.input :nivo
+      f.input :dodatak
+      f.input :location
       f.input :cijena
       f.actions
     end
@@ -68,14 +70,14 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
     attributes_table do
       row :id
       row :name
-      row :profesor
       row :jezik
       row :nivo
       row :dob
       row :dodatak
+      row :location
       row :created_at
       row :updated_at
-      row :cijena
+      row ("Cijena") {|group| number_to_currency(group.cijena, :unit => 'Kn', :format => "%n %u")}
     end
   end
 

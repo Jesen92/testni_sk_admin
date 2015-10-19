@@ -10,11 +10,17 @@ csv force_quotes: true, col_sep: ';' do
   column :email
   column :tel
   column :datum_rodenja
+  column :naziv_poduzeca
+  column :oib_poduzeca
+  column :grad_poduzeca
+  column :postanski_br_poduzeca
+  column :ulica_poduzeca
   column :cijena_prije_popusta
   column :cijena
   column ("Popust(%)") {|ucenik| ucenik.popust}
   column :prvi_mj_placanja
   column ("Broj rata") {|ucenik| ucenik.br_rata}
+  column :comment
 end
  
  controller do
@@ -30,7 +36,7 @@ end
 
  menu :label => "Učenici", :priority => 10
 
-permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, :grad, :postanski_broj, :popust,:preostalo_za_platiti, :cijena_prije_popusta, :cijena, :br_rata, :placanje_na_rate, :prvi_mj_placanja, event_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
+permit_params :name, :OIB, :datum_rodenja, :comment, :email, :tel, :naziv_poduzeca, :oib_poduzeca, :grad_poduzeca, :postanski_br_poduzeca, :ulica_poduzeca, :parents_name, :ulica, :grad, :postanski_broj, :popust,:preostalo_za_platiti, :cijena_prije_popusta, :cijena, :br_rata, :placanje_na_rate, :prvi_mj_placanja, event_ids: [], book_ids: [], ucenik_books_attributes: [:id, :paid, :book_id, :ucenik_id]
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -56,6 +62,7 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
     selectable_column
     column :id 
     column :name, :sortable => :name
+    column :naziv_poduzeca
 #    column :groups, :sortable => :groups do |group|
 #      table_for group.groups.order('name ASC') do
 #        column do |group|
@@ -88,6 +95,13 @@ permit_params :name, :OIB, :datum_rodenja, :email, :tel, :parents_name, :ulica, 
       f.input :parents_name, :label => "Ime roditelja"
       f.input :email, :label => "e-mail"
       f.input :tel, :label => "Broj telefona/mobitela"
+      f.input :naziv_poduzeca
+      f.input :oib_poduzeca
+      f.input :grad_poduzeca
+      f.input :ulica_poduzeca
+      f.input :postanski_br_poduzeca
+      f.input :comment
+
       f.input :events, :label => "Tečajevi", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :books, :label => "Udžbenici", :input_html => {:class => "chosen" ,:multiple => true}
       f.input :popust, :label => "Popust(%)"
@@ -139,15 +153,21 @@ show do
       row ("Grad") {ucenik.grad}
       row ("Ulica") {ucenik.ulica}
       row ("Poštanski broj") {ucenik.postanski_broj}
+      row :naziv_poduzeca
+      row :oib_poduzeca
+      row :grad_poduzeca
+      row :ulica_poduzeca
+      row :postanski_br_poduzeca
       row ("Popust(%)") {ucenik.popust}
-      row ("Cijena prije popusta") {ucenik.cijena_prije_popusta}
-      row ("Cijena") {ucenik.cijena}
-      row ("Preostalo za platiti") {ucenik.preostalo_za_platiti}
+      row ("Cijena prije popusta") {|pay| number_to_currency(pay.cijena_prije_popusta, :unit => 'Kn', :format => "%n %u")}
+      row ("Cijena") {|pay| number_to_currency(pay.cijena, :unit => 'Kn', :format => "%n %u")}
+      row ("Preostalo za platiti") {|pay| number_to_currency(pay.preostalo_za_platiti, :unit => 'Kn', :format => "%n %u")}
       row ("Plaćanje na rate") {ucenik.placanje_na_rate}
       row ("Broj rata") {ucenik.br_rata}
       row ("Mjesec prve rate") {ucenik.prvi_mj_placanja}
       row ("Kreiran") {ucenik.created_at}
       row ("Izmijenjen") {ucenik.updated_at}
+      row :comment
 
       panel "Popis tečajeva" do
         table_for ucenik.events do 
@@ -159,9 +179,10 @@ show do
           column "Mjesečna rata" do |event|
 
             if ucenik.popust != "0"
-              (event.group.cijena-(event.group.cijena*ucenik.popust/100))/ucenik.br_rata
-            elsif 
-              event.group.cijena/ucenik.br_rata
+
+              number_to_currency(((event.group.cijena-(event.group.cijena*ucenik.popust/100))/ucenik.br_rata), :unit => 'Kn', :format => "%n %u")
+            elsif
+              number_to_currency(event.group.cijena/ucenik.br_rata, :unit => 'Kn', :format => "%n %u")
             end
           end
             
@@ -200,7 +221,7 @@ show do
           end
 
           column "Uplata(kn)" do |pay|
-            pay.uplata? ? pay.uplata : "---"
+            pay.uplata? ? number_to_currency(pay.uplata, :unit => 'Kn', :format => "%n %u", :precision => 2) : "---"
           end
         end
       end

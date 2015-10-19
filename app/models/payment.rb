@@ -14,12 +14,17 @@ class Payment < ActiveRecord::Base
 			pay.uplata = pay.default_uplata
 		end
 
+	end
+
+	}
+
+	after_save { |pay|
+
 		@ucenik = Ucenik.find(pay.ucenik_id)
 
 		@ucenik.preostalo_za_platiti = @ucenik.preostalo_za_platiti - pay.uplata
 
 		@ucenik.save
-
-	end
 	}
+
 end

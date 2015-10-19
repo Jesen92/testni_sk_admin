@@ -16,14 +16,14 @@ class Ucenik < ActiveRecord::Base
 
 	validates :name, presence: true
 
-		after_save{ |ucenik|
+		before_save{ |ucenik|
 
 
-			@fee = 0
+			@fee = 0.00
 			@pay = Payment.where({ucenik_id: ucenik.id})
 
 			ucenik.events.each do |event|
-				@fee = @fee + event.group.cijena
+				@fee += event.group.cijena
 			end
 
 			ucenik.cijena_prije_popusta = @fee
@@ -42,49 +42,49 @@ class Ucenik < ActiveRecord::Base
 
 
 			ucenik.preostalo_za_platiti= @fee
-			
 
-			if ucenik.placanje_na_rate?
-				ucenik.events.each do |group|
-					@i = 0
-					@indicator = 0
+	}
 
-					payments = Payment.all
+	after_save { |ucenik|
 
-					payments.each do |pay| #provjera da li uplate vec postoje u bazi
-						if pay.ucenik_id == ucenik.id && pay.event_id == group.id
-							@indicator = 1
-							break
-						end 
-					end
+		if ucenik.placanje_na_rate?
+			ucenik.events.each do |group|
+				@i = 0
+				@indicator = 0
 
+				payments = Payment.all
 
-					while @i < ucenik.br_rata && @indicator == 0
-						payment = Payment.new
-
-						payment.ucenik_id = ucenik.id
-						payment.event_id = group.id
-
-						if ucenik.popust != 0
-							payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
-						elsif
-							payment.default_uplata = group.group.cijena/ucenik.br_rata
-						end
-							
-
-						payment.date = ucenik.prvi_mj_placanja + @i.month
-						payment.default_date = ucenik.prvi_mj_placanja + @i.month
-						payment.ime_ucenika = ucenik.name
-						payment.title = ucenik.name+" "+group.title
-
-						payment.save
-						@i+=1
+				payments.each do |pay| #provjera da li rate vec postoje u bazi
+					if pay.ucenik_id == ucenik.id && pay.event_id == group.id
+						@indicator = 1
+						break
 					end
 				end
+
+
+				while @i < ucenik.br_rata && @indicator == 0 #dodavanje rata u bazu
+					payment = Payment.new
+
+					payment.ucenik_id = ucenik.id
+					payment.event_id = group.id
+
+					if ucenik.popust != 0
+						payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
+					elsif
+					payment.default_uplata = group.group.cijena/ucenik.br_rata
+					end
+
+
+					payment.date = ucenik.prvi_mj_placanja + @i.month
+					payment.default_date = ucenik.prvi_mj_placanja + @i.month
+					payment.ime_ucenika = ucenik.name
+					payment.title = ucenik.name+" "+group.title
+
+					payment.save
+					@i+=1
+				end
 			end
-
-
-
+		end
 
 	}
 

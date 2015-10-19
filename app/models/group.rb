@@ -10,17 +10,25 @@ class Group < ActiveRecord::Base
 	belongs_to :dob
 	belongs_to :nivo
 	belongs_to :jezik
+	belongs_to :location
 
-	after_commit { |group|
+	before_save { |group|
 
 		
-		group.name = group.jezik.name+"/"+group.nivo.name+"/"+group.dob.name
+		group.name = group.jezik.name
+
+		if group.dob != nil
+			group.name += "/"+group.dob.name
+		end
+
+		if group.nivo != nil
+			group.name +="/"+group.nivo.name
+		end
 
 		if group.dodatak != ""
 			group.name = group.name+"/"+group.dodatak
 		end
 
-		group.save
 
 	}
 end

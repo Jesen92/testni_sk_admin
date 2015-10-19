@@ -35,6 +35,21 @@ permit_params :uplaceno, :uplata, :date
 #   permitted
 # end
 
+  show do
+    attributes_table do
+      row :id
+      row :ucenik
+      row :event
+      row :uplaceno
+      row ("Uplata") {|pay| number_to_currency(pay.uplata, :unit => 'Kn', :format => "%n %u")}
+      row ("Default uplata") {|pay| number_to_currency(pay.default_uplata, :unit => 'Kn', :format => "%n %u")}
+      row :date
+      row :default_date
+      row :created_at
+      row :updated_at
+    end
+  end
+
 
   index :title => "Plaćanje" do
     selectable_column
@@ -44,8 +59,7 @@ permit_params :uplaceno, :uplata, :date
     column :ucenik
     column :group, :sortable => :level
     column :uplaceno
-    column :default_uplata
-    column :uplata
+    column ("Uplata") {|pay| number_to_currency(pay.uplata, :unit => 'Kn', :format => "%n %u")}
     column :created_at, :sortable => :created_at
 
     actions
