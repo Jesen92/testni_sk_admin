@@ -69,10 +69,12 @@ class Ucenik < ActiveRecord::Base
 					payment.ucenik_id = ucenik.id
 					payment.event_id = group.id
 
-					if ucenik.popust != 0
-						payment.default_uplata = (group.cijena-(group.cijena*ucenik.popust/100))/ucenik.br_rata
-					elsif
-					payment.default_uplata = group.group.cijena/ucenik.br_rata
+					if ucenik.popust != 0 && ucenik.popust != nil
+						payment.default_uplata = (group.group.cijena-(group.group.cijena*ucenik.popust/100))/ucenik.br_rata
+					elsif ucenik.popust_kn != 0 && ucenik.popust_kn != nil
+					payment.default_uplata = (group.group.cijena-ucenik.popust_kn)/ucenik.br_rata
+					else
+						payment.default_uplata = group.group.cijena/ucenik.br_rata
 					end
 
 
