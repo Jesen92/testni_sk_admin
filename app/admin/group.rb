@@ -48,7 +48,6 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
     column :dob, :sortable => :dob
     column ("Cijena") {|group| number_to_currency(group.cijena, :unit => 'Kn', :format => "%n %u")}
     column :dodatak
-    column :location
     column :created_at, :sortable => :created_at
     actions
   end
@@ -60,7 +59,6 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
       f.input :dob
       f.input :nivo
       f.input :dodatak
-      f.input :location
       f.input :cijena
       f.actions
     end
@@ -74,7 +72,6 @@ permit_params :id, :name, :profesor_id, :nivo_id, :jezik_id, :dob_id, :dodatak,:
       row :nivo
       row :dob
       row :dodatak
-      row :location
       row :created_at
       row :updated_at
       row ("Cijena") {|group| number_to_currency(group.cijena, :unit => 'Kn', :format => "%n %u")}

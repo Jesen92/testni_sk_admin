@@ -33,6 +33,7 @@ menu :label => "Tečajevi", :priority => 3
       t.end.strftime("%H:%M")
     end
     column :start_date
+    column :location
     column :where
 
 
@@ -45,7 +46,7 @@ menu :label => "Tečajevi", :priority => 3
 
 
 
-permit_params :title,:start, :end, :br_sk_sati, :br_pred, :dodatak, :br_uku_sati, :skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: [], ucenik_ids: []
+permit_params :title,:start, :end, :br_sk_sati, :location_id, :br_pred, :dodatak, :br_uku_sati, :skolska_god_id, :polje_id, :start_date, :single_event, :end_date, :allDay, :where_id, :profesor_id, :repeat, :repeat_until, :group_id, :recurring_rule, day_ids: [], ucenik_ids: []
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
@@ -67,12 +68,15 @@ show do
       row :skolska_god
       row :polje
       row :dodatak
+      row ("Grad predavanja") {event.location}
       row :profesor
       row :group
-      row :where
+      row ("Mjesto predavanja") {event.where}
       row ("Početak predavanja") {event.start.strftime("%H:%M")}
       row ("Kraj predavanja") {event.end.strftime("%H:%M")}
+      row ("Broj školskih sati") {event.br_sk_sati}
       row :start_date
+      row ("Ukupan broj školskih sati") {event.br_uku_sati}
       #row :recurring_rule
 
 
@@ -141,6 +145,7 @@ show do
       f.input :skolska_god, :label => "Školska godina"
       f.input :polje, :label => "Red grupe"
       f.input :dodatak
+      f.input :location, :label => "Lokacija"
       f.input :profesor, :label => "Predavač"
       f.input :start, :label => "Vrijeme početka:", :as => :time_picker, :required => true
       f.input :br_sk_sati, :label => "Broj školskih sati"

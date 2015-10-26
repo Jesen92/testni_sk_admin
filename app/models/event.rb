@@ -15,6 +15,7 @@ class Event < ActiveRecord::Base
 	belongs_to :where
   belongs_to :skolska_god
   belongs_to :polje
+  belongs_to :location
 
   has_many :uceniks, through: :group_uceniks
   has_many :group_uceniks
@@ -56,22 +57,11 @@ after_create { |event|
         @ucenik.save
       end
 
-    if event.repeat?
-        event.title = event.group.name+"/ "+event.skolska_god.name
-
-      if event.polje != "" && event.polje != nil
-        event.title = event.title+" / "+event.polje.name
-      end
-
-      if event.dodatak != ""
-        event.title = event.title+" / "+event.dodatak
-      end
-    end
-
 
       event.save
  
 }
+
 
 
 
@@ -90,6 +80,24 @@ after_create { |event|
       @dani_count = 0
       @br = 0
       @zbr = 0
+
+      ############################################################ postavljanje naziva tečaja
+      if event.repeat?
+        event.title = event.group.name+"/ "+event.skolska_god.name
+
+        if event.polje != "" && event.polje != nil
+          event.title = event.title+" / "+event.polje.name
+        end
+
+        if event.dodatak != ""
+          event.title = event.title+" / "+event.dodatak
+        end
+
+        if event.location != nil
+          event.title = event.title+" / "+event.location.name
+        end
+      end
+      ############################################################
 
       event.start_date = event.start_date.to_date.strftime(" %Y-%m-%d ")
 

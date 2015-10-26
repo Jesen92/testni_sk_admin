@@ -10,7 +10,7 @@ class Group < ActiveRecord::Base
 	belongs_to :dob
 	belongs_to :nivo
 	belongs_to :jezik
-	belongs_to :location
+
 
 	before_save { |group|
 
