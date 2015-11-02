@@ -9,7 +9,7 @@
 	end
 
 	g.column name: "Naziv", attribute: 'title', custom_filter: :auto do |t|
-		t.title
+		link_to(t.title, event_path(t.id))
 	end
 
 	g.column name: "Grupa", attribute: 'name', custom_filter: :auto , model: Group do |t|
