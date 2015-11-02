@@ -52,25 +52,24 @@ class Event < ActiveRecord::Base
 
 after_create { |event|
 
-      event.uceniks.each do |ucenik|
-        @ucenik = Ucenik.find(ucenik.id)
-        @ucenik.save
-      end
-
-
       event.save
- 
+
 }
+
+  after_update { |event|
+
+    event.uceniks.each do |ucenik| #dodavanje tečaja učenicima
+      @ucenik = Ucenik.find(ucenik.id)
+      @ucenik.save
+    end
+
+  }
 
 
 
 
     before_update { |event|
 
-      event.uceniks.each do |ucenik|
-        @ucenik = Ucenik.find(ucenik.id)
-        @ucenik.save
-      end
 
         SingleEvent.where({event_id: event.id}).delete_all
 
@@ -157,7 +156,7 @@ after_create { |event|
       s_event.event_id = event.id
     if event.title != nil
       s_event.title = event.title
-    elsif 
+    else
       s_event.title = event.group.name
     end
 
@@ -211,6 +210,8 @@ after_create { |event|
         
       end
   end
+
+
 
     }
 
