@@ -89,29 +89,43 @@ def get_all_events #JSON zapis predavanja za kalendar(svi user-i)
            #   @col = "#FF9900"
            # end
 
-           if s_event.where.id == 1
-            @col =  "#FF0000"
-           elsif s_event.where.id == 2
-            @col = "#00FF00"
-           elsif s_event.where.id == 3
-            @col = "#0000FF"
-           elsif s_event.where.id == 4
-            @col = "#FFCC00"
-           elsif s_event.where.id == 5
-            @col = "#00CCFF"
-           elsif s_event.where.id == 6
-            @col = "#C0C0C0"
-           elsif s_event.where.id == 7
-            @col = "#CC9900"
-           elsif s_event.where.id == 8
-            @col = "#FF00CC"
-           elsif s_event.where.id == 9
-            @col = "#000000"
+
+            if s_event.where != nil
+             if s_event.where.id == 1
+              @col =  "#FF0000"
+             elsif s_event.where.id == 2
+              @col = "#00FF00"
+             elsif s_event.where.id == 3
+              @col = "#0000FF"
+             elsif s_event.where.id == 4
+              @col = "#FFCC00"
+             elsif s_event.where.id == 5
+              @col = "#00CCFF"
+             elsif s_event.where.id == 6
+              @col = "#C0C0C0"
+             elsif s_event.where.id == 7
+              @col = "#CC9900"
+             elsif s_event.where.id == 8
+              @col = "#FF00CC"
+             elsif s_event.where.id == 9
+              @col = "#000000"
+             end
+
+              @txt_col = "#FFFFFF"
+
+            else
+              @col = "#FFFFFF"
+              @txt_col = "#000000"
+            end
+
+
+           if s_event.profesor != nil
+            @profesor = "<p><a href ='/profesors/show."+s_event.profesor.id.to_s+"'>"+s_event.profesor.name+"</a></p>"
+           else
+             @profesor = "Profesor nije dodijeljen"
            end
 
-           @profesor = "<p><a href ='/profesors/show."+s_event.profesor.id.to_s+"'>"+s_event.profesor.name+"</a></p>"
-
-        events << {:id => s_event.id, :profesor => "<p><strong>Profesor:</strong></p> "+"<p>"+@profesor+"</p>", :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.start.strftime("%H:%M").to_s,:end =>s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.end.strftime("%H:%M").to_s, :vrijeme => "<p><strong>"+s_event.start.to_s+" - "+s_event.end.to_s+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
+        events << {:id => s_event.id, :textColor => @txt_col, :profesor => "<p><strong>Profesor:</strong></p> "+"<p>"+@profesor+"</p>", :color => @col, :ev => @ev,:title => s_event.title, :start => s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.start.strftime("%H:%M").to_s,:end =>s_event.date.strftime(" %Y-%m-%d ").to_s+" "+s_event.end.strftime("%H:%M").to_s, :vrijeme => "<p><strong>"+s_event.start.to_s+" - "+s_event.end.to_s+"</strong></p>" ,:grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>" }
     #  else 
        # events << {:id => event.id, :title => event.title, :start =>event.start_date.to_s+" "+event.start.to_s,:end =>event.start_date.to_s+" "+event.end.to_s , :vrijeme => "<p><strong>"+event.start+" - "+event.end+"</strong></p>" , :grupa => "<p><strong>Predavanje grupe:</strong></p> "+"<p>"+@grupa+"</p>", :mjesto => "<p><strong>Mjesto predavanja:</strong></p> "+"<p>"+@mjesto+"</p>", :adresa => "<p><strong>Adresa:</strong></p> "+"<p>"+@adresa+"</p>", :ranges => [{:start => "2000-1-1", :end => "3000-1-1"}] }
     #  end
