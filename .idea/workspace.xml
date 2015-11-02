@@ -2,13 +2,101 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0b4932-5838-43ab-ac7a-179fd50c29ab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-139e0457af28db132498555870241f84.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-139e0457af28db132498555870241f84.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-4a4e665789b2928c9f56cdc53118b5d6.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-4a4e665789b2928c9f56cdc53118b5d6.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-e04f4b99735a51fd048896916fe4b5c1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-e04f4b99735a51fd048896916fe4b5c1.js.gz" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/manifest-db477b48afd97b2a274770323feac43b.json" afterPath="$PROJECT_DIR$/public/assets/manifest-db477b48afd97b2a274770323feac43b.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/manifest-892837ec9665e713ac941319b580bef5.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-0a63ba6c877a80ba5ba5ee6d388cdc48.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-0a63ba6c877a80ba5ba5ee6d388cdc48.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-0da35e6b000ff1181cb9c29e4f689592.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-0da35e6b000ff1181cb9c29e4f689592.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-545e1b924035024af0b1eda9128ea95a.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-545e1b924035024af0b1eda9128ea95a.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-6c33ac19e16ca06158d94d4ca8bb27c0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-6c33ac19e16ca06158d94d4ca8bb27c0.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-9d988bd18bc15d3080c55831363c33a5.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-9d988bd18bc15d3080c55831363c33a5.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-f1623bf465b9e5634851bb089e561c43.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-f1623bf465b9e5634851bb089e561c43.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-0147801e1bbe69af4ec89249675d43e8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-0147801e1bbe69af4ec89249675d43e8.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon-60062247906dd87b473f5879cba733b5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-e01bb9c0b02af51269670ccf90117a19.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-e01bb9c0b02af51269670ccf90117a19.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-fbf126602b570417d83a5211a8106080.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-fbf126602b570417d83a5211a8106080.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/loader-a2427beb7f78d7bd255099b41295a428.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/wysiwyg-a7d55dd5c9c0a81bd46616c5834ceec9.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/wysiwyg-a7d55dd5c9c0a81bd46616c5834ceec9.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow-c28f394d672da246825e86b19c2b0f69.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark-02cdfcae7f839316d8b70ab1c3530359.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable-f62baee4086047239bd32dde77098ab1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-aa30b8b704610f4c443b394a29bfb9f0.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-aa30b8b704610f4c443b394a29bfb9f0.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/animated-overlay-060636189c4458ceed402589dec47b43.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-75c1959c355819c76b372fb93bed3975.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-75c1959c355819c76b372fb93bed3975.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9bd8be6cfb308dd12536ec5fa7882bdd.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9bd8be6cfb308dd12536ec5fa7882bdd.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9c64d416eaaf2429a2a202e6b33a393d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9c64d416eaaf2429a2a202e6b33a393d.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9c959e5acdfd2fada285e09b856fed04.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-9c959e5acdfd2fada285e09b856fed04.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-acfdd63f8dded1e5c2f8c35aac4b5cb8.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-acfdd63f8dded1e5c2f8c35aac4b5cb8.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/arrow_down-4bfc45ed2f7e5940d54c7e8e4f7c35cf.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/arrow_up-f800440fb00a14b92bb3e719c603b034.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-32d0c6ae0bfce87ebd0866afb5aac746.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-32d0c6ae0bfce87ebd0866afb5aac746.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-c6b2c4c24c70a0edd56e46ab7b54935f.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-c6b2c4c24c70a0edd56e46ab7b54935f.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/chosen-sprite-57bd850f6ae6ebc295791af9d5272b9a.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/chosen-sprite@2x-53d39251d889fcb44961ba2108cf5c48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/arrow_down-4bfc45ed2f7e5940d54c7e8e4f7c35cf.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/arrow_down.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/arrow_up-f800440fb00a14b92bb3e719c603b034.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/arrow_up.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/calendar_view_month-4262dfa3487e637ca24bd1dd865d4040.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/collapse-32bcacdfe29ce78294575dee0d5a5502.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/delete-df807c99030afa93cb9e2764100162b4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/expand-6bac30e3aef254df7805d232f1574e0a.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/page_white_excel-aa7a891d09d8542bfb856bd9b14c2db2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/page_white_find-34d692cda2aaa869547380aa29a6cbec.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/table-852d7f218c5c8781753b58b1a4a218e0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/table_refresh-21b1c8437a336e035e8afbf305d67663.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/tick_all-12b571b3caf2833dfff4f2c24e233043.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/icons/grid/untick_all-3e2281b9b156a26a128ff0618de50243.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-fd6f45499761ce4ed27b77a076705c8b.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-fd6f45499761ce4ed27b77a076705c8b.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-1bb7b4ba806a9afca11e02d05fb594fe.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-1e47aacbb8caadc882aabf258cc46a7c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_55_fbf9ee_1x400-5f541b1d1c91560c65cd277d0667f156.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_65_ffffff_1x400-5c76742c914aa1c2efc8290d55680e03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_dadada_1x400-5eabf66301b2d7795887d0885ce7438d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_e6e6e6_1x400-ad8d94c63fd82b217593c6e5110ccc21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_95_fef1ec_1x400-f6e66ac54dc6d869c0ccdd13796695c0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100-c078ce74122b5677d6e95477f38f01fd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_222222_256x240-f292d7610c1d4ae8d7d06c992b14666f.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_2e83ff_256x240-ba936f7b3fc94f21ed62f98b60d72eab.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_454545_256x240-1d3aedb52dce1f0c52f994f42738e07b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_888888_256x240-af4cf3fcd69301aeb2978a43521ab352.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_cd0a0a_256x240-903ea32423ead5e7687e1a4658fe80a4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest-db477b48afd97b2a274770323feac43b.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/style-a2cc3192c8431b1bf5e55879d0863c61.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/style-a2cc3192c8431b1bf5e55879d0863c61.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/table-852d7f218c5c8781753b58b1a4a218e0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/table_refresh-21b1c8437a336e035e8afbf305d67663.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_diagonals-thick_90_eeeeee_40x40-0705d9e01d59109beab16116e5823dbf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_flat_15_cd0a0a_40x100-06d6ad3ff96b45b121cadc0d341f9249.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_100_e4f1fb_1x400-6c7f5ae563dadeecd4617845baa597e2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_50_3baae3_1x400-6d8dae5e52ceb577b746472055214f01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_80_d7ebf9_1x400-d94f814dbe55c3e3c6bc8f0d2b16497d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-hard_100_f2f5f7_1x100-d153e69b2dc8eb9f81ea1975d106954b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-hard_70_000000_1x100-5c1d57e5b26c150e30c7ede8c5f46688.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-soft_100_deedf7_1x100-aff8d1cc45b19566b42015c502fd0a50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-soft_25_ffef8f_1x100-1c95fb6413a1927d6c693e6ed66941bc.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_2694e8_256x240-285f89f23eaf7ea340790fddd2ce589b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_2e83ff_256x240-a789a1f02657c1ef4b338cef093857f2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_3d80b3_256x240-19d0a25e6a4c868f21724b6f551599f3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_72a7cf_256x240-fb7dd54e100d271a0be25f5ececbe5e1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_ffffff_256x240-45adfc2fa2232b0d4466aad254ee9349.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skola_str.iws" />
@@ -26,7 +114,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1446469453916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_clobber__skola_str.coverage" NAME="assets:clobber: skola_str Coverage Results" MODIFIED="1446471087152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1446471118108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@Development__skola_str.coverage" NAME="Development: skola_str Coverage Results" MODIFIED="1446468111488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -68,11 +157,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wice_grid.css.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wice_grid.css.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/wice_grid.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.55744684">
+              <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -105,11 +194,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3608522">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rake" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/rake">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -245,7 +344,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,9 +396,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="production" />
-      </envs>
+      <envs />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
@@ -297,6 +406,30 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="assets:precompile" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="assets:clobber: skola_str" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="skola_str" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="assets:clobber" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
@@ -461,16 +594,18 @@
       <envs />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Rails.Development: skola_str" />
       <item index="1" class="java.lang.String" itemvalue="Rails.Production: skola_str" />
       <item index="2" class="java.lang.String" itemvalue="Rake.spec: skola_str" />
       <item index="3" class="java.lang.String" itemvalue="Rake.test: skola_str" />
       <item index="4" class="java.lang.String" itemvalue="Rake.assets:precompile: skola_str" />
+      <item index="5" class="java.lang.String" itemvalue="Rake.assets:clobber: skola_str" />
     </list>
     <recent_temporary>
-      <list size="1">
+      <list size="2">
         <item index="0" class="java.lang.String" itemvalue="Rake.assets:precompile: skola_str" />
+        <item index="1" class="java.lang.String" itemvalue="Rake.assets:clobber: skola_str" />
       </list>
     </recent_temporary>
   </component>
@@ -509,7 +644,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446470095637</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ispravak">
+      <created>1446470362095</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1446470362095</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -524,7 +665,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -550,14 +691,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/uceniks_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/single_events_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -846,14 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/wice_grid.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/images/table_refresh.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -908,8 +1033,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3608522">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/rake">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/wice_grid.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.55744684">
+          <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
           <folding />
         </state>
       </provider>
