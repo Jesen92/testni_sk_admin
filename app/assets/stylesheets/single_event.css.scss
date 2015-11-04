@@ -2,3 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.single-event-index {
+  overflow-y: scroll;
+  height: 100%;
+}

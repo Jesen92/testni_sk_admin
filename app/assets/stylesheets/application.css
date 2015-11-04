@@ -19,8 +19,13 @@
  *= boostrap-sass
  */
 
-
+html {
+    overflow: visible;
+    height: 101%;
+    width: 150%;
+}
 
 body {
+
   padding-top: 50px;
 }
