@@ -20,12 +20,7 @@ default: &default
   password: aD8%eP8*
   port: 3306
 
-  ###production baza
-  #host: sql2.freemysqlhosting.net
-  #database: sql292287
-  #username: sql292287
-  #password: lH1!dY1%
-  #port: 3306
+
 
   pool: 5
   timeout: 5000
