@@ -21,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/skola_str@assets_clobber__skola_str.coverage" NAME="assets:clobber: skola_str Coverage Results" MODIFIED="1446662639731" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@assets_clean_keep___skola_str.coverage" NAME="assets:clean[keep]: skola_str Coverage Results" MODIFIED="1447334374253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
-    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447334387584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447334568900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@Development__skola_str.coverage" NAME="Development: skola_str Coverage Results" MODIFIED="1447334213326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -46,8 +46,8 @@
       <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.103270225">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46471602">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -408,9 +408,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="production" />
-      </envs>
+      <envs />
       <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
       <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
       <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
@@ -728,7 +726,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447334302017</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="precompile assets">
+      <created>1447334461112</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1447334461112</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -770,7 +774,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Testna verzija, prvi commit" />
     <MESSAGE value="Ispravak" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ispravak" />
+    <MESSAGE value="precompile assets" />
+    <option name="LAST_COMMIT_MESSAGE" value="precompile assets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1148,8 +1153,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.103270225">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46471602">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
         </state>
       </provider>
