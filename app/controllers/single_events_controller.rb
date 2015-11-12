@@ -4,7 +4,6 @@ respond_to :json
     before_filter :authenticate_user!
     layout "application"
 
-  
 
   def get_events #JSON zapis predavanja za kalendar(current_user)
     @event = current_user.profesor.events
@@ -166,6 +165,18 @@ end
     @event_t = SingleEvent.find(params[:format])
     @page_title = @event_t.title
 
+  end
+
+  def events_odrzano
+    se = SingleEvent.find(params[:grid][:selected])
+
+    se.each do |s|
+      s.odrzano = true
+      s.save
+    end
+
+    flash[:notice] = "Updated SingleEvents!"
+    redirect_to single_events_path
   end
 
   private

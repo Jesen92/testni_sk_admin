@@ -85,6 +85,7 @@ Rails.application.routes.draw do
   resources :novi_uceniks, only: [:create]
 
   resources :single_events do
+    put :events_odrzano, on: :collection
     get :get_events, on: :collection
     get :get_all_events, on: :collection
   end
