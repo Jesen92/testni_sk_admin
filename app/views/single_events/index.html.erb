@@ -22,7 +22,7 @@
 		end
 	end
 
-	g.column name: "Datum predavanja", attribute: 'date', ordering: true, helper_style: :standard do |t|
+	g.column name: "Datum predavanja", attribute: 'date', ordering: true, helper_style: :calendar do |t|
 		t.date.strftime(" %d.%m.%Y. ")
 	end
 
