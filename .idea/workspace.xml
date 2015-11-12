@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0b4932-5838-43ab-ac7a-179fd50c29ab" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3b55b96f2ccfa75482155a12bec4a3c2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3b55b96f2ccfa75482155a12bec4a3c2.js.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-238c855d34127b43fe3cec185701665a.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-238c855d34127b43fe3cec185701665a.js.gz" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/active_admin-3c21571ada1d09385ded7c5ab1acff88.css.gz" afterPath="$PROJECT_DIR$/public/assets/active_admin-3c21571ada1d09385ded7c5ab1acff88.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-5acbd6e5b9d4d3e3f543d4b404c8b4c9.css.gz" afterPath="$PROJECT_DIR$/public/assets/jquery-ui-5acbd6e5b9d4d3e3f543d4b404c8b4c9.css.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/style-d78818332fa49693b08679c4e62a1ad9.css.gz" afterPath="$PROJECT_DIR$/public/assets/style-d78818332fa49693b08679c4e62a1ad9.css.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skola_str.iws" />
@@ -28,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/skola_str@assets_clobber__skola_str.coverage" NAME="assets:clobber: skola_str Coverage Results" MODIFIED="1447334723559" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@assets_clean_keep___skola_str.coverage" NAME="assets:clean[keep]: skola_str Coverage Results" MODIFIED="1447334374253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
-    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447334746196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447334937976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@Development__skola_str.coverage" NAME="Development: skola_str Coverage Results" MODIFIED="1447334213326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -716,7 +709,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447334592770</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="precompile assets">
+      <created>1447334815526</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1447334815526</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
