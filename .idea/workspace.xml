@@ -2,31 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0b4932-5838-43ab-ac7a-179fd50c29ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/arrow_down-4bfc45ed2f7e5940d54c7e8e4f7c35cf-4bfc45ed2f7e5940d54c7e8e4f7c35cf.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/arrow_down-4bfc45ed2f7e5940d54c7e8e4f7c35cf.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/arrow_up-f800440fb00a14b92bb3e719c603b034-f800440fb00a14b92bb3e719c603b034.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/arrow_up-f800440fb00a14b92bb3e719c603b034.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/calendar_view_month-4262dfa3487e637ca24bd1dd865d4040-4262dfa3487e637ca24bd1dd865d4040.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/calendar_view_month-4262dfa3487e637ca24bd1dd865d4040.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/collapse-32bcacdfe29ce78294575dee0d5a5502-32bcacdfe29ce78294575dee0d5a5502.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/collapse-32bcacdfe29ce78294575dee0d5a5502.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/delete-df807c99030afa93cb9e2764100162b4-df807c99030afa93cb9e2764100162b4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/delete-df807c99030afa93cb9e2764100162b4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/expand-6bac30e3aef254df7805d232f1574e0a-6bac30e3aef254df7805d232f1574e0a.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/expand-6bac30e3aef254df7805d232f1574e0a.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/page_white_excel-aa7a891d09d8542bfb856bd9b14c2db2-aa7a891d09d8542bfb856bd9b14c2db2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/page_white_excel-aa7a891d09d8542bfb856bd9b14c2db2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/page_white_find-34d692cda2aaa869547380aa29a6cbec-34d692cda2aaa869547380aa29a6cbec.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/page_white_find-34d692cda2aaa869547380aa29a6cbec.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/table-852d7f218c5c8781753b58b1a4a218e0-852d7f218c5c8781753b58b1a4a218e0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/table-852d7f218c5c8781753b58b1a4a218e0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/table_refresh-21b1c8437a336e035e8afbf305d67663-21b1c8437a336e035e8afbf305d67663.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/table_refresh-21b1c8437a336e035e8afbf305d67663.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/tick_all-12b571b3caf2833dfff4f2c24e233043-12b571b3caf2833dfff4f2c24e233043.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/tick_all-12b571b3caf2833dfff4f2c24e233043.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/grid/untick_all-3e2281b9b156a26a128ff0618de50243-3e2281b9b156a26a128ff0618de50243.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/icons/grid/untick_all-3e2281b9b156a26a128ff0618de50243.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/manifest-c50a415e8d49cc8d651c29abc9b35908.json" afterPath="$PROJECT_DIR$/public/assets/manifest-c50a415e8d49cc8d651c29abc9b35908.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/manifest-2153faaf2dab5fc76c25e424af64f916.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3c21571ada1d09385ded7c5ab1acff88.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3c21571ada1d09385ded7c5ab1acff88.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3e1f87e979f211c9914ad8ff0067c147.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin-3e1f87e979f211c9914ad8ff0067c147.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-9156a159aebfedcefde69352f6bc1e22.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/application-9156a159aebfedcefde69352f6bc1e22.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/datepicker/datepicker-input-icon-570e2accd85d24304593185da98fec42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-34a5c8a395e02dde56b826fdd831a002.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-34a5c8a395e02dde56b826fdd831a002.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-e91cf33817eb7afeaa397f34796dd6cf.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor-e91cf33817eb7afeaa397f34796dd6cf.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/loader-c39acc701f0719bb4e3f47d69e350be7.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/wysiwyg-f07bc67bf6e9836725f54894455e051e.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/editor/wysiwyg-f07bc67bf6e9836725f54894455e051e.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow-5f142680c25e2aa0a816daf2acaf0b5a.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/nested_menu_arrow_dark-de149f884a653acba31d3906dd2c43ba.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/orderable-8871c8f6abafa76c236e6adbf37dfa16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-f20639bd3ceda52d7a509c2a4bfe75f8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/active_admin/print-f20639bd3ceda52d7a509c2a4bfe75f8.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/animated-overlay-c41fca1416adc3901c55ac9d93d8e094.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-07405a5656bf04b5b0ea94348c21e698.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-07405a5656bf04b5b0ea94348c21e698.js.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f77f39e3932fa3aa9a921ae51f0f3c35.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/application-f77f39e3932fa3aa9a921ae51f0f3c35.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/arrow_down-d5679e690b6ee7f34ed98edac6fa2f98.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/arrow_up-1d7f6781d3f1bedb86b00083c89790e3.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-70caf90c7c1819e463c5586cedc3d5c8.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/bootstrap-70caf90c7c1819e463c5586cedc3d5c8.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/chosen-sprite-eada27f72fa0600cc97cfdee218838b0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/chosen-sprite@2x-88a6d111a5d2fda8cf79a2dddd5f6aa6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-5acbd6e5b9d4d3e3f543d4b404c8b4c9.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui-5acbd6e5b9d4d3e3f543d4b404c8b4c9.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_0_aaaaaa_40x100-ed6e82e18def45e6311e7af33aa2639e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_flat_75_ffffff_40x100-ddd682dcd9f9df372256868f54c635f0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_55_fbf9ee_1x400-3dd7f665970ee31c318e8c87cbe98faa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_65_ffffff_1x400-965fb3ba57991e90dfdcfdeac04ef1c3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_dadada_1x400-216fb03520970c6fc58282a609d9442d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_75_e6e6e6_1x400-1dd22fc8e63ac07aa8abd98028c88a05.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_glass_95_fef1ec_1x400-88b7e4f91cce5e46543b517591c5a0d3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-bg_highlight-soft_75_cccccc_1x100-55c2a1ce5cc41bfbe9b6adb0f607efa3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_222222_256x240-423afab2682141c5076e93d64888fa75.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_2e83ff_256x240-81a22e7ee2a42a72fcf3b7a57ead4479.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_454545_256x240-4566d9907f23398fe45d29b0013fee9d.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_888888_256x240-890f86389ea63b332611e2aa7da818b8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/jquery-ui/ui-icons_cd0a0a_256x240-ec474d3a2f076ebba238bf047211278e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/manifest-c50a415e8d49cc8d651c29abc9b35908.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/style-d78818332fa49693b08679c4e62a1ad9.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/style-d78818332fa49693b08679c4e62a1ad9.css.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/table-9ec9577439e6692f807e38c837a4253b.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/table_refresh-8669386619b64556b1ff3ec616aa2f22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_diagonals-thick_90_eeeeee_40x40-189f517938fb7c23c6e190091fa544c9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_flat_15_cd0a0a_40x100-e5f3984c15d1763d191629218a47fade.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_100_e4f1fb_1x400-f6786fa50057d144e05086a0b8b0b25e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_50_3baae3_1x400-d215c37e8149a98427b9b3f9a42427d4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_glass_80_d7ebf9_1x400-3b32d3b89b7ee2bab11fb5c01adb3c57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-hard_100_f2f5f7_1x100-8edcfa7513f04983f777c71a37b4629c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-hard_70_000000_1x100-7ddec749584c15e4442e62ff0d1a6449.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-soft_100_deedf7_1x100-17101e99d3f8bacc5444cd3ec4b23fb2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-bg_highlight-soft_25_ffef8f_1x100-89a022078bc513c24e502617d3e89a85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_2694e8_256x240-c27f9ead53c70f3002551fd0bc49730c.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_2e83ff_256x240-a0f49eee8f49670ed1b5159d60930621.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_3d80b3_256x240-e310a1e03c8eb57e3a3fbfc243a8a037.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_72a7cf_256x240-28f8eabddfbbdc1a456ffbeebd8e4f7e.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/assets/ui-icons_ffffff_256x240-544644f375351b28a8242679bc085641.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="skola_str.iws" />
@@ -44,9 +84,9 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/skola_str@assets_clobber__skola_str.coverage" NAME="assets:clobber: skola_str Coverage Results" MODIFIED="1447335025023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_clobber__skola_str.coverage" NAME="assets:clobber: skola_str Coverage Results" MODIFIED="1447335799180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@assets_clean_keep___skola_str.coverage" NAME="assets:clean[keep]: skola_str Coverage Results" MODIFIED="1447334374253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
-    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447335710700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
+    <SUITE FILE_PATH="coverage/skola_str@assets_precompile__skola_str.coverage" NAME="assets:precompile: skola_str Coverage Results" MODIFIED="1447335810285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
     <SUITE FILE_PATH="coverage/skola_str@Development__skola_str.coverage" NAME="Development: skola_str Coverage Results" MODIFIED="1447334213326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="skola_str" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -58,24 +98,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
+            <state vertical-scroll-proportion="0.46471602">
               <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-07405a5656bf04b5b0ea94348c21e698.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/assets/application-07405a5656bf04b5b0ea94348c21e698.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33217993">
-              <caret line="28713" column="38" selection-start-line="28713" selection-start-column="38" selection-end-line="28713" selection-end-column="38" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -226,50 +254,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skola_str" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testni_sk_admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skola_str" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testni_sk_admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="icons" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -753,7 +737,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447335608740</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="precompile assets">
+      <created>1447335736687</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1447335736687</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1133,19 +1123,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
+        <state vertical-scroll-proportion="0.46471602">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/application-07405a5656bf04b5b0ea94348c21e698.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33217993">
-          <caret line="28713" column="38" selection-start-line="28713" selection-start-column="38" selection-end-line="28713" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
